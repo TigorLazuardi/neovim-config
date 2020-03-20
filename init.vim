@@ -25,7 +25,8 @@ source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/rust.vim
 source $HOME/.config/nvim/clip.vim
 source $HOME/.config/nvim/tagbar.vim
-" source $HOME/.config/nvim/fern.vim
+" source $HOME/.config/nvim/defx.vim
+source $HOME/.config/nvim/fern.vim
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'

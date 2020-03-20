@@ -39,9 +39,9 @@ nmap <silent> gE <Plug>(coc-diagnostic-prev)
 nmap <F2> <Plug>(coc-rename)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <silent> K :call CocActionAsync('doHover')<CR>
-nmap <silent> <leader>e :CocCommand explorer
-      \ --toggle
-      \<CR>
+" nmap <silent> <leader>e :CocCommand explorer
+"       \ --toggle
+"       \<CR>
       " \ --sources=buffer-,file+
       " \ --file-columns=git:selection:clip:diagnosticError:indent:icon:filename;fullpath;size;modified;readonly
 
