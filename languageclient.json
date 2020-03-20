@@ -1,0 +1,12 @@
+{
+  "gopls": {
+    "usePlaceholders": true,
+    "completeUnimported": true,
+    "hoverKind": "FullDocumentation",
+    "linkTarget": ""
+  },
+  "gopls.usePlaceholders": true,
+  "gopls.completeUnimported": true,
+  "gopls.hoverKind": "FullDocumentation",
+  "gopls.linkTarget": ""
+}

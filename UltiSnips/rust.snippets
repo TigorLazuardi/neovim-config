@@ -1,0 +1,23 @@
+priority +100
+
+snippet Sf "String from" 
+String::from(${0});
+endsnippet
+
+snippet Sn "String::new()"
+String::new();
+endsnippet
+
+snippet fn "Function Declaration" b
+${5/..*/\/\/\//} $5
+${1:pub }fn ${2:FunctionName}($3)${4/.+/ -> /}$4 {
+	$0
+}
+endsnippet
+
+snippet t "Type Declaration" b
+${4/..*/\/\/\//} $4
+${1:pub }${2:Type} ${3:TypeName} {
+	$0
+}
+endsnippet

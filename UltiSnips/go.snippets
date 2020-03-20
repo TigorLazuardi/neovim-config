@@ -1,0 +1,71 @@
+global !p
+import utils
+
+def insert_snake_case(string):
+	snip.expand_anon(utils.snake_case(string))
+endglobal
+
+priority +1000
+snippet if "if ..." b
+if $1 {
+	$2
+}
+endsnippet
+
+snippet if "if err != nil" "re.match('^\s+[^=]*err\s*:?=', snip.buffer[snip.line-1])" be
+if err != nil {
+	$1
+}
+endsnippet
+
+snippet "^p" "package" "snip.line == 0" Arbe
+package `!v expand('%:p:h:t')`
+endsnippet
+
+snippet ` "Struct Tag generator" "re.match('^\s+([a-zA-Z0-9\.]*)\s+\*?\[?\]?\w+\{?\}?\s', snip.buffer[snip.line])" ieA
+\`db:"${1:`!p snip.rv = utils.snake_case(snip.context.group(1))`}" json:"$1"$0
+endsnippet
+
+snippet spanserv "Span service" "re.match('^func\s\(.+\)\s(\w+)\(', snip.buffer[snip.line-1])" ibe 
+span, _ := apm.StartSpan(ctx, "${1:`!p snip.rv = utils.space_between_camels(snip.context.group(1))`}", "service")
+defer span.End()
+endsnippet
+
+snippet r "return" "re.match('^\s+if err ', snip.buffer[snip.line-1])" be
+return err
+endsnippet
+
+snippet fn "Function declaration" b
+// ${1:FunctionName} ${2:Documentation}
+func ${3/..*/(/}$3${3/..*/) /}$1($4)${5/..*/ (/}$5${5/..*/)/} {
+	$0
+}
+endsnippet
+
+snippet fnh "Function Http Handler with Struct" b
+// ${1:FunctionName} ${2:Documentation}
+func ${3/..*/(/}$3${3/..*/) /}$1(w http.ResponseWriter, r *http.Request) {
+	${0}
+}
+endsnippet
+
+snippet tx "Tracer transaction" "re.match('func\s\((\w+)\s.*\)\s(\w+)\(', snip.buffer[snip.line-1])" bei
+tx := ${1:`!p snip.rv = snip.context.group(1)`}.Tracer.StartTransaction("${2:`!p snip.rv = utils.space_between_camels(snip.context.group(2))`}", "controller")
+defer tx.End()
+ctx := apm.ContextWithTransaction($1.Context, tx)
+endsnippet
+
+snippet trun "t.Run" b
+t.Run("${1:Test name}", ${2:func(t *testing.T) \{
+	$0
+\}})
+endsnippet
+
+post_jump "if snip.tabstop == 5: insert_snake_case(snip.tabstops[2].current_text)"
+snippet asseq "Assert Equal" bi
+assert.Equal(t, ${1:data.${2:Field}${3:.String}}, ${4:body["$5"]})
+endsnippet
+
+snippet msi "map[string]interface{}"
+map[string]interface{}
+endsnippet

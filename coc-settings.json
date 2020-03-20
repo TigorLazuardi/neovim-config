@@ -1,0 +1,85 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "Markdown",
+    "typescript", 
+    "javascript", 
+    "typescriptreact", 
+    "javascriptreact", 
+    "yaml", 
+    "json", 
+    "markdown", 
+    "vim", 
+    "rust", 
+    "go", 
+    "python",
+    "html",
+    "toml"
+  ],
+  "coc.preferences.formatOnInsertLeave": true,
+  "coc.preferences.formatOnType": true,
+  "languageserver": 
+  {
+    "intelephense": {
+      "command": "intelephense",
+      "args": ["--stdio"],
+      "filetypes": ["php"],
+      "initializationOptions": {
+        "storagePath": "/tmp/intelephense"
+      }
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  },
+  "prettier.singleQuote": true,
+  "prettier.trailingComma":"es5",
+  "prettier.semi": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.arrowParens": "always",
+  "prettier.printWidth": 80,
+  "signature.floatMaxWidth": 100,
+  "codeLens.enable": true,
+  "codeLens.separator": "⬅",
+  "suggest.noselect": true,
+  "suggest.floatEnable": true,
+  "suggest.enablePreselect": false,
+  "suggest.numberSelect": false,
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.displayByAle": true,
+  "coc.preferences.enableFloatHighlight": true,
+  "coc.preferences.hoverTarget": "float",
+  "diagnostic.virtualText": true,
+  "diagnostic.errorSign": "❌",
+  "diagnostic.infoSign": "🌟",
+  "diagnostic.warningSign": "⚡",
+  "diagnostic.messageTarget": "float",
+  "diagnostic.level": "information",
+  "diagnostic.locationlist": true,
+  "diagnostic.checkCurrentLine": false,
+  "diagnostic.highlightOffset": 1000,
+  "diagnostic.virtualTextLineSeparator": "🔻",
+  "diagnostic.virtualTextLines": 3,
+  "diagnostic.hintSign": "❔",
+  "diagnostic.messageDelay": 500,
+  "diagnostic.virtualTextPrefix": "🔧 ",
+  "go.enable": true,
+  "go.goplsOptions": {
+    "usePlaceholders": true,
+    "completeUnimported": true,
+    "hoverKind": "FullDocumentation",
+    "completionDocumentation": true,
+    "deepCompletion": true,
+    "linkTarget": "",
+    "fuzzyMatching": true
+  },
+  "signature.enable": true,
+  "coc.source.ultisnips.priority": 100,
+  "suggest.languageSourcePriority": 99,
+  "diagnostic.enable": true,
+  "coc.source.emoji.filetypes": null,
+  "coc.source.emoji.priority": 1
+}

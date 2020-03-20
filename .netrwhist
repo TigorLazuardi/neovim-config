@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/tigor/.config/fontconfig/conf.d'
+let g:netrw_dirhist_2='/home/tigor/github/rust_pointers'
+let g:netrw_dirhist_1='/home/tigor/github/rust_pointers/src'
+let g:netrw_dirhist_0='/home/tigor/github/rust_pointers'
+let g:netrw_dirhist_9='/home/tigor/github/train'
+let g:netrw_dirhist_8='/home/tigor/github/train/src'
+let g:netrw_dirhist_7='/home/tigor/github/train'
+let g:netrw_dirhist_6='/home/tigor/.config/nvim'
+let g:netrw_dirhist_5='/home/tigor/Bareksa/ms-vouchers/services'
+let g:netrw_dirhist_4='/home/tigor/Bareksa/ms-vouchers'
