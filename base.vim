@@ -35,6 +35,8 @@ set incsearch "Start searching before pressing enter"
 " set noundofile
 " set nowritebackup
 set directory=~/.vim/tmp
+" Prevent auto enter
+set formatoptions-=tc
 
 " Enable syntax highlighting
 syntax on 
