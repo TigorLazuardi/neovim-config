@@ -27,6 +27,7 @@ source $HOME/.config/nvim/clip.vim
 source $HOME/.config/nvim/tagbar.vim
 " source $HOME/.config/nvim/defx.vim
 source $HOME/.config/nvim/fern.vim
+source $HOME/.config/nvim/prose.vim
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
@@ -41,6 +42,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'godlygeek/tabular'
+Plug 'tpope/vim-abolish'
 call plug#end()
 
 " Change leader key to space key
