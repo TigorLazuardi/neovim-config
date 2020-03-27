@@ -28,7 +28,7 @@ source $HOME/.config/nvim/tagbar.vim
 " source $HOME/.config/nvim/defx.vim
 source $HOME/.config/nvim/fern.vim
 source $HOME/.config/nvim/prose.vim
-Plug 'ludovicchabant/vim-gutentags'
+source $HOME/.config/nvim/gutentags.vim
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
