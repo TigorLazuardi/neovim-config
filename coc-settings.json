@@ -49,7 +49,7 @@
   "suggest.enablePreselect": false,
   "suggest.numberSelect": false,
   "diagnostic.refreshOnInsertMode": true,
-  "diagnostic.displayByAle": true,
+  "diagnostic.displayByAle": false,
   "coc.preferences.enableFloatHighlight": true,
   "coc.preferences.hoverTarget": "float",
   "diagnostic.virtualText": true,
@@ -80,6 +80,11 @@
   "coc.source.ultisnips.priority": 100,
   "suggest.languageSourcePriority": 99,
   "diagnostic.enable": true,
+  "vetur.format.enable": true,
+  "vetur.validation.script": true,
+  "vetur.useWorkspaceDependencies": true,
+  "vetur.validation.template": true,
+  "vetur.format.defaultFormatter.html": "prettier",
   "coc.source.emoji.filetypes": null,
   "coc.source.emoji.priority": 1
 }

@@ -3,7 +3,6 @@ Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-textobj-quote'
 Plug 'reedes/vim-textobj-sentence'
-Plug 'kana/vim-textobj-user'
 Plug 'reedes/vim-wordy'
 Plug 'jdelkins/vim-correction'
 

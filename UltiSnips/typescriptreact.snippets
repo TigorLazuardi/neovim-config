@@ -1,1 +1,21 @@
+global !p
+import utils
+endglobal
 
+snippet "^i" "react" "snip.line == 0" Arbe
+import React, { FunctionComponent } from 'react'
+
+type Props = {
+}
+
+const `!v expand('%:t:r')`: FunctionComponent<Props> = ({}) => {
+	$0
+	return (
+		<div></div>
+	)
+}
+
+export default `!v expand('%:t:r')`
+endsnippet
+
+	

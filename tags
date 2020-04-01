@@ -59,7 +59,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <C-n>	init_old.vim	/^nmap <C-n> :NERDTreeToggle<CR>$/;"	m
 <CR>	defx.vim	/^  nnoremap <silent><buffer><expr> <CR> defx#do_action('drop')$/;"	m
 <CR>	ncm2.vim	/^imap <silent> <expr> <CR> ((pumvisible() && empty(v:completed_item)) ?  "\\<c-y>\\<Plug>delimitM/;"	m
-<F10>	ultisnips.vim	/^nnoremap <F10> :UltiSnipsEdit<CR>$/;"	m
+<F10>	ultisnips.vim	/^nnoremap <silent> <F10> :UltiSnipsEdit<CR>$/;"	m
 <F11>	init.vim	/^nmap <silent><F11> :e \/home\/tigor\/.config\/nvim\/$/;"	m
 <F12>	init.vim	/^nmap <silent><F12> :source $HOME\/.config\/nvim\/init.vim<CR>:echo "Config reloaded"<CR>$/;"	m
 <F1>	languageclient.vim	/^    nnoremap <F1> :call LanguageClient_contextMenu()<CR>$/;"	m
@@ -78,11 +78,10 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <F8>	prose.vim	/^  xnoremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>$/;"	m
 <F8>	tagbar.vim	/^nmap <silent> <F8> :TagbarToggle<CR>$/;"	m
 <Leader><Enter>	fzf.vim	/^nnoremap <silent> <Leader><Enter> :call fzf#run({$/;"	m
-<Leader>f	easymotion.vim	/^map  <Leader>f <Plug>(easymotion-bd-f)$/;"	m
-<Leader>f	easymotion.vim	/^nmap <Leader>f <Plug>(easymotion-overwin-f)$/;"	m
-<Leader>j	easymotion.vim	/^map <Leader>j <Plug>(easymotion-bd-jk)$/;"	m
+<Leader>j	easymotion.vim	/^nmap <Leader>j <Plug>(easymotion-bd-jk)$/;"	m
+<Leader>j	easymotion.vim	/^xmap <Leader>j <Plug>(easymotion-bd-jk)$/;"	m
 <Leader>k	easymotion.vim	/^nmap <Leader>k <Plug>(easymotion-overwin-line)$/;"	m
-<Leader>w	easymotion.vim	/^map  <Leader>w <Plug>(easymotion-bd-w)$/;"	m
+<Leader>k	easymotion.vim	/^xmap <Leader>k <Plug>(easymotion-overwin-line)$/;"	m
 <Leader>w	easymotion.vim	/^nmap <Leader>w <Plug>(easymotion-overwin-w)$/;"	m
 <S-F5>	init.vim	/^nnoremap <expr><silent><S-F5> &filetype == "rust" ? ":make test<CR>" : "\\<nop>"$/;"	m
 <S-TAB>	coc.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
@@ -112,6 +111,8 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <cr>	init_old.vim	/^inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : $/;"	m
 <kEnter>	init_old.vim	/^nmap <kEnter> o<Esc>$/;"	m
 <leader>;	init.vim	/^nmap <leader>; mAA;<esc>`A$/;"	m
+<leader>F	easymotion.vim	/^nmap <leader>F <Plug>(easymotion-overwin-f2)$/;"	m
+<leader>F	easymotion.vim	/^xmap <leader>F <Plug>(easymotion-overwin-f2)$/;"	m
 <leader>Q	prose.vim	/^  nnoremap <buffer> <silent> <leader>Q vapJgqap$/;"	m
 <leader>a	coc.vim	/^xmap <leader>a  <Plug>(coc-codeaction-selected)$/;"	m
 <leader>a	init_old.vim	/^nmap <leader>a  <Plug>(coc-codeaction-selected)$/;"	m
@@ -130,6 +131,8 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <leader>e	defx.vim	/^nnoremap <silent> <leader>e :Defx -split=vertical -winwidth=30 -direction=topleft<CR>$/;"	m
 <leader>e	fern.vim	/^nnoremap <silent> <leader>e :Fern . -reveal=% -drawer -toggle<CR>$/;"	m
 <leader>e	nerdtree.vim	/^nmap <leader>e :NERDTreeToggle<CR>$/;"	m
+<leader>f	easymotion.vim	/^nmap <leader>f <Plug>(easymotion-overwin-f)$/;"	m
+<leader>f	easymotion.vim	/^xmap <leader>f <Plug>(easymotion-overwin-f)$/;"	m
 <leader>f	init_old.vim	/^nmap <leader>f  <Plug>(coc-format-selected)$/;"	m
 <leader>f	init_old.vim	/^xmap <leader>f  <Plug>(coc-format-selected)$/;"	m
 <leader>qc	prose.vim	/^  map <silent> <buffer> <leader>qc <Plug>ReplaceWithCurly$/;"	m
@@ -138,8 +141,9 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <leader>rn	init_old.vim	/^nmap <leader>rn <Plug>(coc-rename)$/;"	m
 <leader>s	clip.vim	/^nmap <leader>s <plug>(SubversiveSubstituteRange)$/;"	m
 <leader>s	clip.vim	/^xmap <leader>s <plug>(SubversiveSubstituteRange)$/;"	m
-<leader>s	easymotion.vim	/^nmap <leader>s <Plug>(easymotion-overwin-f2)$/;"	m
 <leader>ss	clip.vim	/^nmap <leader>ss <plug>(SubversiveSubstituteWordRange)$/;"	m
+<leader>t	easymotion.vim	/^nmap <leader>t <Plug>(easymotion-bd-t)$/;"	m
+<leader>t	easymotion.vim	/^xmap <leader>t <Plug>(easymotion-bd-t)$/;"	m
 <space>a	init_old.vim	/^nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>$/;"	m
 <space>c	init_old.vim	/^nnoremap <silent> <space>c  :<C-u>CocList commands<cr>$/;"	m
 <space>e	init_old.vim	/^nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>$/;"	m
@@ -228,7 +232,7 @@ delimitMate_expand_space	init_old.vim	/^let delimitMate_expand_space = 1$/;"	v
 delimitMate_jump_expansion	delimitMate.vim	/^let delimitMate_jump_expansion = 1$/;"	v
 dependencies	package-lock.json	/^  "dependencies": {$/;"	o
 diagnostic.checkCurrentLine	coc-settings.json	/^  "diagnostic.checkCurrentLine": false,$/;"	b
-diagnostic.displayByAle	coc-settings.json	/^  "diagnostic.displayByAle": true,$/;"	b
+diagnostic.displayByAle	coc-settings.json	/^  "diagnostic.displayByAle": false,$/;"	b
 diagnostic.enable	coc-settings.json	/^  "diagnostic.enable": true,$/;"	b
 diagnostic.errorSign	coc-settings.json	/^  "diagnostic.errorSign": "❌",$/;"	s
 diagnostic.highlightOffset	coc-settings.json	/^  "diagnostic.highlightOffset": 1000,$/;"	n
@@ -263,7 +267,6 @@ g:LanguageClient_useVirtualText	languageclient.vim	/^let g:LanguageClient_useVir
 g:NERDTreeWinSize	init_old.vim	/^let g:NERDTreeWinSize=40$/;"	v
 g:ToggleSymbolHover	coc.vim	/^    let g:ToggleSymbolHover = !get(g:, 'ToggleSymbolHover', 1)$/;"	v
 g:UltiSnipsEditSplit	init_old.vim	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
-g:UltiSnipsEditSplit	ultisnips.vim	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
 g:UltiSnipsExpandTrigger	init_old.vim	/^let g:UltiSnipsExpandTrigger = "<nop>"$/;"	v
 g:UltiSnipsExpandTrigger	ultisnips.vim	/^let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"$/;"	v
 g:UltiSnipsExpandTrigger	ultisnips.vim	/^let g:UltiSnipsExpandTrigger = "<c-l>"$/;"	v
@@ -385,6 +388,7 @@ g:go_highlight_variable_declarations	vimgo.vim	/^let g:go_highlight_variable_dec
 g:go_metalinter_autosave	init_old.vim	/^let g:go_metalinter_autosave = 0$/;"	v
 g:go_snippet_engine	vimgo.vim	/^let g:go_snippet_engine = ''$/;"	v
 g:gruvbox_italic	gruvbox.vim	/^let g:gruvbox_italic=1$/;"	v
+g:gutentags_file_list_command	gutentags.vim	/^let g:gutentags_file_list_command = {$/;"	v
 g:instant_markdown_allow_unsafe_content	instantmarkdown.vim	/^let g:instant_markdown_allow_unsafe_content = 1$/;"	v
 g:instant_markdown_browser	instantmarkdown.vim	/^let g:instant_markdown_browser = "firefox --new-window"$/;"	v
 g:instant_markdown_open_to_the_world	instantmarkdown.vim	/^let g:instant_markdown_open_to_the_world = 1$/;"	v
@@ -501,6 +505,11 @@ usePlaceholders	coc-settings.json	/^    "usePlaceholders": true,$/;"	b	object:go
 usePlaceholders	languageclient.json	/^    "usePlaceholders": true,$/;"	b	object:gopls
 user_dict	litecorrect.vim	/^let user_dict = {$/;"	v
 version	package-lock.json	/^      "version": "1.22.0",$/;"	s	object:dependencies.yarn
+vetur.format.defaultFormatter.html	coc-settings.json	/^  "vetur.format.defaultFormatter.html": "prettier",$/;"	s
+vetur.format.enable	coc-settings.json	/^  "vetur.format.enable": true,$/;"	b
+vetur.useWorkspaceDependencies	coc-settings.json	/^  "vetur.useWorkspaceDependencies": true,$/;"	b
+vetur.validation.script	coc-settings.json	/^  "vetur.validation.script": true,$/;"	b
+vetur.validation.template	coc-settings.json	/^  "vetur.validation.template": true,$/;"	b
 w!!	init.vim	/^cmap w!! w! !sudo tee > \/dev\/null %$/;"	m
 w!!	init_old.vim	/^cmap w!! w! !sudo tee > \/dev\/null %$/;"	m
 x	clip.vim	/^nnoremap x d$/;"	m
