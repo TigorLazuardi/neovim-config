@@ -59,8 +59,6 @@ call plug#end()
 nnoremap <Space> <nop>
 let mapleader = " "
 
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w! !sudo tee > /dev/null %
 
 " Press F12 to reload config
 nmap <silent><F12> :source $HOME/.config/nvim/init.vim<CR>:echo "Config reloaded"<CR>

@@ -8,7 +8,8 @@ function! s:buflist()
   return split(ls, '\n')
 endfunction
 
-nmap <silent> ; :Files<CR>
+nmap <silent> ; :Buffers<CR>
+nmap <silent> [o :Files<cr>
 nmap <silent><F3> :Rg <c-r><c-w><CR>
 " Search tags
 nmap ]t :Tags<CR>

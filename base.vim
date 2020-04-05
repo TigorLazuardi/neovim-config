@@ -9,14 +9,13 @@ set shiftround "An extension of above"
 set autoindent "When you press enter on a tabbed line, Next line is idented properly"
 set smartindent "Indent enhancement"
 set smarttab "tab enhancement"
-set number "Shows line number on the left"
 set textwidth=100 "The text width before vim wraps the line"
 set clipboard=unnamedplus "Make vim able to copy and paste from outside vim"
 set encoding=utf8 "Enforces utf-8"
 set guifont=DejavuSansMono\ Nerd\ Font\ Mono "You may want to delete this if you don't have the font"
 set cursorline "Highlight where your current line is"
 set termguicolors
-set timeoutlen=2000 "Set delay between input commands before trigger"
+set timeoutlen=1000 "Set delay between input commands before trigger"
 set updatetime=500 "Time before vim is refreshed. Default 4000, the stronger your pc, the lower you may set it."
 set display+=lastline "Never shortens messages"
 set linebreak "Prevent vim from wrap in the middle of a word"
@@ -37,6 +36,8 @@ set incsearch "Start searching before pressing enter"
 set directory=~/.vim/tmp
 " Prevent auto enter
 set formatoptions-=tc
+set path+=**
+set number relativenumber
 
 " Enable syntax highlighting
 syntax on 
@@ -66,3 +67,27 @@ nnoremap <silent> <A-p> :bprev!<cr>
 inoremap <silent> <A-n> <esc>:bnext!<cr>
 inoremap <silent> <A-p> <esc>:bprev!<cr>
 
+inoremap jj <esc>
+inoremap jk <esc>
+inoremap kj <esc>
+inoremap kk <esc>
+cnoremap jj <c-c><esc>
+cnoremap jk <c-c><esc>
+cnoremap kj <c-c><esc>
+cnoremap kk <c-c><esc>
+xnoremap <tab> <esc>
+inoremap <c-[> <esc>
+cnoremap <c-[> <c-c><esc>
+vnoremap <c-[> <esc>
+
+nnoremap [w :setlocal nowrap<cr>
+nnoremap ]w :setlocal wrap<cr>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap fs w! !sudo tee > /dev/null %
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END

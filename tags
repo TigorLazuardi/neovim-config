@@ -30,7 +30,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 8	coc-settings.json	/^    "markdown", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 9	coc-settings.json	/^    "vim", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 ;	defx.vim	/^  nnoremap <silent><buffer><expr> ; defx#do_action('repeat')$/;"	m
-;	fzf.vim	/^nmap <silent> ; :Files<CR>$/;"	m
+;	fzf.vim	/^nmap <silent> ; :Buffers<CR>$/;"	m
 <A-j>	base.vim	/^inoremap <A-j> :m .+1<CR>==gi$/;"	m
 <A-j>	base.vim	/^nnoremap <A-j> :m .+1<CR>==$/;"	m
 <A-j>	base.vim	/^vnoremap <A-j> :m '>+1<CR>gv=gv$/;"	m
@@ -95,6 +95,9 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <TAB>	init_old.vim	/^inoremap <silent><expr> <TAB>$/;"	m
 <Tab>	ncm2.vim	/^inoremap <expr> <Tab> pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
 <c-=>	clip.vim	/^nmap <c-=> <plug>(YoinkPostPasteToggleFormat)$/;"	m
+<c-[>	base.vim	/^cnoremap <c-[> <c-c><esc>$/;"	m
+<c-[>	base.vim	/^inoremap <c-[> <esc>$/;"	m
+<c-[>	base.vim	/^vnoremap <c-[> <esc>$/;"	m
 <c-c>	ncm2.vim	/^inoremap <c-c> <ESC>$/;"	m
 <c-m>	coc.vim	/^imap <c-m> <Plug>(coc-snippets-expand-jump)$/;"	m
 <c-m>	coc.vim	/^vmap <c-m> <Plug>(coc-snippets-expand-jump)$/;"	m
@@ -152,6 +155,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <space>o	init_old.vim	/^nnoremap <silent> <space>o  :<C-u>CocList outline<cr>$/;"	m
 <space>p	init_old.vim	/^nnoremap <silent> <space>p  :<C-u>CocListResume<CR>$/;"	m
 <space>s	init_old.vim	/^nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>$/;"	m
+<tab>	base.vim	/^xnoremap <tab> <esc>$/;"	m
 C	defx.vim	/^  nnoremap <silent><buffer><expr> C defx#do_action('toggle_columns', dent:icon:filename:type:siz/;"	m
 Fd	coc.vim	/^command! -nargs=? Fd :call CocAction('fold', <f-args>)$/;"	c
 Fmt	coc.vim	/^command! -nargs=0 Fmt :call CocAction('format')$/;"	c
@@ -189,13 +193,16 @@ X	clip.vim	/^nnoremap X D$/;"	m
 [T	fzf.vim	/^nnoremap <silent> [T :call fzf#run({$/;"	m
 [f	fzf.vim	/^nnoremap [f :Rg <c-r><c-w><cr>$/;"	m
 [g	init_old.vim	/^nmap <silent> [g <Plug>(coc-diagnostic-prev)$/;"	m
+[o	fzf.vim	/^nmap <silent> [o :Files<cr>$/;"	m
 [t	fzf.vim	/^nmap [t :Tags <c-r><c-w><CR> $/;"	m
+[w	base.vim	/^nnoremap [w :setlocal nowrap<cr>$/;"	m
 [y	clip.vim	/^nmap [y <plug>(YoinkRotateBack)$/;"	m
 \x21	defx.vim	/^  nnoremap <silent><buffer><expr> ! defx#do_action('execute_command')$/;"	m
 ]F	fzf.vim	/^nnoremap <silent> ]F :call fzf#run({$/;"	m
 ]f	fzf.vim	/^nnoremap ]f :Rg $/;"	m
 ]g	init_old.vim	/^nmap <silent> ]g <Plug>(coc-diagnostic-next)$/;"	m
 ]t	fzf.vim	/^nmap ]t :Tags<CR>$/;"	m
+]w	base.vim	/^nnoremap ]w :setlocal wrap<cr>$/;"	m
 ]y	clip.vim	/^nmap ]y <plug>(YoinkRotateForward)$/;"	m
 af	init_old.vim	/^omap af <Plug>(coc-funcobj-a)$/;"	m
 af	init_old.vim	/^xmap af <Plug>(coc-funcobj-a)$/;"	m
@@ -251,6 +258,7 @@ diagnostic.warningSign	coc-settings.json	/^  "diagnostic.warningSign": "⚡",$/;
 e	defx.vim	/^  nnoremap <silent><buffer><expr> e defx#do_action('open', 'vsplit')$/;"	m
 filetypes	coc-settings.json	/^      "filetypes": ["php"],$/;"	a	object:languageserver.intelephense
 filetypes	coc-settings.json	/^      "filetypes": ["sh"],$/;"	a	object:languageserver.bash
+fs	base.vim	/^cmap fs w! !sudo tee > \/dev\/null %$/;"	m
 fuzzyMatching	coc-settings.json	/^    "fuzzyMatching": true$/;"	b	object:go.goplsOptions
 g:EasyClipAutoFormat	easyclip.vim	/^let g:EasyClipAutoFormat = 1 $/;"	v
 g:EasyClipShareYanks	easyclip.vim	/^let g:EasyClipShareYanks = 1$/;"	v
@@ -454,6 +462,14 @@ ignoredRootPaths	coc-settings.json	/^      "ignoredRootPaths": ["~"]$/;"	a	objec
 initializationOptions	coc-settings.json	/^      "initializationOptions": {$/;"	o	object:languageserver.intelephense
 integrity	package-lock.json	/^      "integrity": "sha512-KMHP\/Jq53jZKTY9iTUt3dIVl\/be6UPs2INo96+BnZHLKxYNTfwMmlgHTaMWyGZoO74R/;"	s	object:dependencies.yarn
 intelephense	coc-settings.json	/^    "intelephense": {$/;"	o	object:languageserver
+jj	base.vim	/^cnoremap jj <c-c><esc>$/;"	m
+jj	base.vim	/^inoremap jj <esc>$/;"	m
+jk	base.vim	/^cnoremap jk <c-c><esc>$/;"	m
+jk	base.vim	/^inoremap jk <esc>$/;"	m
+kj	base.vim	/^cnoremap kj <c-c><esc>$/;"	m
+kj	base.vim	/^inoremap kj <esc>$/;"	m
+kk	base.vim	/^cnoremap kk <c-c><esc>$/;"	m
+kk	base.vim	/^inoremap kk <esc>$/;"	m
 l	defx.vim	/^  nnoremap <silent><buffer><expr> l defx#do_action('open')$/;"	m
 languageserver	coc-settings.json	/^  "languageserver": $/;"	o
 lexical	lexical.vim	/^augroup lexical$/;"	a
@@ -467,6 +483,7 @@ mapleader	init.vim	/^let mapleader = " "$/;"	v
 mapleader	init_old.vim	/^let mapleader = "-"$/;"	v
 mygroup	init_old.vim	/^augroup mygroup$/;"	a
 ncm2autoload	ncm2.vim	/^augroup ncm2autoload$/;"	a
+numbertoggle	base.vim	/^augroup numbertoggle$/;"	a
 o	defx.vim	/^  nnoremap <silent><buffer><expr> o defx#do_action('open_or_close_tree')$/;"	m
 p	clip.vim	/^nmap p <plug>(YoinkPaste_p)$/;"	m
 p	defx.vim	/^  nnoremap <silent><buffer><expr> p defx#do_action('paste')$/;"	m
@@ -510,7 +527,6 @@ vetur.format.enable	coc-settings.json	/^  "vetur.format.enable": true,$/;"	b
 vetur.useWorkspaceDependencies	coc-settings.json	/^  "vetur.useWorkspaceDependencies": true,$/;"	b
 vetur.validation.script	coc-settings.json	/^  "vetur.validation.script": true,$/;"	b
 vetur.validation.template	coc-settings.json	/^  "vetur.validation.template": true,$/;"	b
-w!!	init.vim	/^cmap w!! w! !sudo tee > \/dev\/null %$/;"	m
 w!!	init_old.vim	/^cmap w!! w! !sudo tee > \/dev\/null %$/;"	m
 x	clip.vim	/^nnoremap x d$/;"	m
 x	clip.vim	/^xnoremap x d$/;"	m

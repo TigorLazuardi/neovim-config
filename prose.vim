@@ -53,5 +53,5 @@ function! Prose()
 endfunction
 
 " automatically initialize buffer by file type
-autocmd FileType markdown,mkd,text,textile call Prose()
+autocmd FileType text,textile call Prose()
 
