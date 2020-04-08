@@ -19,7 +19,7 @@ source $HOME/.config/nvim/gruvbox.vim
 " source $HOME/.config/nvim/languageclient.vim
 " source $HOME/.config/nvim/echodoc.vim
 source $HOME/.config/nvim/coc.vim
-source $HOME/.config/nvim/ale.vim
+" source $HOME/.config/nvim/ale.vim
 source $HOME/.config/nvim/vimgo.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/rust.vim
