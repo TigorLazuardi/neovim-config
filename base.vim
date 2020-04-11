@@ -38,7 +38,9 @@ set directory=~/.vim/tmp
 set formatoptions-=tc
 set path+=**
 set number relativenumber
-
+set wildmenu
+set wildignore+=**/node_modules/** 
+set wildmode=longest:full,list:full
 " Enable syntax highlighting
 syntax on 
 
@@ -91,3 +93,25 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
+
+" Press F12 to reload config
+nmap <silent><F12> :source $HOME/.config/nvim/init.vim<CR>:echo "Config reloaded"<CR>
+nmap <silent><F11> :e $HOME/.config/nvim/
+
+" Change leader key to space key
+nnoremap <Space> <nop>
+let mapleader = " "
+
+
+" Adds Semicolon to end of line
+nmap <leader>; mAA;<esc>`A
+
+au VimEnter * inoremap <c-l> <right>
+au VimEnter * inoremap <c-h> <left>
+
+au VimEnter * hi Normal guibg=NONE ctermbg=NONE
+au BufEnter * hi Normal guibg=NONE ctermbg=NONE
+
+nmap <leader>n :e %:h/
+command! -nargs=1 -complete=help H :vert help <args>

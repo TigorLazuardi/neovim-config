@@ -3,7 +3,6 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-source $HOME/.config/nvim/base.vim
 
 nnoremap <Space> <nop>
 let mapleader = " "
@@ -29,6 +28,7 @@ source $HOME/.config/nvim/tagbar.vim
 source $HOME/.config/nvim/fern.vim
 source $HOME/.config/nvim/prose.vim
 source $HOME/.config/nvim/gutentags.vim
+Plug 'tpope/vim-eunuch'
 Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
@@ -53,29 +53,13 @@ Plug 'sgur/vim-textobj-parameter' " argument select. a motion key
 Plug 'whatyouhide/vim-textobj-xmlattr' " xml/html property select. x motion key
 Plug 'Julian/vim-textobj-variable-segment' " camelcase & snakecase select. v motion key
 Plug 'kana/vim-textobj-line' " select line. l motion key
+
+" Statistics
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
-" Change leader key to space key
-nnoremap <Space> <nop>
-let mapleader = " "
+source $HOME/.config/nvim/base.vim
 
-
-" Press F12 to reload config
-nmap <silent><F12> :source $HOME/.config/nvim/init.vim<CR>:echo "Config reloaded"<CR>
-nmap <silent><F11> :e /home/tigor/.config/nvim/
-
-" Adds Semicolon to end of line
-nmap <leader>; mAA;<esc>`A
-
-nnoremap <expr><silent><F5> &filetype == "rust" ? ":make run<CR>" :
-      \ &filetype == "javascript" ? ":! node %<CR>" : "\<nop>" 
-nnoremap <expr><silent><S-F5> &filetype == "rust" ? ":make test<CR>" : "\<nop>"
-au VimEnter * inoremap <c-l> <right>
-au VimEnter * inoremap <c-h> <left>
-" au VimEnter * inoremap <c-j> <down>
-" au VimEnter * inoremap <c-k> <up>
-
-au VimEnter * hi Normal guibg=NONE ctermbg=NONE
-au BufEnter * hi Normal guibg=NONE ctermbg=NONE
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+

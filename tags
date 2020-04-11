@@ -60,8 +60,8 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <CR>	defx.vim	/^  nnoremap <silent><buffer><expr> <CR> defx#do_action('drop')$/;"	m
 <CR>	ncm2.vim	/^imap <silent> <expr> <CR> ((pumvisible() && empty(v:completed_item)) ?  "\\<c-y>\\<Plug>delimitM/;"	m
 <F10>	ultisnips.vim	/^nnoremap <silent> <F10> :UltiSnipsEdit<CR>$/;"	m
-<F11>	init.vim	/^nmap <silent><F11> :e \/home\/tigor\/.config\/nvim\/$/;"	m
-<F12>	init.vim	/^nmap <silent><F12> :source $HOME\/.config\/nvim\/init.vim<CR>:echo "Config reloaded"<CR>$/;"	m
+<F11>	base.vim	/^nmap <silent><F11> :e $HOME\/.config\/nvim\/$/;"	m
+<F12>	base.vim	/^nmap <silent><F12> :source $HOME\/.config\/nvim\/init.vim<CR>:echo "Config reloaded"<CR>$/;"	m
 <F1>	languageclient.vim	/^    nnoremap <F1> :call LanguageClient_contextMenu()<CR>$/;"	m
 <F2>	coc.vim	/^nmap <F2> <Plug>(coc-rename)$/;"	m
 <F2>	languageclient.vim	/^    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>$/;"	m
@@ -69,7 +69,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <F3>	init_old.vim	/^noremap <F3> :Autoformat<CR>$/;"	m
 <F4>	coc.vim	/^nnoremap <F4> :call ToggleSymbolHover()<CR>$/;"	m
 <F4>	init_old.vim	/^nmap <F4> <Plug>(ale_fix)$/;"	m
-<F5>	init.vim	/^nnoremap <expr><silent><F5> &filetype == "rust" ? ":make run<CR>" :$/;"	m
+<F5>	rust.vim	/^nnoremap <expr><silent><F5> &filetype == "rust" ? ":make run<CR>" :$/;"	m
 <F7>	vimgo.vim	/^inoremap <expr><F7> &filetype == "go" ? "\\<esc>:GoFillStruct<CR>i" : "\\<nop>"$/;"	m
 <F7>	vimgo.vim	/^nnoremap <expr><F7> &filetype == "go" ? "\\:GoFillStruct<CR>" : "\\<nop>"$/;"	m
 <F8>	init_old.vim	/^nmap <F8> :TagbarToggle<CR>$/;"	m
@@ -83,11 +83,12 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <Leader>k	easymotion.vim	/^nmap <Leader>k <Plug>(easymotion-overwin-line)$/;"	m
 <Leader>k	easymotion.vim	/^xmap <Leader>k <Plug>(easymotion-overwin-line)$/;"	m
 <Leader>w	easymotion.vim	/^nmap <Leader>w <Plug>(easymotion-overwin-w)$/;"	m
-<S-F5>	init.vim	/^nnoremap <expr><silent><S-F5> &filetype == "rust" ? ":make test<CR>" : "\\<nop>"$/;"	m
+<S-F5>	rust.vim	/^nnoremap <expr><silent><S-F5> &filetype == "rust" ? ":make test<CR>" : "\\<nop>"$/;"	m
 <S-TAB>	coc.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
 <S-TAB>	deoplete.vim	/^imap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<S-TAB>"$/;"	m
 <S-TAB>	init_old.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
 <S-Tab>	ncm2.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"$/;"	m
+<Space>	base.vim	/^nnoremap <Space> <nop>$/;"	m
 <Space>	defx.vim	/^  nnoremap <silent><buffer><expr> <Space> defx#do_action('toggle_select') . 'j'$/;"	m
 <Space>	init.vim	/^nnoremap <Space> <nop>$/;"	m
 <TAB>	coc.vim	/^inoremap <silent><expr> <TAB>$/;"	m
@@ -113,7 +114,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <cr>	coc.vim	/^inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : $/;"	m
 <cr>	init_old.vim	/^inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : $/;"	m
 <kEnter>	init_old.vim	/^nmap <kEnter> o<Esc>$/;"	m
-<leader>;	init.vim	/^nmap <leader>; mAA;<esc>`A$/;"	m
+<leader>;	base.vim	/^nmap <leader>; mAA;<esc>`A$/;"	m
 <leader>F	easymotion.vim	/^nmap <leader>F <Plug>(easymotion-overwin-f2)$/;"	m
 <leader>F	easymotion.vim	/^xmap <leader>F <Plug>(easymotion-overwin-f2)$/;"	m
 <leader>Q	prose.vim	/^  nnoremap <buffer> <silent> <leader>Q vapJgqap$/;"	m
@@ -138,6 +139,8 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <leader>f	easymotion.vim	/^xmap <leader>f <Plug>(easymotion-overwin-f)$/;"	m
 <leader>f	init_old.vim	/^nmap <leader>f  <Plug>(coc-format-selected)$/;"	m
 <leader>f	init_old.vim	/^xmap <leader>f  <Plug>(coc-format-selected)$/;"	m
+<leader>n	base.vim	/^nmap <leader>n :e %:h\/$/;"	m
+<leader>o	fzf.vim	/^nnoremap <silent> <leader>o :Files<cr>$/;"	m
 <leader>qc	prose.vim	/^  map <silent> <buffer> <leader>qc <Plug>ReplaceWithCurly$/;"	m
 <leader>qf	init_old.vim	/^nmap <leader>qf  <Plug>(coc-fix-current)$/;"	m
 <leader>qs	prose.vim	/^  map <silent> <buffer> <leader>qs <Plug>ReplaceWithStraight$/;"	m
@@ -161,6 +164,7 @@ Fd	coc.vim	/^command! -nargs=? Fd :call CocAction('fold', <f-args>)$/;"	c
 Fmt	coc.vim	/^command! -nargs=0 Fmt :call CocAction('format')$/;"	c
 Fold	init_old.vim	/^command! -nargs=? Fold :call     CocAction('fold', <f-args>)$/;"	c
 Format	init_old.vim	/^command! -nargs=0 Format :call CocAction('format')$/;"	c
+H	base.vim	/^command! -nargs=1 -complete=help H :vert help <args>$/;"	c
 HoverSymbol	coc.vim	/^        augroup HoverSymbol$/;"	a
 HoverSymbol	coc.vim	/^    augroup HoverSymbol$/;"	a
 HoverSymbol	coc.vim	/^augroup HoverSymbol$/;"	a
@@ -218,6 +222,7 @@ coc.preferences.formatOnType	coc-settings.json	/^  "coc.preferences.formatOnType
 coc.preferences.hoverTarget	coc-settings.json	/^  "coc.preferences.hoverTarget": "float",$/;"	s
 coc.source.emoji.filetypes	coc-settings.json	/^  "coc.source.emoji.filetypes": null,$/;"	z
 coc.source.emoji.priority	coc-settings.json	/^  "coc.source.emoji.priority": 1$/;"	n
+coc.source.file.ignoreHidden	coc-settings.json	/^  "coc.source.file.ignoreHidden": false,$/;"	b
 coc.source.ultisnips.priority	coc-settings.json	/^  "coc.source.ultisnips.priority": 100,$/;"	n
 coc_autos	coc.vim	/^augroup coc_autos$/;"	a
 codeLens.enable	coc-settings.json	/^  "codeLens.enable": true,$/;"	b
@@ -479,6 +484,7 @@ litecorrect	litecorrect.vim	/^augroup litecorrect$/;"	a
 lockfileVersion	package-lock.json	/^  "lockfileVersion": 1,$/;"	n
 m	clip.vim	/^nnoremap m m$/;"	m
 m	defx.vim	/^  nnoremap <silent><buffer><expr> m defx#do_action('move')$/;"	m
+mapleader	base.vim	/^let mapleader = " "$/;"	v
 mapleader	init.vim	/^let mapleader = " "$/;"	v
 mapleader	init_old.vim	/^let mapleader = "-"$/;"	v
 mygroup	init_old.vim	/^augroup mygroup$/;"	a
