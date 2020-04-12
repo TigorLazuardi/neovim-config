@@ -70,20 +70,15 @@ inoremap <silent> <A-n> <esc>:bnext!<cr>
 inoremap <silent> <A-p> <esc>:bprev!<cr>
 
 inoremap jj <esc>
-inoremap jk <esc>
-inoremap kj <esc>
 inoremap kk <esc>
 cnoremap jj <c-c><esc>
-cnoremap jk <c-c><esc>
-cnoremap kj <c-c><esc>
 cnoremap kk <c-c><esc>
 xnoremap <tab> <esc>
-inoremap <c-[> <esc>
-cnoremap <c-[> <c-c><esc>
-vnoremap <c-[> <esc>
 
 nnoremap [w :setlocal nowrap<cr>
 nnoremap ]w :setlocal wrap<cr>
+nnoremap <silent> + :res +5<cr>:vertical resize +5<cr>
+nnoremap <silent> _ :res -5<cr>:vertical resize -5<cr>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap fs w! !sudo tee > /dev/null %

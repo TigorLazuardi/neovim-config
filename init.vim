@@ -8,44 +8,30 @@ nnoremap <Space> <nop>
 let mapleader = " "
 
 call plug#begin()
-source $HOME/.config/nvim/easymotion.vim
-source $HOME/.config/nvim/sayonara.vim
 source $HOME/.config/nvim/ultisnips.vim
-" source $HOME/.config/nvim/deoplete.vim
-source $HOME/.config/nvim/delimitMate.vim
 source $HOME/.config/nvim/airline.vim
 source $HOME/.config/nvim/gruvbox.vim
-" source $HOME/.config/nvim/languageclient.vim
-" source $HOME/.config/nvim/echodoc.vim
 source $HOME/.config/nvim/coc.vim
-" source $HOME/.config/nvim/ale.vim
 source $HOME/.config/nvim/vimgo.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/rust.vim
 source $HOME/.config/nvim/clip.vim
-source $HOME/.config/nvim/tagbar.vim
-" source $HOME/.config/nvim/defx.vim
 source $HOME/.config/nvim/fern.vim
-source $HOME/.config/nvim/prose.vim
 source $HOME/.config/nvim/gutentags.vim
 Plug 'tpope/vim-eunuch'
-Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'anned20/vimsence'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
-Plug 'kshenoy/vim-signature'
-" source $HOME/.config/nvim/ncm2.vim
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'godlygeek/tabular'
-Plug 'tpope/vim-abolish'
 
 " Text Objects
+Plug 'kana/vim-textobj-user'
 Plug 'gcmt/wildfire.vim' " Enter key
 Plug 'wellle/targets.vim' " enhance default motions
 Plug 'kana/vim-textobj-entire' " buffer select. e motion key

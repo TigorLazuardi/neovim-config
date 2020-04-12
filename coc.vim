@@ -1,6 +1,6 @@
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 set hidden
 set nobackup
@@ -115,3 +115,32 @@ vmap <c-m> <Plug>(coc-snippets-expand-jump)
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
+inoremap <silent><expr> <c-l>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<c-w><c-l>" :
+      \ coc#refresh()
+
+let g:coc_global_extensions = [
+      \ 'coc-tsserver', 
+      \ 'coc-word', 
+      \ 'coc-vimlsp', 
+      \ 'coc-ultisnips',
+      \ 'coc-tag',
+      \ 'coc-json',
+      \ 'coc-emoji',
+      \ 'coc-snippets',
+      \ 'coc-prettier',
+      \ 'coc-go',
+      \ 'coc-emoji',
+      \ 'coc-emmet',
+      \ 'coc-dictionary',
+      \ 'coc-diagnostics',
+      \ 'coc-yaml',
+      \ 'coc-pairs'
+      \ ]
+
+autocmd FileType markdown let b:coc_pairs_disabled = ['`']
+inoremap <silent> <cr> <C-g>u<CR><c-r>=coc#on_enter()<CR>
