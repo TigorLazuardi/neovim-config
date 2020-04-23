@@ -3,14 +3,14 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
 nnoremap <Space> <nop>
 let mapleader = " "
 
 call plug#begin()
 source $HOME/.config/nvim/ultisnips.vim
-source $HOME/.config/nvim/airline.vim
 source $HOME/.config/nvim/gruvbox.vim
+source $HOME/.config/nvim/airline.vim
+" source $HOME/.config/nvim/lightline.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/vimgo.vim
 source $HOME/.config/nvim/fzf.vim
@@ -29,6 +29,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " Text Objects
 Plug 'kana/vim-textobj-user'
@@ -42,6 +43,9 @@ Plug 'kana/vim-textobj-line' " select line. l motion key
 
 " Statistics
 Plug 'wakatime/vim-wakatime'
+
+" Docs
+source $HOME/.config/nvim/wiki.vim
 call plug#end()
 
 source $HOME/.config/nvim/base.vim

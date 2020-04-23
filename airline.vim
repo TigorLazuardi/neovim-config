@@ -9,3 +9,4 @@ set noshowmode
 set noshowcmd
 set nomodeline
 
+autocmd VimEnter * :AirlineTheme gruvbox

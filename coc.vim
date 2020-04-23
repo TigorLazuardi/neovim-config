@@ -115,13 +115,9 @@ vmap <c-m> <Plug>(coc-snippets-expand-jump)
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-
-inoremap <silent><expr> <c-l>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<c-w><c-l>" :
-      \ coc#refresh()
+inoremap <silent><expr> <Tab> pumvisible() ? "\<c-n>" : "\<Tab>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
+inoremap <silent><expr> ; pumvisible() ? coc#_select_confirm() : ";"
 
 let g:coc_global_extensions = [
       \ 'coc-tsserver', 
@@ -137,10 +133,10 @@ let g:coc_global_extensions = [
       \ 'coc-emoji',
       \ 'coc-emmet',
       \ 'coc-dictionary',
-      \ 'coc-diagnostics',
+      \ 'coc-diagnostic',
       \ 'coc-yaml',
       \ 'coc-pairs'
       \ ]
 
-autocmd FileType markdown let b:coc_pairs_disabled = ['`']
+autocmd FileType markdown,vimwiki,wiki,md let b:coc_pairs_disabled = ['`']
 inoremap <silent> <cr> <C-g>u<CR><c-r>=coc#on_enter()<CR>

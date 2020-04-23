@@ -110,3 +110,6 @@ au BufEnter * hi Normal guibg=NONE ctermbg=NONE
 
 nmap <leader>n :e %:h/
 command! -nargs=1 -complete=help H :vert help <args>
+
+cnoreabbrev wq w<bar>bd
+cnoreabbrev q bd

@@ -10,27 +10,41 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 *	defx.vim	/^  nnoremap <silent><buffer><expr> * defx#do_action('toggle_select_all')$/;"	m
 +	base.vim	/^nnoremap <silent> + :res +5<cr>:vertical resize +5<cr>$/;"	m
 .	defx.vim	/^  nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')$/;"	m
+0	coc-settings.json	/^            "-isystem",$/;"	s	array:languageserver.ccls.initializationOptions.clang.extraArgs
 0	coc-settings.json	/^      "args": ["--stdio"],$/;"	s	array:languageserver.intelephense.args
 0	coc-settings.json	/^      "args": ["start"],$/;"	s	array:languageserver.bash.args
+0	coc-settings.json	/^      "filetypes": ["c", "cpp", "objc", "objcpp"],$/;"	s	array:languageserver.ccls.filetypes
 0	coc-settings.json	/^      "filetypes": ["php"],$/;"	s	array:languageserver.intelephense.filetypes
 0	coc-settings.json	/^      "filetypes": ["sh"],$/;"	s	array:languageserver.bash.filetypes
 0	coc-settings.json	/^      "ignoredRootPaths": ["~"]$/;"	s	array:languageserver.bash.ignoredRootPaths
+0	coc-settings.json	/^      "rootPatterns": [".ccls", "compile_commands.json", ".vim\/", ".git\/", ".hg\/"],$/;"	s	array:languageserver.ccls.rootPatterns
 0	coc-settings.json	/^    "css",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
 0	coc-settings.json	/^  "coc.source.emoji.filetypes": ["markdown"],$/;"	s	array:coc.source.emoji.filetypes
+1	coc-settings.json	/^            "\/Library\/Developer\/CommandLineTools\/usr\/include\/c++\/v1",$/;"	s	array:languageserver.ccls.initializationOptions.clang.extraArgs
+1	coc-settings.json	/^      "filetypes": ["c", "cpp", "objc", "objcpp"],$/;"	s	array:languageserver.ccls.filetypes
+1	coc-settings.json	/^      "rootPatterns": [".ccls", "compile_commands.json", ".vim\/", ".git\/", ".hg\/"],$/;"	s	array:languageserver.ccls.rootPatterns
 1	coc-settings.json	/^    "Markdown",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
 10	coc-settings.json	/^    "rust", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 11	coc-settings.json	/^    "go", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 12	coc-settings.json	/^    "python",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
 13	coc-settings.json	/^    "html",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
 14	coc-settings.json	/^    "toml"$/;"	s	array:coc.preferences.formatOnSaveFiletypes
+2	coc-settings.json	/^            "-I",$/;"	s	array:languageserver.ccls.initializationOptions.clang.extraArgs
+2	coc-settings.json	/^      "filetypes": ["c", "cpp", "objc", "objcpp"],$/;"	s	array:languageserver.ccls.filetypes
+2	coc-settings.json	/^      "rootPatterns": [".ccls", "compile_commands.json", ".vim\/", ".git\/", ".hg\/"],$/;"	s	array:languageserver.ccls.rootPatterns
 2	coc-settings.json	/^    "typescript", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
+3	coc-settings.json	/^            "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Develop/;"	s	array:languageserver.ccls.initializationOptions.clang.extraArgs
+3	coc-settings.json	/^      "filetypes": ["c", "cpp", "objc", "objcpp"],$/;"	s	array:languageserver.ccls.filetypes
+3	coc-settings.json	/^      "rootPatterns": [".ccls", "compile_commands.json", ".vim\/", ".git\/", ".hg\/"],$/;"	s	array:languageserver.ccls.rootPatterns
 3	coc-settings.json	/^    "javascript", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
+4	coc-settings.json	/^      "rootPatterns": [".ccls", "compile_commands.json", ".vim\/", ".git\/", ".hg\/"],$/;"	s	array:languageserver.ccls.rootPatterns
 4	coc-settings.json	/^    "typescriptreact", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 5	coc-settings.json	/^    "javascriptreact", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 6	coc-settings.json	/^    "yaml", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 7	coc-settings.json	/^    "json", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 8	coc-settings.json	/^    "markdown", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 9	coc-settings.json	/^    "vim", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
+;	coc.vim	/^inoremap <silent><expr> ; pumvisible() ? coc#_select_confirm() : ";"$/;"	m
 ;	defx.vim	/^  nnoremap <silent><buffer><expr> ; defx#do_action('repeat')$/;"	m
 ;	fzf.vim	/^nmap <silent> ; :Buffers<CR>$/;"	m
 <A-j>	base.vim	/^inoremap <A-j> :m .+1<CR>==gi$/;"	m
@@ -89,6 +103,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <S-TAB>	coc.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
 <S-TAB>	deoplete.vim	/^imap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<S-TAB>"$/;"	m
 <S-TAB>	init_old.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
+<S-Tab>	coc.vim	/^inoremap <silent><expr> <S-Tab> pumvisible() ? "\\<c-p>" : "\\<S-Tab>"$/;"	m
 <S-Tab>	ncm2.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"$/;"	m
 <Space>	base.vim	/^nnoremap <Space> <nop>$/;"	m
 <Space>	defx.vim	/^  nnoremap <silent><buffer><expr> <Space> defx#do_action('toggle_select') . 'j'$/;"	m
@@ -96,10 +111,10 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <TAB>	coc.vim	/^inoremap <silent><expr> <TAB>$/;"	m
 <TAB>	deoplete.vim	/^imap <expr><TAB> pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m
 <TAB>	init_old.vim	/^inoremap <silent><expr> <TAB>$/;"	m
+<Tab>	coc.vim	/^inoremap <silent><expr> <Tab> pumvisible() ? "\\<c-n>" : "\\<Tab>"$/;"	m
 <Tab>	ncm2.vim	/^inoremap <expr> <Tab> pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
 <c-=>	clip.vim	/^nmap <c-=> <plug>(YoinkPostPasteToggleFormat)$/;"	m
 <c-c>	ncm2.vim	/^inoremap <c-c> <ESC>$/;"	m
-<c-l>	coc.vim	/^inoremap <silent><expr> <c-l>$/;"	m
 <c-m>	coc.vim	/^imap <c-m> <Plug>(coc-snippets-expand-jump)$/;"	m
 <c-m>	coc.vim	/^vmap <c-m> <Plug>(coc-snippets-expand-jump)$/;"	m
 <c-n>	clip.vim	/^nmap <c-n> <plug>(YoinkPostPasteSwapBack)$/;"	m
@@ -216,7 +231,10 @@ args	coc-settings.json	/^      "args": ["--stdio"],$/;"	a	object:languageserver.
 args	coc-settings.json	/^      "args": ["start"],$/;"	a	object:languageserver.bash
 bash	coc-settings.json	/^    "bash": {$/;"	o	object:languageserver
 c	defx.vim	/^  nnoremap <silent><buffer><expr> c defx#do_action('copy')$/;"	m
+cache	coc-settings.json	/^        "cache": {$/;"	o	object:languageserver.ccls.initializationOptions
+ccls	coc-settings.json	/^    "ccls": {$/;"	o	object:languageserver
 cd	defx.vim	/^  nnoremap <silent><buffer><expr> cd defx#do_action('change_vim_cwd')$/;"	m
+clang	coc-settings.json	/^        "clang": {$/;"	o	object:languageserver.ccls.initializationOptions
 coc.preferences.enableFloatHighlight	coc-settings.json	/^  "coc.preferences.enableFloatHighlight": true,$/;"	b
 coc.preferences.formatOnInsertLeave	coc-settings.json	/^  "coc.preferences.formatOnInsertLeave": true,$/;"	b
 coc.preferences.formatOnSaveFiletypes	coc-settings.json	/^  "coc.preferences.formatOnSaveFiletypes": [$/;"	a
@@ -230,6 +248,7 @@ coc_autos	coc.vim	/^augroup coc_autos$/;"	a
 codeLens.enable	coc-settings.json	/^  "codeLens.enable": true,$/;"	b
 codeLens.separator	coc-settings.json	/^  "codeLens.separator": "⬅",$/;"	s
 command	coc-settings.json	/^      "command": "bash-language-server",$/;"	s	object:languageserver.bash
+command	coc-settings.json	/^      "command": "ccls",$/;"	s	object:languageserver.ccls
 command	coc-settings.json	/^      "command": "intelephense",$/;"	s	object:languageserver.intelephense
 completeUnimported	coc-settings.json	/^    "completeUnimported": true,$/;"	b	object:go.goplsOptions
 completeUnimported	languageclient.json	/^    "completeUnimported": true,$/;"	b	object:gopls
@@ -262,7 +281,10 @@ diagnostic.virtualTextLineSeparator	coc-settings.json	/^  "diagnostic.virtualTex
 diagnostic.virtualTextLines	coc-settings.json	/^  "diagnostic.virtualTextLines": 3,$/;"	n
 diagnostic.virtualTextPrefix	coc-settings.json	/^  "diagnostic.virtualTextPrefix": "🔧 ",$/;"	s
 diagnostic.warningSign	coc-settings.json	/^  "diagnostic.warningSign": "⚡",$/;"	s
+directory	coc-settings.json	/^          "directory": "\/tmp\/ccls"$/;"	s	object:languageserver.ccls.initializationOptions.cache
 e	defx.vim	/^  nnoremap <silent><buffer><expr> e defx#do_action('open', 'vsplit')$/;"	m
+extraArgs	coc-settings.json	/^          "extraArgs": [$/;"	a	object:languageserver.ccls.initializationOptions.clang
+filetypes	coc-settings.json	/^      "filetypes": ["c", "cpp", "objc", "objcpp"],$/;"	a	object:languageserver.ccls
 filetypes	coc-settings.json	/^      "filetypes": ["php"],$/;"	a	object:languageserver.intelephense
 filetypes	coc-settings.json	/^      "filetypes": ["sh"],$/;"	a	object:languageserver.bash
 fs	base.vim	/^cmap fs w! !sudo tee > \/dev\/null %$/;"	m
@@ -467,6 +489,7 @@ hoverKind	languageclient.json	/^    "hoverKind": "FullDocumentation",$/;"	s	obje
 if	init_old.vim	/^omap if <Plug>(coc-funcobj-i)$/;"	m
 if	init_old.vim	/^xmap if <Plug>(coc-funcobj-i)$/;"	m
 ignoredRootPaths	coc-settings.json	/^      "ignoredRootPaths": ["~"]$/;"	a	object:languageserver.bash
+initializationOptions	coc-settings.json	/^      "initializationOptions": {$/;"	o	object:languageserver.ccls
 initializationOptions	coc-settings.json	/^      "initializationOptions": {$/;"	o	object:languageserver.intelephense
 integrity	package-lock.json	/^      "integrity": "sha512-KMHP\/Jq53jZKTY9iTUt3dIVl\/be6UPs2INo96+BnZHLKxYNTfwMmlgHTaMWyGZoO74R/;"	s	object:dependencies.yarn
 intelephense	coc-settings.json	/^    "intelephense": {$/;"	o	object:languageserver
@@ -504,6 +527,8 @@ q	defx.vim	/^  nnoremap <silent><buffer><expr> q defx#do_action('quit')$/;"	m
 r	defx.vim	/^  nnoremap <silent><buffer><expr> r defx#do_action('rename')$/;"	m
 requires	package-lock.json	/^  "requires": true,$/;"	b
 resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/yarn\/-\/yarn-1.22.0.tgz",$/;"	s	object:dependencies.yarn
+resourceDir	coc-settings.json	/^          "resourceDir": "\/Library\/Developer\/CommandLineTools\/usr\/lib\/clang\/11.0.0",$/;"	s	object:languageserver.ccls.initializationOptions.clang
+rootPatterns	coc-settings.json	/^      "rootPatterns": [".ccls", "compile_commands.json", ".vim\/", ".git\/", ".hg\/"],$/;"	a	object:languageserver.ccls
 s	clip.vim	/^nmap s <plug>(SubversiveSubstitute)$/;"	m
 s:buflist	fzf.vim	/^function! s:buflist()$/;"	f
 s:bufopen	fzf.vim	/^function! s:bufopen(e)$/;"	f
