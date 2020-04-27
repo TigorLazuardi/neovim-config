@@ -22,10 +22,6 @@ snippet "^p" "package" "snip.line == 0" Arbe
 package `!v expand('%:p:h:t')`
 endsnippet
 
-snippet ` "Struct Tag generator" "re.match('^\s+([a-zA-Z0-9\.]*)\s+\*?\[?\]?\w+\{?\}?\s', snip.buffer[snip.line])" ieA
-\`db:"${1:`!p snip.rv = utils.snake_case(snip.context.group(1))`}" json:"$1"$0
-endsnippet
-
 snippet spanserv "Span service" "re.match('^func\s\(.+\)\s(\w+)\(', snip.buffer[snip.line-1])" ibe 
 span, _ := apm.StartSpan(ctx, "${1:`!p snip.rv = utils.space_between_camels(snip.context.group(1))`}", "service")
 defer span.End()

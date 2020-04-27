@@ -113,3 +113,6 @@ command! -nargs=1 -complete=help H :vert help <args>
 
 cnoreabbrev wq w<bar>bd
 cnoreabbrev q bd
+
+nnoremap <silent> [o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
+nnoremap <silent> ]o :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>

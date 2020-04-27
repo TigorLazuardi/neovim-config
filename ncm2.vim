@@ -2,7 +2,6 @@ Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-ultisnips'
 Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
 Plug 'svermeulen/ncm2-yoink'
 Plug 'ncm2/float-preview.nvim'
@@ -11,22 +10,25 @@ Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
 Plug 'ncm2/ncm2-github'
 Plug 'fgrsnau/ncm2-otherbuf'
 Plug 'yuki-ycino/ncm2-dictionary'
-" Plug 'ncm2/ncm2-match-highlight'
-" inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+
+if has('python3')
+  Plug 'SirVer/ultisnips'
+  Plug 'ncm2/ncm2-ultisnips'
+endif
+
 augroup ncm2autoload
   au! 
   autocmd BufEnter * call ncm2#enable_for_buffer()
-  " autocmd BufEnter * call ncm2#override_source('ultisnips', {'priority': 1})
 augroup end
 
 set completeopt=noinsert,menuone,noselect
 set shortmess+=c
 inoremap <c-c> <ESC>
 
-augroup ultisnips_config
-  au!
-  au TextChangedI * call ncm2#auto_trigger()
-augroup END
+" augroup ultisnips_config
+"   au!
+"   au TextChangedI * call ncm2#auto_trigger()
+" augroup END
 
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -49,5 +51,10 @@ augroup config_of_ncm2
             \ 'complete_length': 2,
             \ }, 'keep')
 augroup end
-
-imap <silent> <expr> <CR> ((pumvisible() && empty(v:completed_item)) ?  "\<c-y>\<Plug>delimitMateCR" : (!empty(v:completed_item) ? ncm2_ultisnips#expand_or("", 'n') : "\<Plug>delimitMateCR" ))
+if has('python3')
+  let g:UltiSnipsRemoveSelectModeMappings = 0
+  let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+  let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+  let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"
+  imap <silent> <expr> <C-y> pumvisible() ? ncm2_ultisnips#expand_or("\<C-y>", 'n') : "\<C-y>"
+endif

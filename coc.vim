@@ -117,7 +117,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <Tab> pumvisible() ? "\<c-n>" : "\<Tab>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
-inoremap <silent><expr> ; pumvisible() ? coc#_select_confirm() : ";"
+inoremap <silent><expr> <c-y> pumvisible() ? coc#_select_confirm() : "\<c-y>"
 
 let g:coc_global_extensions = [
       \ 'coc-tsserver', 

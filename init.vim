@@ -10,7 +10,6 @@ call plug#begin()
 source $HOME/.config/nvim/ultisnips.vim
 source $HOME/.config/nvim/gruvbox.vim
 source $HOME/.config/nvim/airline.vim
-" source $HOME/.config/nvim/lightline.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/vimgo.vim
 source $HOME/.config/nvim/fzf.vim
@@ -18,6 +17,7 @@ source $HOME/.config/nvim/rust.vim
 source $HOME/.config/nvim/clip.vim
 source $HOME/.config/nvim/fern.vim
 source $HOME/.config/nvim/gutentags.vim
+source $HOME/.config/nvim/prose.vim
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
@@ -29,7 +29,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-abolish'
 
 " Text Objects
 Plug 'kana/vim-textobj-user'
@@ -52,4 +52,3 @@ source $HOME/.config/nvim/base.vim
 
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-

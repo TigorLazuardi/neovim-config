@@ -44,7 +44,6 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 7	coc-settings.json	/^    "json", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 8	coc-settings.json	/^    "markdown", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
 9	coc-settings.json	/^    "vim", $/;"	s	array:coc.preferences.formatOnSaveFiletypes
-;	coc.vim	/^inoremap <silent><expr> ; pumvisible() ? coc#_select_confirm() : ";"$/;"	m
 ;	defx.vim	/^  nnoremap <silent><buffer><expr> ; defx#do_action('repeat')$/;"	m
 ;	fzf.vim	/^nmap <silent> ; :Buffers<CR>$/;"	m
 <A-j>	base.vim	/^inoremap <A-j> :m .+1<CR>==gi$/;"	m
@@ -73,8 +72,8 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <C-j>	init_old.vim	/^vmap <C-j> <Plug>(coc-snippets-select)$/;"	m
 <C-l>	init_old.vim	/^imap <C-l> <Plug>(coc-snippets-expand)$/;"	m
 <C-n>	init_old.vim	/^nmap <C-n> :NERDTreeToggle<CR>$/;"	m
+<C-y>	ncm2.vim	/^  imap <silent> <expr> <C-y> pumvisible() ? ncm2_ultisnips#expand_or("\\<C-y>", 'n') : "\\<C-y>"$/;"	m
 <CR>	defx.vim	/^  nnoremap <silent><buffer><expr> <CR> defx#do_action('drop')$/;"	m
-<CR>	ncm2.vim	/^imap <silent> <expr> <CR> ((pumvisible() && empty(v:completed_item)) ?  "\\<c-y>\\<Plug>delimitM/;"	m
 <F10>	ultisnips.vim	/^nnoremap <silent> <F10> :UltiSnipsEdit<CR>$/;"	m
 <F11>	base.vim	/^nmap <silent><F11> :e $HOME\/.config\/nvim\/$/;"	m
 <F12>	base.vim	/^nmap <silent><F12> :source $HOME\/.config\/nvim\/init.vim<CR>:echo "Config reloaded"<CR>$/;"	m
@@ -89,9 +88,6 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <F7>	vimgo.vim	/^inoremap <expr><F7> &filetype == "go" ? "\\<esc>:GoFillStruct<CR>i" : "\\<nop>"$/;"	m
 <F7>	vimgo.vim	/^nnoremap <expr><F7> &filetype == "go" ? "\\:GoFillStruct<CR>" : "\\<nop>"$/;"	m
 <F8>	init_old.vim	/^nmap <F8> :TagbarToggle<CR>$/;"	m
-<F8>	prose.vim	/^  inoremap <silent> <buffer> <F8> <C-o>:NextWordy<cr>$/;"	m
-<F8>	prose.vim	/^  noremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>$/;"	m
-<F8>	prose.vim	/^  xnoremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>$/;"	m
 <F8>	tagbar.vim	/^nmap <silent> <F8> :TagbarToggle<CR>$/;"	m
 <Leader><Enter>	fzf.vim	/^nnoremap <silent> <Leader><Enter> :call fzf#run({$/;"	m
 <Leader>j	easymotion.vim	/^nmap <Leader>j <Plug>(easymotion-bd-jk)$/;"	m
@@ -126,6 +122,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <c-space>	init_old.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
 <c-v>	easyclip.vim	/^cmap <c-v> <plug>EasyClipCommandModePaste$/;"	m
 <c-v>	easyclip.vim	/^imap <c-v> <plug>EasyClipInsertModePaste$/;"	m
+<c-y>	coc.vim	/^inoremap <silent><expr> <c-y> pumvisible() ? coc#_select_confirm() : "\\<c-y>"$/;"	m
 <cr>	coc.vim	/^inoremap <silent> <cr> <C-g>u<CR><c-r>=coc#on_enter()<CR>$/;"	m
 <cr>	coc.vim	/^inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : $/;"	m
 <cr>	init_old.vim	/^inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : $/;"	m
@@ -156,10 +153,8 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <leader>f	init_old.vim	/^nmap <leader>f  <Plug>(coc-format-selected)$/;"	m
 <leader>f	init_old.vim	/^xmap <leader>f  <Plug>(coc-format-selected)$/;"	m
 <leader>n	base.vim	/^nmap <leader>n :e %:h\/$/;"	m
-<leader>o	fzf.vim	/^nnoremap <silent> <leader>o :Files<cr>$/;"	m
-<leader>qc	prose.vim	/^  map <silent> <buffer> <leader>qc <Plug>ReplaceWithCurly$/;"	m
+<leader>o	fzf.vim	/^nnoremap <silent><leader>o :HFiles<CR>$/;"	m
 <leader>qf	init_old.vim	/^nmap <leader>qf  <Plug>(coc-fix-current)$/;"	m
-<leader>qs	prose.vim	/^  map <silent> <buffer> <leader>qs <Plug>ReplaceWithStraight$/;"	m
 <leader>rn	init_old.vim	/^nmap <leader>rn <Plug>(coc-rename)$/;"	m
 <leader>s	clip.vim	/^nmap <leader>s <plug>(SubversiveSubstituteRange)$/;"	m
 <leader>s	clip.vim	/^xmap <leader>s <plug>(SubversiveSubstituteRange)$/;"	m
@@ -181,6 +176,7 @@ Fmt	coc.vim	/^command! -nargs=0 Fmt :call CocAction('format')$/;"	c
 Fold	init_old.vim	/^command! -nargs=? Fold :call     CocAction('fold', <f-args>)$/;"	c
 Format	init_old.vim	/^command! -nargs=0 Format :call CocAction('format')$/;"	c
 H	base.vim	/^command! -nargs=1 -complete=help H :vert help <args>$/;"	c
+HFiles	fzf.vim	/^command! -bang -nargs=? -complete=dir HFiles$/;"	c
 HoverSymbol	coc.vim	/^        augroup HoverSymbol$/;"	a
 HoverSymbol	coc.vim	/^    augroup HoverSymbol$/;"	a
 HoverSymbol	coc.vim	/^augroup HoverSymbol$/;"	a
@@ -210,10 +206,9 @@ StructToGQL	init_old.vim	/^command! -nargs=0 StructToGQL %s\/\\s\\+\\w\\+\\s\\+\
 ToggleSymbolHover	coc.vim	/^function! ToggleSymbolHover()$/;"	f
 X	clip.vim	/^nnoremap X D$/;"	m
 [F	fzf.vim	/^nnoremap <silent> [F :call fzf#run({$/;"	m
-[T	fzf.vim	/^nnoremap <silent> [T :call fzf#run({$/;"	m
 [f	fzf.vim	/^nnoremap [f :Rg <c-r><c-w><cr>$/;"	m
 [g	init_old.vim	/^nmap <silent> [g <Plug>(coc-diagnostic-prev)$/;"	m
-[o	fzf.vim	/^nmap <silent> [o :Files<cr>$/;"	m
+[o	base.vim	/^nnoremap <silent> [o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>$/;"	m
 [t	fzf.vim	/^nmap [t :Tags <c-r><c-w><CR> $/;"	m
 [w	base.vim	/^nnoremap [w :setlocal nowrap<cr>$/;"	m
 [y	clip.vim	/^nmap [y <plug>(YoinkRotateBack)$/;"	m
@@ -221,6 +216,7 @@ X	clip.vim	/^nnoremap X D$/;"	m
 ]F	fzf.vim	/^nnoremap <silent> ]F :call fzf#run({$/;"	m
 ]f	fzf.vim	/^nnoremap ]f :Rg $/;"	m
 ]g	init_old.vim	/^nmap <silent> ]g <Plug>(coc-diagnostic-next)$/;"	m
+]o	base.vim	/^nnoremap <silent> ]o :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>$/;"	m
 ]t	fzf.vim	/^nmap ]t :Tags<CR>$/;"	m
 ]w	base.vim	/^nnoremap ]w :setlocal wrap<cr>$/;"	m
 ]y	clip.vim	/^nmap ]y <plug>(YoinkRotateForward)$/;"	m
@@ -305,10 +301,13 @@ g:NERDTreeWinSize	init_old.vim	/^let g:NERDTreeWinSize=40$/;"	v
 g:ToggleSymbolHover	coc.vim	/^    let g:ToggleSymbolHover = !get(g:, 'ToggleSymbolHover', 1)$/;"	v
 g:UltiSnipsEditSplit	init_old.vim	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
 g:UltiSnipsExpandTrigger	init_old.vim	/^let g:UltiSnipsExpandTrigger = "<nop>"$/;"	v
+g:UltiSnipsExpandTrigger	ncm2.vim	/^  let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"$/;"	v
 g:UltiSnipsExpandTrigger	ultisnips.vim	/^let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"$/;"	v
-g:UltiSnipsExpandTrigger	ultisnips.vim	/^let g:UltiSnipsExpandTrigger = "<c-l>"$/;"	v
+g:UltiSnipsJumpBackwardTrigger	ncm2.vim	/^  let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"$/;"	v
 g:UltiSnipsJumpBackwardTrigger	ultisnips.vim	/^let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"$/;"	v
+g:UltiSnipsJumpForwardTrigger	ncm2.vim	/^  let g:UltiSnipsJumpForwardTrigger	= "<c-j>"$/;"	v
 g:UltiSnipsJumpForwardTrigger	ultisnips.vim	/^let g:UltiSnipsJumpForwardTrigger	= "<c-j>"$/;"	v
+g:UltiSnipsRemoveSelectModeMappings	ncm2.vim	/^  let g:UltiSnipsRemoveSelectModeMappings = 0$/;"	v
 g:UltiSnipsRemoveSelectModeMappings	ultisnips.vim	/^let g:UltiSnipsRemoveSelectModeMappings = 0$/;"	v
 g:afterglow_italic_comments	init_old.vim	/^let g:afterglow_italic_comments=1$/;"	v
 g:airline#extensions#default#section_truncate_width	init_old.vim	/^let g:airline#extensions#default#section_truncate_width = {$/;"	v
@@ -426,7 +425,7 @@ g:go_highlight_variable_declarations	vimgo.vim	/^let g:go_highlight_variable_dec
 g:go_metalinter_autosave	init_old.vim	/^let g:go_metalinter_autosave = 0$/;"	v
 g:go_snippet_engine	vimgo.vim	/^let g:go_snippet_engine = ''$/;"	v
 g:gruvbox_italic	gruvbox.vim	/^let g:gruvbox_italic=1$/;"	v
-g:gutentags_file_list_command	gutentags.vim	/^let g:gutentags_file_list_command = {$/;"	v
+g:gutentags_file_list_command	gutentags.vim	/^  let g:gutentags_file_list_command = {$/;"	v
 g:instant_markdown_allow_unsafe_content	instantmarkdown.vim	/^let g:instant_markdown_allow_unsafe_content = 1$/;"	v
 g:instant_markdown_browser	instantmarkdown.vim	/^let g:instant_markdown_browser = "firefox --new-window"$/;"	v
 g:instant_markdown_open_to_the_world	instantmarkdown.vim	/^let g:instant_markdown_open_to_the_world = 1$/;"	v
@@ -442,17 +441,16 @@ g:lexical#spelllang	lexical.vim	/^let g:lexical#spelllang = ['en_us','id_ID',]$/
 g:lexical#spelllang	prose.vim	/^  let g:lexical#spelllang = ['en_us','id_ID',]$/;"	v
 g:lexical#thesaurus	lexical.vim	/^let g:lexical#thesaurus = ['~\/.config\/nvim\/thesaurus\/words.txt']$/;"	v
 g:lexical#thesaurus	prose.vim	/^  let g:lexical#thesaurus = ['~\/.config\/nvim\/thesaurus\/words.txt']$/;"	v
+g:lightline	lightline.vim	/^let g:lightline = {$/;"	v
 g:ncm2#popup_limit	ncm2.vim	/^let g:ncm2#popup_limit = 10$/;"	v
 g:ncm2#total_popup_limit	ncm2.vim	/^let g:ncm2#total_popup_limit = 20$/;"	v
 g:pencil#wrapModeDefault	pencil.vim	/^let g:pencil#wrapModeDefault = 'soft'$/;"	v
-g:pencil#wrapModeDefault	prose.vim	/^  let g:pencil#wrapModeDefault = 'soft'$/;"	v
 g:rustfmt_autosave	init_old.vim	/^let g:rustfmt_autosave = 1$/;"	v
 g:syntastic_always_populate_loc_list	init_old.vim	/^let g:syntastic_always_populate_loc_list = 1$/;"	v
 g:syntastic_auto_loc_list	init_old.vim	/^let g:syntastic_auto_loc_list = 1$/;"	v
 g:syntastic_check_on_open	init_old.vim	/^let g:syntastic_check_on_open = 1$/;"	v
 g:syntastic_check_on_wq	init_old.vim	/^let g:syntastic_check_on_wq = 0$/;"	v
-g:textobj#quote#doubleMotion	prose.vim	/^  let g:textobj#quote#doubleMotion = 'q'$/;"	v
-g:textobj#quote#singleMotion	prose.vim	/^  let g:textobj#quote#singleMotion = 'Q'$/;"	v
+g:vimwiki_table_mappings	wiki.vim	/^let g:vimwiki_table_mappings = 0$/;"	v
 g:yoinkAutoFormatPaste	clip.vim	/^let g:yoinkAutoFormatPaste = 1$/;"	v
 g:yoinkIncludeDeleteOperations	clip.vim	/^let g:yoinkIncludeDeleteOperations = 1$/;"	v
 g:yoinkSavePersistently	clip.vim	/^let g:yoinkSavePersistently = 1$/;"	v
@@ -548,7 +546,6 @@ suggest.floatEnable	coc-settings.json	/^  "suggest.floatEnable": true,$/;"	b
 suggest.languageSourcePriority	coc-settings.json	/^  "suggest.languageSourcePriority": 99,$/;"	n
 suggest.noselect	coc-settings.json	/^  "suggest.noselect": true,$/;"	b
 suggest.numberSelect	coc-settings.json	/^  "suggest.numberSelect": false,$/;"	b
-ultisnips_config	ncm2.vim	/^augroup ultisnips_config$/;"	a
 usePlaceholders	coc-settings.json	/^    "usePlaceholders": true,$/;"	b	object:go.goplsOptions
 usePlaceholders	languageclient.json	/^    "usePlaceholders": true,$/;"	b	object:gopls
 user_dict	litecorrect.vim	/^let user_dict = {$/;"	v

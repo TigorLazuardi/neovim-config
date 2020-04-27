@@ -9,7 +9,6 @@ function! s:buflist()
 endfunction
 
 nmap <silent> ; :Buffers<CR>
-nmap <silent> [o :Files<cr>
 nmap <silent><F3> :Rg <c-r><c-w><CR>
 " Search tags
 nmap ]t :Tags<CR>
@@ -28,15 +27,10 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
 
-" Select Color Scheme
-nnoremap <silent> [T :call fzf#run({
-\   'source':
-\     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
-\         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
-\   'sink':    'colo',
-\   'options': '+m',
-\   'left':    30
-\ })<CR>
+command! -bang -nargs=? -complete=dir HFiles
+      \ call fzf#vim#files(<q-args>, {'source': 'rg --files --hidden'}, <bang>0)
+
+nnoremap <silent><leader>o :HFiles<CR>
 
 nnoremap [f :Rg <c-r><c-w><cr>
 nnoremap ]f :Rg 
@@ -49,8 +43,6 @@ nnoremap <silent> ]F :call fzf#run({
 nnoremap <silent> [F :call fzf#run({
 \   'right': winwidth('.') / 2,
 \   'sink':  'vertical botright split' })<CR>
-
-nnoremap <silent> <leader>o :Files<cr>
 
 " command! -nargs=1 -bang Locate call fzf#run(fzf#wrap(
 "       \ {'source': 'locate <q-args>', 'options': '-m'}, <bang>0))

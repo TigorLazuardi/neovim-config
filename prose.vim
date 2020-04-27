@@ -1,17 +1,17 @@
-Plug 'reedes/vim-pencil'
+" Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-lexical'
-Plug 'reedes/vim-textobj-quote'
-Plug 'reedes/vim-textobj-sentence'
-Plug 'reedes/vim-wordy'
+" Plug 'reedes/vim-textobj-quote'
+Plug 'reedes/vim-textobj-sentence' " Motion Key 's'
+" Plug 'reedes/vim-wordy'
 Plug 'jdelkins/vim-correction'
 
 function! Prose()
 
-  call pencil#init()
+  " call pencil#init()
   call lexical#init()
   call litecorrect#init()
-  call textobj#quote#init()
+  " call textobj#quote#init()
   call textobj#sentence#init()
 
   " manual reformatting shortcuts
@@ -33,21 +33,21 @@ function! Prose()
   setlocal foldlevel=6
 
   " replace typographical quotes (reedes/vim-textobj-quote)
-  map <silent> <buffer> <leader>qc <Plug>ReplaceWithCurly
-  map <silent> <buffer> <leader>qs <Plug>ReplaceWithStraight
+  " map <silent> <buffer> <leader>qc <Plug>ReplaceWithCurly
+  " map <silent> <buffer> <leader>qs <Plug>ReplaceWithStraight
 
   " highlight words (reedes/vim-wordy)
-  noremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>
-  xnoremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>
-  inoremap <silent> <buffer> <F8> <C-o>:NextWordy<cr>
+  " noremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>
+  " xnoremap <silent> <buffer> <F8> :<C-u>NextWordy<cr>
+  " inoremap <silent> <buffer> <F8> <C-o>:NextWordy<cr>
 
-  let g:pencil#wrapModeDefault = 'soft'
+  " let g:pencil#wrapModeDefault = 'soft'
   let g:lexical#spell = 1
   let g:lexical#spelllang = ['en_us','id_ID',]
   let g:lexical#thesaurus = ['~/.config/nvim/thesaurus/words.txt']
   let g:lexical#dictionary = ['/usr/share/dict/words',]
-  let g:textobj#quote#doubleMotion = 'q'
-  let g:textobj#quote#singleMotion = 'Q'
+  " let g:textobj#quote#doubleMotion = 'q'
+  " let g:textobj#quote#singleMotion = 'Q'
   set spell
 
 endfunction
