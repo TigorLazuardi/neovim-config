@@ -22,17 +22,23 @@ set linebreak "Prevent vim from wrap in the middle of a word"
 set scrolloff=5 "Make sure there's at least few lines visible between cursor and edge of window. Setting to 999 will make the cursor always on middle of screen"
 set autoread "Auto reload file if there's outside edit"
 set backspace=indent,eol,start "you may backspace over indentation, endofline, startofline"
+
+if !isdirectory($HOME . "/.vim/backup")
+  call mkdir($HOME . "/.vim/backup", "p", 0700)
+endif
 set backupdir=~/.vim/backup "set backup dir cache"
+
 set formatoptions+=j "When editing a comment, and in insert mode you press enter, there's a leading comment added"
 set noswapfile "Disable swap file. Makes my life easier to be honest, but make sure to save frequently"
 set nrformats-=octal
-set undodir=$HOME/vim/undodir "Make undo persistent between sessions"
-set splitbelow "Horizontal split appears on bottom"
+set undodir=$HOME/vim/undodir "Make undo persistent between sessions
+set splitbelow "Horizontal split appears on bottom
 set splitright "Vertical split appears on right
-set incsearch "Start searching before pressing enter"
-" set nobackup
-" set noundofile
-" set nowritebackup
+set incsearch "Start searching before pressing enter
+
+if !isdirectory($HOME . "/.vim/tmp")
+  call mkdir($HOME . "/.vim/tmp", "p", 0700)
+endif
 set directory=~/.vim/tmp
 " Prevent auto enter
 set formatoptions-=tc
@@ -41,6 +47,8 @@ set number relativenumber
 set wildmenu
 set wildignore+=**/node_modules/** 
 set wildmode=longest:full,list:full
+
+
 " Enable syntax highlighting
 syntax on 
 
@@ -77,8 +85,6 @@ xnoremap <tab> <esc>
 
 nnoremap [w :setlocal nowrap<cr>
 nnoremap ]w :setlocal wrap<cr>
-nnoremap <silent> + :res +5<cr>:vertical resize +5<cr>
-nnoremap <silent> _ :res -5<cr>:vertical resize -5<cr>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap fs w! !sudo tee > /dev/null %
@@ -91,8 +97,10 @@ augroup END
 
 
 " Press F12 to reload config
-nmap <silent><F12> :source $HOME/.config/nvim/init.vim<CR>:echo "Config reloaded"<CR>
-nmap <silent><F11> :e $HOME/.config/nvim/
+if has('unix')
+  nmap <silent><F12> :source $HOME/.config/nvim/init.vim<CR>:echo "Config reloaded"<CR>
+  nmap <silent><F11> :e $HOME/.config/nvim/
+endif
 
 " Change leader key to space key
 nnoremap <Space> <nop>
@@ -116,3 +124,8 @@ cnoreabbrev q bd
 
 nnoremap <silent> [o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> ]o :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
+
+nnoremap <silent> <c-up> :res -1<CR>
+nnoremap <silent> <c-down> :res +1<CR>
+nnoremap <silent> <c-left> :vert res -3<CR>
+nnoremap <silent> <c-right> :vert res +3<CR>

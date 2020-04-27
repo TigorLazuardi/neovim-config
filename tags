@@ -8,7 +8,6 @@
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
 $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;"	v
 *	defx.vim	/^  nnoremap <silent><buffer><expr> * defx#do_action('toggle_select_all')$/;"	m
-+	base.vim	/^nnoremap <silent> + :res +5<cr>:vertical resize +5<cr>$/;"	m
 .	defx.vim	/^  nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')$/;"	m
 0	coc-settings.json	/^            "-isystem",$/;"	s	array:languageserver.ccls.initializationOptions.clang.extraArgs
 0	coc-settings.json	/^      "args": ["--stdio"],$/;"	s	array:languageserver.intelephense.args
@@ -66,17 +65,20 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <C-J>	base.vim	/^nnoremap <C-J> <C-W><C-J>$/;"	m
 <C-K>	base.vim	/^nnoremap <C-K> <C-W><C-K>$/;"	m
 <C-L>	base.vim	/^nnoremap <C-L> <C-W><C-L>$/;"	m
+<C-e>	asynccomplete.vim	/^inoremap <expr> <C-e> pumvisible() ? asyncomplete#cancel_popup() : "\\<C-e>"$/;"	m
 <C-g>	defx.vim	/^  nnoremap <silent><buffer><expr> <C-g> defx#do_action('print')$/;"	m
 <C-j>	coc.vim	/^vmap <C-j> <Plug>(coc-snippets-select)$/;"	m
 <C-j>	init_old.vim	/^imap <C-j> <Plug>(coc-snippets-expand-jump)$/;"	m
 <C-j>	init_old.vim	/^vmap <C-j> <Plug>(coc-snippets-select)$/;"	m
 <C-l>	init_old.vim	/^imap <C-l> <Plug>(coc-snippets-expand)$/;"	m
 <C-n>	init_old.vim	/^nmap <C-n> :NERDTreeToggle<CR>$/;"	m
+<C-y>	asynccomplete.vim	/^  inoremap <expr> <C-y> pumvisible() && UltiSnips#SnippetsInCurrentScope() ? asyncomplete#close_/;"	m
+<C-y>	asynccomplete.vim	/^inoremap <expr> <C-y> pumvisible() ? asyncomplete#close_popup() : "\\<C-y>"$/;"	m
 <C-y>	ncm2.vim	/^  imap <silent> <expr> <C-y> pumvisible() ? ncm2_ultisnips#expand_or("\\<C-y>", 'n') : "\\<C-y>"$/;"	m
 <CR>	defx.vim	/^  nnoremap <silent><buffer><expr> <CR> defx#do_action('drop')$/;"	m
 <F10>	ultisnips.vim	/^nnoremap <silent> <F10> :UltiSnipsEdit<CR>$/;"	m
-<F11>	base.vim	/^nmap <silent><F11> :e $HOME\/.config\/nvim\/$/;"	m
-<F12>	base.vim	/^nmap <silent><F12> :source $HOME\/.config\/nvim\/init.vim<CR>:echo "Config reloaded"<CR>$/;"	m
+<F11>	base.vim	/^  nmap <silent><F11> :e $HOME\/.config\/nvim\/$/;"	m
+<F12>	base.vim	/^  nmap <silent><F12> :source $HOME\/.config\/nvim\/init.vim<CR>:echo "Config reloaded"<CR>$/;"	m
 <F1>	languageclient.vim	/^    nnoremap <F1> :call LanguageClient_contextMenu()<CR>$/;"	m
 <F2>	coc.vim	/^nmap <F2> <Plug>(coc-rename)$/;"	m
 <F2>	languageclient.vim	/^    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>$/;"	m
@@ -99,6 +101,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <S-TAB>	coc.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
 <S-TAB>	deoplete.vim	/^imap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<S-TAB>"$/;"	m
 <S-TAB>	init_old.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
+<S-Tab>	asynccomplete.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"$/;"	m
 <S-Tab>	coc.vim	/^inoremap <silent><expr> <S-Tab> pumvisible() ? "\\<c-p>" : "\\<S-Tab>"$/;"	m
 <S-Tab>	ncm2.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"$/;"	m
 <Space>	base.vim	/^nnoremap <Space> <nop>$/;"	m
@@ -107,19 +110,25 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <TAB>	coc.vim	/^inoremap <silent><expr> <TAB>$/;"	m
 <TAB>	deoplete.vim	/^imap <expr><TAB> pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m
 <TAB>	init_old.vim	/^inoremap <silent><expr> <TAB>$/;"	m
+<Tab>	asynccomplete.vim	/^inoremap <expr> <Tab>   pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
 <Tab>	coc.vim	/^inoremap <silent><expr> <Tab> pumvisible() ? "\\<c-n>" : "\\<Tab>"$/;"	m
 <Tab>	ncm2.vim	/^inoremap <expr> <Tab> pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
 <c-=>	clip.vim	/^nmap <c-=> <plug>(YoinkPostPasteToggleFormat)$/;"	m
 <c-c>	ncm2.vim	/^inoremap <c-c> <ESC>$/;"	m
+<c-down>	base.vim	/^nnoremap <silent> <c-down> :res +1<CR>$/;"	m
+<c-left>	base.vim	/^nnoremap <silent> <c-left> :vert res -3<CR>$/;"	m
 <c-m>	coc.vim	/^imap <c-m> <Plug>(coc-snippets-expand-jump)$/;"	m
 <c-m>	coc.vim	/^vmap <c-m> <Plug>(coc-snippets-expand-jump)$/;"	m
 <c-n>	clip.vim	/^nmap <c-n> <plug>(YoinkPostPasteSwapBack)$/;"	m
 <c-o>	base.vim	/^inoremap <c-o> <esc>A<CR> $/;"	m
 <c-p>	clip.vim	/^nmap <c-p> <plug>(YoinkPostPasteSwapForward)$/;"	m
+<c-right>	base.vim	/^nnoremap <silent> <c-right> :vert res +3<CR>$/;"	m
 <c-s>	prose.vim	/^  inoremap <buffer> <c-s> <c-g>u<Esc>[s1z=`]A<c-g>u$/;"	m
 <c-s>	prose.vim	/^  nnoremap <buffer> <c-s> [s1z=<c-o>$/;"	m
+<c-space>	asynccomplete.vim	/^imap <c-space> <Plug>(asyncomplete_force_refresh)$/;"	m
 <c-space>	coc.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
 <c-space>	init_old.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
+<c-up>	base.vim	/^nnoremap <silent> <c-up> :res -1<CR>$/;"	m
 <c-v>	easyclip.vim	/^cmap <c-v> <plug>EasyClipCommandModePaste$/;"	m
 <c-v>	easyclip.vim	/^imap <c-v> <plug>EasyClipInsertModePaste$/;"	m
 <c-y>	coc.vim	/^inoremap <silent><expr> <c-y> pumvisible() ? coc#_select_confirm() : "\\<c-y>"$/;"	m
@@ -220,7 +229,7 @@ X	clip.vim	/^nnoremap X D$/;"	m
 ]t	fzf.vim	/^nmap ]t :Tags<CR>$/;"	m
 ]w	base.vim	/^nnoremap ]w :setlocal wrap<cr>$/;"	m
 ]y	clip.vim	/^nmap ]y <plug>(YoinkRotateForward)$/;"	m
-_	base.vim	/^nnoremap <silent> _ :res -5<cr>:vertical resize -5<cr>$/;"	m
+acc	asynccomplete.vim	/^augroup acc$/;"	a
 af	init_old.vim	/^omap af <Plug>(coc-funcobj-a)$/;"	m
 af	init_old.vim	/^xmap af <Plug>(coc-funcobj-a)$/;"	m
 args	coc-settings.json	/^      "args": ["--stdio"],$/;"	a	object:languageserver.intelephense
@@ -300,13 +309,17 @@ g:LanguageClient_useVirtualText	languageclient.vim	/^let g:LanguageClient_useVir
 g:NERDTreeWinSize	init_old.vim	/^let g:NERDTreeWinSize=40$/;"	v
 g:ToggleSymbolHover	coc.vim	/^    let g:ToggleSymbolHover = !get(g:, 'ToggleSymbolHover', 1)$/;"	v
 g:UltiSnipsEditSplit	init_old.vim	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
+g:UltiSnipsExpandTrigger	asynccomplete.vim	/^  let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"$/;"	v
 g:UltiSnipsExpandTrigger	init_old.vim	/^let g:UltiSnipsExpandTrigger = "<nop>"$/;"	v
 g:UltiSnipsExpandTrigger	ncm2.vim	/^  let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"$/;"	v
 g:UltiSnipsExpandTrigger	ultisnips.vim	/^let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"$/;"	v
+g:UltiSnipsJumpBackwardTrigger	asynccomplete.vim	/^  let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"$/;"	v
 g:UltiSnipsJumpBackwardTrigger	ncm2.vim	/^  let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"$/;"	v
 g:UltiSnipsJumpBackwardTrigger	ultisnips.vim	/^let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"$/;"	v
+g:UltiSnipsJumpForwardTrigger	asynccomplete.vim	/^  let g:UltiSnipsJumpForwardTrigger	= "<c-j>"$/;"	v
 g:UltiSnipsJumpForwardTrigger	ncm2.vim	/^  let g:UltiSnipsJumpForwardTrigger	= "<c-j>"$/;"	v
 g:UltiSnipsJumpForwardTrigger	ultisnips.vim	/^let g:UltiSnipsJumpForwardTrigger	= "<c-j>"$/;"	v
+g:UltiSnipsRemoveSelectModeMappings	asynccomplete.vim	/^  let g:UltiSnipsRemoveSelectModeMappings = 0$/;"	v
 g:UltiSnipsRemoveSelectModeMappings	ncm2.vim	/^  let g:UltiSnipsRemoveSelectModeMappings = 0$/;"	v
 g:UltiSnipsRemoveSelectModeMappings	ultisnips.vim	/^let g:UltiSnipsRemoveSelectModeMappings = 0$/;"	v
 g:afterglow_italic_comments	init_old.vim	/^let g:afterglow_italic_comments=1$/;"	v
