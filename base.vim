@@ -1,10 +1,10 @@
 set nocompatible "Remove compability with older versions.
 set ignorecase "When searching, make the search case insensitive
 set hlsearch "When searching, the text is highlighted
-set tabstop=2 "2 spaces when pressing tab.
-set softtabstop=2 "Same as above"
+set tabstop=4 "2 spaces when pressing tab.
+set softtabstop=4 "Same as above"
 set expandtab "Same as above
-set shiftwidth=2 "If there's a matching bracket, vim will put it properly"
+set shiftwidth=4 "If there's a matching bracket, vim will put it properly"
 set shiftround "An extension of above"
 set autoindent "When you press enter on a tabbed line, Next line is idented properly"
 set smartindent "Indent enhancement"

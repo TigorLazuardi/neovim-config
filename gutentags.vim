@@ -7,5 +7,6 @@ if executable('ctags')
         \ '.hg': 'hg files',
         \ },
         \ }
+  let g:gutentags_ctags_tagfile = '.tags'
 endif
 

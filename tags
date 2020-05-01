@@ -6,7 +6,6 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
-$NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;"	v
 *	defx.vim	/^  nnoremap <silent><buffer><expr> * defx#do_action('toggle_select_all')$/;"	m
 .	defx.vim	/^  nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')$/;"	m
 0	coc-settings.json	/^            "-isystem",$/;"	s	array:languageserver.ccls.initializationOptions.clang.extraArgs
@@ -48,15 +47,9 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <A-j>	base.vim	/^inoremap <A-j> :m .+1<CR>==gi$/;"	m
 <A-j>	base.vim	/^nnoremap <A-j> :m .+1<CR>==$/;"	m
 <A-j>	base.vim	/^vnoremap <A-j> :m '>+1<CR>gv=gv$/;"	m
-<A-j>	init_old.vim	/^inoremap <A-j> :m .+1<CR>==gi$/;"	m
-<A-j>	init_old.vim	/^nnoremap <A-j> :m .+1<CR>==$/;"	m
-<A-j>	init_old.vim	/^vnoremap <A-j> :m '>+1<CR>gv=gv$/;"	m
 <A-k>	base.vim	/^inoremap <A-k> :m .-2<CR>==gi$/;"	m
 <A-k>	base.vim	/^nnoremap <A-k> :m .-2<CR>==$/;"	m
 <A-k>	base.vim	/^vnoremap <A-k> :m '<-2<CR>gv=gv$/;"	m
-<A-k>	init_old.vim	/^inoremap <A-k> :m .-2<CR>==gi$/;"	m
-<A-k>	init_old.vim	/^nnoremap <A-k> :m .-2<CR>==$/;"	m
-<A-k>	init_old.vim	/^vnoremap <A-k> :m '<-2<CR>gv=gv$/;"	m
 <A-n>	base.vim	/^inoremap <silent> <A-n> <esc>:bnext!<cr>$/;"	m
 <A-n>	base.vim	/^nnoremap <silent> <A-n> :bnext!<cr>$/;"	m
 <A-p>	base.vim	/^inoremap <silent> <A-p> <esc>:bprev!<cr>$/;"	m
@@ -68,10 +61,6 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <C-e>	asynccomplete.vim	/^inoremap <expr> <C-e> pumvisible() ? asyncomplete#cancel_popup() : "\\<C-e>"$/;"	m
 <C-g>	defx.vim	/^  nnoremap <silent><buffer><expr> <C-g> defx#do_action('print')$/;"	m
 <C-j>	coc.vim	/^vmap <C-j> <Plug>(coc-snippets-select)$/;"	m
-<C-j>	init_old.vim	/^imap <C-j> <Plug>(coc-snippets-expand-jump)$/;"	m
-<C-j>	init_old.vim	/^vmap <C-j> <Plug>(coc-snippets-select)$/;"	m
-<C-l>	init_old.vim	/^imap <C-l> <Plug>(coc-snippets-expand)$/;"	m
-<C-n>	init_old.vim	/^nmap <C-n> :NERDTreeToggle<CR>$/;"	m
 <C-y>	asynccomplete.vim	/^  inoremap <expr> <C-y> pumvisible() && UltiSnips#SnippetsInCurrentScope() ? asyncomplete#close_/;"	m
 <C-y>	asynccomplete.vim	/^inoremap <expr> <C-y> pumvisible() ? asyncomplete#close_popup() : "\\<C-y>"$/;"	m
 <C-y>	ncm2.vim	/^  imap <silent> <expr> <C-y> pumvisible() ? ncm2_ultisnips#expand_or("\\<C-y>", 'n') : "\\<C-y>"$/;"	m
@@ -83,13 +72,10 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <F2>	coc.vim	/^nmap <F2> <Plug>(coc-rename)$/;"	m
 <F2>	languageclient.vim	/^    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>$/;"	m
 <F3>	fzf.vim	/^nmap <silent><F3> :Rg <c-r><c-w><CR>$/;"	m
-<F3>	init_old.vim	/^noremap <F3> :Autoformat<CR>$/;"	m
 <F4>	coc.vim	/^nnoremap <F4> :call ToggleSymbolHover()<CR>$/;"	m
-<F4>	init_old.vim	/^nmap <F4> <Plug>(ale_fix)$/;"	m
 <F5>	rust.vim	/^nnoremap <expr><silent><F5> &filetype == "rust" ? ":make run<CR>" :$/;"	m
 <F7>	vimgo.vim	/^inoremap <expr><F7> &filetype == "go" ? "\\<esc>:GoFillStruct<CR>i" : "\\<nop>"$/;"	m
 <F7>	vimgo.vim	/^nnoremap <expr><F7> &filetype == "go" ? "\\:GoFillStruct<CR>" : "\\<nop>"$/;"	m
-<F8>	init_old.vim	/^nmap <F8> :TagbarToggle<CR>$/;"	m
 <F8>	tagbar.vim	/^nmap <silent> <F8> :TagbarToggle<CR>$/;"	m
 <Leader><Enter>	fzf.vim	/^nnoremap <silent> <Leader><Enter> :call fzf#run({$/;"	m
 <Leader>j	easymotion.vim	/^nmap <Leader>j <Plug>(easymotion-bd-jk)$/;"	m
@@ -100,7 +86,6 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <S-F5>	rust.vim	/^nnoremap <expr><silent><S-F5> &filetype == "rust" ? ":make test<CR>" : "\\<nop>"$/;"	m
 <S-TAB>	coc.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
 <S-TAB>	deoplete.vim	/^imap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<S-TAB>"$/;"	m
-<S-TAB>	init_old.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
 <S-Tab>	asynccomplete.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"$/;"	m
 <S-Tab>	coc.vim	/^inoremap <silent><expr> <S-Tab> pumvisible() ? "\\<c-p>" : "\\<S-Tab>"$/;"	m
 <S-Tab>	ncm2.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"$/;"	m
@@ -109,7 +94,6 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <Space>	init.vim	/^nnoremap <Space> <nop>$/;"	m
 <TAB>	coc.vim	/^inoremap <silent><expr> <TAB>$/;"	m
 <TAB>	deoplete.vim	/^imap <expr><TAB> pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m
-<TAB>	init_old.vim	/^inoremap <silent><expr> <TAB>$/;"	m
 <Tab>	asynccomplete.vim	/^inoremap <expr> <Tab>   pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
 <Tab>	coc.vim	/^inoremap <silent><expr> <Tab> pumvisible() ? "\\<c-n>" : "\\<Tab>"$/;"	m
 <Tab>	ncm2.vim	/^inoremap <expr> <Tab> pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
@@ -127,24 +111,17 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <c-s>	prose.vim	/^  nnoremap <buffer> <c-s> [s1z=<c-o>$/;"	m
 <c-space>	asynccomplete.vim	/^imap <c-space> <Plug>(asyncomplete_force_refresh)$/;"	m
 <c-space>	coc.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
-<c-space>	init_old.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
 <c-up>	base.vim	/^nnoremap <silent> <c-up> :res -1<CR>$/;"	m
 <c-v>	easyclip.vim	/^cmap <c-v> <plug>EasyClipCommandModePaste$/;"	m
 <c-v>	easyclip.vim	/^imap <c-v> <plug>EasyClipInsertModePaste$/;"	m
 <c-y>	coc.vim	/^inoremap <silent><expr> <c-y> pumvisible() ? coc#_select_confirm() : "\\<c-y>"$/;"	m
 <cr>	coc.vim	/^inoremap <silent> <cr> <C-g>u<CR><c-r>=coc#on_enter()<CR>$/;"	m
 <cr>	coc.vim	/^inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : $/;"	m
-<cr>	init_old.vim	/^inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : $/;"	m
-<kEnter>	init_old.vim	/^nmap <kEnter> o<Esc>$/;"	m
 <leader>;	base.vim	/^nmap <leader>; mAA;<esc>`A$/;"	m
 <leader>F	easymotion.vim	/^nmap <leader>F <Plug>(easymotion-overwin-f2)$/;"	m
 <leader>F	easymotion.vim	/^xmap <leader>F <Plug>(easymotion-overwin-f2)$/;"	m
 <leader>Q	prose.vim	/^  nnoremap <buffer> <silent> <leader>Q vapJgqap$/;"	m
 <leader>a	coc.vim	/^xmap <leader>a  <Plug>(coc-codeaction-selected)$/;"	m
-<leader>a	init_old.vim	/^nmap <leader>a  <Plug>(coc-codeaction-selected)$/;"	m
-<leader>a	init_old.vim	/^nnoremap <silent> <leader>a :cclose<CR>:lclose<CR>$/;"	m
-<leader>a	init_old.vim	/^xmap <leader>a  <Plug>(coc-codeaction-selected)$/;"	m
-<leader>ac	init_old.vim	/^nmap <leader>ac  <Plug>(coc-codeaction)$/;"	m
 <leader>cc	coc.vim	/^nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>$/;"	m
 <leader>cd	coc.vim	/^nnoremap <silent> <leader>cd  :<C-u>CocList diagnostics<cr>$/;"	m
 <leader>ce	coc.vim	/^nnoremap <silent> <leader>ce  :<C-u>CocList extensions<cr>$/;"	m
@@ -159,31 +136,17 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	init_old.vim	/^let $NVIM_TUI_ENABLE_TRUE_COLOR=1 $/;
 <leader>e	nerdtree.vim	/^nmap <leader>e :NERDTreeToggle<CR>$/;"	m
 <leader>f	easymotion.vim	/^nmap <leader>f <Plug>(easymotion-overwin-f)$/;"	m
 <leader>f	easymotion.vim	/^xmap <leader>f <Plug>(easymotion-overwin-f)$/;"	m
-<leader>f	init_old.vim	/^nmap <leader>f  <Plug>(coc-format-selected)$/;"	m
-<leader>f	init_old.vim	/^xmap <leader>f  <Plug>(coc-format-selected)$/;"	m
 <leader>n	base.vim	/^nmap <leader>n :e %:h\/$/;"	m
 <leader>o	fzf.vim	/^nnoremap <silent><leader>o :HFiles<CR>$/;"	m
-<leader>qf	init_old.vim	/^nmap <leader>qf  <Plug>(coc-fix-current)$/;"	m
-<leader>rn	init_old.vim	/^nmap <leader>rn <Plug>(coc-rename)$/;"	m
 <leader>s	clip.vim	/^nmap <leader>s <plug>(SubversiveSubstituteRange)$/;"	m
 <leader>s	clip.vim	/^xmap <leader>s <plug>(SubversiveSubstituteRange)$/;"	m
 <leader>ss	clip.vim	/^nmap <leader>ss <plug>(SubversiveSubstituteWordRange)$/;"	m
 <leader>t	easymotion.vim	/^nmap <leader>t <Plug>(easymotion-bd-t)$/;"	m
 <leader>t	easymotion.vim	/^xmap <leader>t <Plug>(easymotion-bd-t)$/;"	m
-<space>a	init_old.vim	/^nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>$/;"	m
-<space>c	init_old.vim	/^nnoremap <silent> <space>c  :<C-u>CocList commands<cr>$/;"	m
-<space>e	init_old.vim	/^nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>$/;"	m
-<space>j	init_old.vim	/^nnoremap <silent> <space>j  :<C-u>CocNext<CR>$/;"	m
-<space>k	init_old.vim	/^nnoremap <silent> <space>k  :<C-u>CocPrev<CR>$/;"	m
-<space>o	init_old.vim	/^nnoremap <silent> <space>o  :<C-u>CocList outline<cr>$/;"	m
-<space>p	init_old.vim	/^nnoremap <silent> <space>p  :<C-u>CocListResume<CR>$/;"	m
-<space>s	init_old.vim	/^nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>$/;"	m
 <tab>	base.vim	/^xnoremap <tab> <esc>$/;"	m
 C	defx.vim	/^  nnoremap <silent><buffer><expr> C defx#do_action('toggle_columns', dent:icon:filename:type:siz/;"	m
 Fd	coc.vim	/^command! -nargs=? Fd :call CocAction('fold', <f-args>)$/;"	c
 Fmt	coc.vim	/^command! -nargs=0 Fmt :call CocAction('format')$/;"	c
-Fold	init_old.vim	/^command! -nargs=? Fold :call     CocAction('fold', <f-args>)$/;"	c
-Format	init_old.vim	/^command! -nargs=0 Format :call CocAction('format')$/;"	c
 H	base.vim	/^command! -nargs=1 -complete=help H :vert help <args>$/;"	c
 HFiles	fzf.vim	/^command! -bang -nargs=? -complete=dir HFiles$/;"	c
 HoverSymbol	coc.vim	/^        augroup HoverSymbol$/;"	a
@@ -192,17 +155,14 @@ HoverSymbol	coc.vim	/^augroup HoverSymbol$/;"	a
 IsExpandable	deoplete.vim	/^  function IsExpandable()$/;"	f
 K	coc.vim	/^nmap <silent> K :call CocActionAsync('doHover')<CR>$/;"	m
 K	defx.vim	/^  nnoremap <silent><buffer><expr> K defx#do_action('new_directory')$/;"	m
-K	init_old.vim	/^nnoremap <silent> K :call <SID>show_documentation()<CR>$/;"	m
 K	languageclient.vim	/^    nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>$/;"	m
 LC_maps	languageclient.vim	/^function LC_maps()$/;"	f
 LanguageClient_config	languageclient.vim	/^augroup LanguageClient_config$/;"	a
 M	defx.vim	/^  nnoremap <silent><buffer><expr> M defx#do_action('new_multiple_files')$/;"	m
 N	defx.vim	/^  nnoremap <silent><buffer><expr> N defx#do_action('new_file')$/;"	m
-NERDTreeShowHidden	init_old.vim	/^let NERDTreeShowHidden = 1$/;"	v
 NERDTreeShowHidden	nerdtree.vim	/^let NERDTreeShowHidden = 1$/;"	v
 Normal Mode:	readme.md	/^# Normal Mode:$/;"	c
 OR	coc.vim	/^command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')$/;"	c
-OR	init_old.vim	/^command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')$/;"	c
 P	clip.vim	/^nmap P <plug>(YoinkPaste_P)$/;"	m
 P	defx.vim	/^  nnoremap <silent><buffer><expr> P defx#do_action('open', 'pedit')$/;"	m
 Prose	prose.vim	/^function! Prose()$/;"	f
@@ -211,12 +171,10 @@ Q	prose.vim	/^  xnoremap <buffer> <silent> Q gq$/;"	m
 R	defx.vim	/^  nnoremap <silent><buffer><expr> R defx#do_action('redraw')$/;"	m
 S	clip.vim	/^nmap S <plug>(SubversiveSubstituteToEndOfLine)$/;"	m
 S	defx.vim	/^  nnoremap <silent><buffer><expr> S defx#do_action('toggle_sort', 'time')$/;"	m
-StructToGQL	init_old.vim	/^command! -nargs=0 StructToGQL %s\/\\s\\+\\w\\+\\s\\+\\(.\\)\\(.\\+\\)\\s\\+`json:"\\(.\\+\\)"`\//;"	c
 ToggleSymbolHover	coc.vim	/^function! ToggleSymbolHover()$/;"	f
 X	clip.vim	/^nnoremap X D$/;"	m
 [F	fzf.vim	/^nnoremap <silent> [F :call fzf#run({$/;"	m
 [f	fzf.vim	/^nnoremap [f :Rg <c-r><c-w><cr>$/;"	m
-[g	init_old.vim	/^nmap <silent> [g <Plug>(coc-diagnostic-prev)$/;"	m
 [o	base.vim	/^nnoremap <silent> [o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>$/;"	m
 [t	fzf.vim	/^nmap [t :Tags <c-r><c-w><CR> $/;"	m
 [w	base.vim	/^nnoremap [w :setlocal nowrap<cr>$/;"	m
@@ -224,14 +182,11 @@ X	clip.vim	/^nnoremap X D$/;"	m
 \x21	defx.vim	/^  nnoremap <silent><buffer><expr> ! defx#do_action('execute_command')$/;"	m
 ]F	fzf.vim	/^nnoremap <silent> ]F :call fzf#run({$/;"	m
 ]f	fzf.vim	/^nnoremap ]f :Rg $/;"	m
-]g	init_old.vim	/^nmap <silent> ]g <Plug>(coc-diagnostic-next)$/;"	m
 ]o	base.vim	/^nnoremap <silent> ]o :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>$/;"	m
 ]t	fzf.vim	/^nmap ]t :Tags<CR>$/;"	m
 ]w	base.vim	/^nnoremap ]w :setlocal wrap<cr>$/;"	m
 ]y	clip.vim	/^nmap ]y <plug>(YoinkRotateForward)$/;"	m
 acc	asynccomplete.vim	/^augroup acc$/;"	a
-af	init_old.vim	/^omap af <Plug>(coc-funcobj-a)$/;"	m
-af	init_old.vim	/^xmap af <Plug>(coc-funcobj-a)$/;"	m
 args	coc-settings.json	/^      "args": ["--stdio"],$/;"	a	object:languageserver.intelephense
 args	coc-settings.json	/^      "args": ["start"],$/;"	a	object:languageserver.bash
 bash	coc-settings.json	/^    "bash": {$/;"	o	object:languageserver
@@ -262,11 +217,8 @@ config_of_ncm2	ncm2.vim	/^augroup config_of_ncm2$/;"	a
 d	defx.vim	/^  nnoremap <silent><buffer><expr> d defx#do_action('remove')$/;"	m
 deepCompletion	coc-settings.json	/^    "deepCompletion": true,$/;"	b	object:go.goplsOptions
 defx	defx.vim	/^augroup defx$/;"	a
-delimitMate_autoclose	init_old.vim	/^let delimitMate_autoclose = 0$/;"	v
 delimitMate_balance_matchpairs	delimitMate.vim	/^let delimitMate_balance_matchpairs = 1$/;"	v
 delimitMate_expand_cr	delimitMate.vim	/^let delimitMate_expand_cr = 1$/;"	v
-delimitMate_expand_cr	init_old.vim	/^let delimitMate_expand_cr = 1$/;"	v
-delimitMate_expand_space	init_old.vim	/^let delimitMate_expand_space = 1$/;"	v
 delimitMate_jump_expansion	delimitMate.vim	/^let delimitMate_jump_expansion = 1$/;"	v
 dependencies	package-lock.json	/^  "dependencies": {$/;"	o
 diagnostic.checkCurrentLine	coc-settings.json	/^  "diagnostic.checkCurrentLine": false,$/;"	b
@@ -306,11 +258,8 @@ g:LanguageClient_hoverPreview	languageclient.vim	/^let g:LanguageClient_hoverPre
 g:LanguageClient_loadSettings	languageclient.vim	/^let g:LanguageClient_loadSettings = 1$/;"	v
 g:LanguageClient_serverCommands	languageclient.vim	/^let g:LanguageClient_serverCommands = {$/;"	v
 g:LanguageClient_useVirtualText	languageclient.vim	/^let g:LanguageClient_useVirtualText = "All"$/;"	v
-g:NERDTreeWinSize	init_old.vim	/^let g:NERDTreeWinSize=40$/;"	v
 g:ToggleSymbolHover	coc.vim	/^    let g:ToggleSymbolHover = !get(g:, 'ToggleSymbolHover', 1)$/;"	v
-g:UltiSnipsEditSplit	init_old.vim	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
 g:UltiSnipsExpandTrigger	asynccomplete.vim	/^  let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"$/;"	v
-g:UltiSnipsExpandTrigger	init_old.vim	/^let g:UltiSnipsExpandTrigger = "<nop>"$/;"	v
 g:UltiSnipsExpandTrigger	ncm2.vim	/^  let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"$/;"	v
 g:UltiSnipsExpandTrigger	ultisnips.vim	/^let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"$/;"	v
 g:UltiSnipsJumpBackwardTrigger	asynccomplete.vim	/^  let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"$/;"	v
@@ -322,36 +271,9 @@ g:UltiSnipsJumpForwardTrigger	ultisnips.vim	/^let g:UltiSnipsJumpForwardTrigger	
 g:UltiSnipsRemoveSelectModeMappings	asynccomplete.vim	/^  let g:UltiSnipsRemoveSelectModeMappings = 0$/;"	v
 g:UltiSnipsRemoveSelectModeMappings	ncm2.vim	/^  let g:UltiSnipsRemoveSelectModeMappings = 0$/;"	v
 g:UltiSnipsRemoveSelectModeMappings	ultisnips.vim	/^let g:UltiSnipsRemoveSelectModeMappings = 0$/;"	v
-g:afterglow_italic_comments	init_old.vim	/^let g:afterglow_italic_comments=1$/;"	v
-g:airline#extensions#default#section_truncate_width	init_old.vim	/^let g:airline#extensions#default#section_truncate_width = {$/;"	v
 g:airline#extensions#tabline#enabled	airline.vim	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
-g:airline_left_alt_sep	init_old.vim	/^let g:airline_left_alt_sep = ''$/;"	v
-g:airline_left_sep	init_old.vim	/^let g:airline_left_sep = '»'$/;"	v
-g:airline_left_sep	init_old.vim	/^let g:airline_left_sep = '▶'$/;"	v
-g:airline_left_sep	init_old.vim	/^let g:airline_left_sep = ''$/;"	v
 g:airline_powerline_fonts	airline.vim	/^let g:airline_powerline_fonts = 1$/;"	v
-g:airline_powerline_fonts	init_old.vim	/^let g:airline_powerline_fonts = 1$/;"	v
-g:airline_right_alt_sep	init_old.vim	/^let g:airline_right_alt_sep = ''$/;"	v
-g:airline_right_sep	init_old.vim	/^let g:airline_right_sep = '«'$/;"	v
-g:airline_right_sep	init_old.vim	/^let g:airline_right_sep = '◀'$/;"	v
-g:airline_right_sep	init_old.vim	/^let g:airline_right_sep = ''$/;"	v
-g:airline_section_z	init_old.vim	/^let g:airline_section_z="%l:%c"$/;"	v
-g:airline_skip_empty_sections	init_old.vim	/^let g:airline_skip_empty_sections = 1$/;"	v
-g:airline_solarized_bg	init_old.vim	/^let g:airline_solarized_bg='dark'$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols = {}$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.branch = '⎇'$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.branch = ''$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.linenr = '¶'$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.linenr = '␊'$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.linenr = '␤'$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.linenr = ''$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.paste = 'Þ'$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.paste = 'ρ'$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.paste = '∥'$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.readonly = ''$/;"	v
-g:airline_symbols	init_old.vim	/^let g:airline_symbols.whitespace = 'Ξ'$/;"	v
 g:airline_theme	autoload/theme.vim	/^let g:airline_theme='gruvbox'$/;"	v
-g:airline_theme	init_old.vim	/^let g:airline_theme='gruvbox'$/;"	v
 g:ale_completion_tsserver_autoimport	ale.vim	/^let g:ale_completion_tsserver_autoimport = 1$/;"	v
 g:ale_fix_on_save	ale.vim	/^let g:ale_fix_on_save = 1$/;"	v
 g:ale_fixers	ale.vim	/^let g:ale_fixers = {$/;"	v
@@ -366,20 +288,12 @@ g:ale_virtualtext_cursor	ale.vim	/^let g:ale_virtualtext_cursor = 1$/;"	v
 g:ale_virtualtext_prefix	ale.vim	/^let g:ale_virtualtext_prefix = '🔧 '$/;"	v
 g:coc_global_extensions	coc.vim	/^let g:coc_global_extensions = [$/;"	v
 g:coc_snippet_next	coc.vim	/^let g:coc_snippet_next = '<c-j>'$/;"	v
-g:coc_snippet_next	init_old.vim	/^let g:coc_snippet_next = '<c-j>'$/;"	v
-g:coc_snippet_next	init_old.vim	/^let g:coc_snippet_next = '<tab>'$/;"	v
 g:coc_snippet_prev	coc.vim	/^let g:coc_snippet_prev = '<c-k>'$/;"	v
-g:coc_snippet_prev	init_old.vim	/^let g:coc_snippet_prev = '<c-k>'$/;"	v
 g:ctrlp_cmd	ctrlp.vim	/^let g:ctrlp_cmd = 'CtrlP'$/;"	v
-g:ctrlp_cmd	init_old.vim	/^let g:ctrlp_cmd = 'CtrlP'$/;"	v
 g:ctrlp_map	ctrlp.vim	/^let g:ctrlp_map = '<c-p>'$/;"	v
-g:ctrlp_map	init_old.vim	/^let g:ctrlp_map = '<c-p>'$/;"	v
 g:ctrlp_root_markers	ctrlp.vim	/^let g:ctrlp_root_markers = ['pom.xml', '.p4ignore', '.yaml', 'package.json', 'cargo.toml', 'go.m/;"	v
-g:ctrlp_root_markers	init_old.vim	/^let g:ctrlp_root_markers = ['pom.xml', '.p4ignore', '.yaml', 'package.json', 'cargo.toml', 'go.m/;"	v
 g:ctrlp_user_command	ctrlp.vim	/^let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']$/;"	v
-g:ctrlp_user_command	init_old.vim	/^let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']$/;"	v
 g:ctrlp_working_path_mode	ctrlp.vim	/^let g:ctrlp_working_path_mode = 'ra'$/;"	v
-g:ctrlp_working_path_mode	init_old.vim	/^let g:ctrlp_working_path_mode = 'ra'$/;"	v
 g:deoplete#enable_at_startup	deoplete.vim	/^let g:deoplete#enable_at_startup = 1$/;"	v
 g:echodoc#enable_at_startup	deoplete.vim	/^let g:echodoc#enable_at_startup = 1$/;"	v
 g:echodoc#enable_at_startup	echodoc.vim	/^let g:echodoc#enable_at_startup = 1$/;"	v
@@ -389,9 +303,7 @@ g:fern#default_hidden	fern.vim	/^let g:fern#default_hidden = 1$/;"	v
 g:fern#drawer_width	fern.vim	/^let g:fern#drawer_width = 40$/;"	v
 g:fern#renderer	fern.vim	/^let g:fern#renderer = "devicons"$/;"	v
 g:float_preview#docked	ncm2.vim	/^let g:float_preview#docked = 1$/;"	v
-g:go_auto_type_info	init_old.vim	/^let g:go_auto_type_info = 0$/;"	v
 g:go_code_completion_enabled	vimgo.vim	/^let g:go_code_completion_enabled = 0$/;"	v
-g:go_def_mapping_enabled	init_old.vim	/^let g:go_def_mapping_enabled = 0$/;"	v
 g:go_def_mapping_enabled	vimgo.vim	/^let g:go_def_mapping_enabled = 0$/;"	v
 g:go_diagnostics_enabled	vimgo.vim	/^let g:go_diagnostics_enabled = 1$/;"	v
 g:go_doc_keywordprg_enabled	vimgo.vim	/^let g:go_doc_keywordprg_enabled = 0$/;"	v
@@ -399,53 +311,33 @@ g:go_doc_popup_window	vimgo.vim	/^let g:go_doc_popup_window = 1$/;"	v
 g:go_echo_go_info	vimgo.vim	/^let g:go_echo_go_info = 0$/;"	v
 g:go_fmt_autosave	vimgo.vim	/^let g:go_fmt_autosave = 0$/;"	v
 g:go_fmt_autosave	vimgo.vim	/^let g:go_fmt_autosave = 1$/;"	v
-g:go_fmt_command	init_old.vim	/^let g:go_fmt_command = "goimports"$/;"	v
 g:go_fmt_command	vimgo.vim	/^let g:go_fmt_command = "goimports"$/;"	v
-g:go_fold_enable	init_old.vim	/^let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']$/;"	v
 g:go_gopls_complete_unimported	vimgo.vim	/^let g:go_gopls_complete_unimported = 1$/;"	v
 g:go_gopls_deep_completion	vimgo.vim	/^let g:go_gopls_deep_completion = 1$/;"	v
 g:go_gopls_enabled	vimgo.vim	/^let g:go_gopls_enabled = 0$/;"	v
 g:go_gopls_fuzzy_matching	vimgo.vim	/^let g:go_gopls_fuzzy_matching = 1$/;"	v
 g:go_gopls_staticcheck	vimgo.vim	/^let g:go_gopls_staticcheck = 1$/;"	v
 g:go_gopls_use_placeholders	vimgo.vim	/^let g:go_gopls_use_placeholders = 1 $/;"	v
-g:go_highlight_array_whitespace_error	init_old.vim	/^let g:go_highlight_array_whitespace_error = 1$/;"	v
-g:go_highlight_build_constraints	init_old.vim	/^let g:go_highlight_build_constraints = 1$/;"	v
 g:go_highlight_build_constraints	vimgo.vim	/^let g:go_highlight_build_constraints = 1$/;"	v
-g:go_highlight_chan_whitespace_error	init_old.vim	/^let g:go_highlight_chan_whitespace_error = 1$/;"	v
 g:go_highlight_diagnostic_errors	vimgo.vim	/^let g:go_highlight_diagnostic_errors = 1$/;"	v
-g:go_highlight_extra_types	init_old.vim	/^let g:go_highlight_extra_types = 1$/;"	v
 g:go_highlight_extra_types	vimgo.vim	/^let g:go_highlight_extra_types = 1$/;"	v
-g:go_highlight_fields	init_old.vim	/^let g:go_highlight_fields = 1$/;"	v
 g:go_highlight_fields	vimgo.vim	/^let g:go_highlight_fields = 1$/;"	v
-g:go_highlight_function_calls	init_old.vim	/^let g:go_highlight_function_calls = 1$/;"	v
 g:go_highlight_function_calls	vimgo.vim	/^let g:go_highlight_function_calls = 1$/;"	v
-g:go_highlight_function_parameters	init_old.vim	/^let g:go_highlight_function_parameters = 1$/;"	v
 g:go_highlight_function_parameters	vimgo.vim	/^let g:go_highlight_function_parameters = 1$/;"	v
-g:go_highlight_functions	init_old.vim	/^let g:go_highlight_functions = 1$/;"	v
 g:go_highlight_functions	vimgo.vim	/^let g:go_highlight_functions = 1$/;"	v
-g:go_highlight_generate_tags	init_old.vim	/^let g:go_highlight_generate_tags = 1$/;"	v
 g:go_highlight_generate_tags	vimgo.vim	/^let g:go_highlight_generate_tags = 1$/;"	v
-g:go_highlight_operators	init_old.vim	/^let g:go_highlight_operators = 1$/;"	v
 g:go_highlight_operators	vimgo.vim	/^let g:go_highlight_operators = 1$/;"	v
-g:go_highlight_space_tab_error	init_old.vim	/^let g:go_highlight_space_tab_error = 1$/;"	v
-g:go_highlight_trailing_whitespace_error	init_old.vim	/^let g:go_highlight_trailing_whitespace_error = 1$/;"	v
-g:go_highlight_types	init_old.vim	/^let g:go_highlight_types = 1$/;"	v
 g:go_highlight_types	vimgo.vim	/^let g:go_highlight_types = 1$/;"	v
-g:go_highlight_variable_assignments	init_old.vim	/^let g:go_highlight_variable_assignments = 1$/;"	v
 g:go_highlight_variable_assignments	vimgo.vim	/^let g:go_highlight_variable_assignments = 1$/;"	v
-g:go_highlight_variable_declarations	init_old.vim	/^let g:go_highlight_variable_declarations = 1$/;"	v
 g:go_highlight_variable_declarations	vimgo.vim	/^let g:go_highlight_variable_declarations = 1$/;"	v
-g:go_metalinter_autosave	init_old.vim	/^let g:go_metalinter_autosave = 0$/;"	v
 g:go_snippet_engine	vimgo.vim	/^let g:go_snippet_engine = ''$/;"	v
 g:gruvbox_italic	gruvbox.vim	/^let g:gruvbox_italic=1$/;"	v
+g:gutentags_ctags_tagfile	gutentags.vim	/^  let g:gutentags_ctags_tagfile = '.tags'$/;"	v
 g:gutentags_file_list_command	gutentags.vim	/^  let g:gutentags_file_list_command = {$/;"	v
 g:instant_markdown_allow_unsafe_content	instantmarkdown.vim	/^let g:instant_markdown_allow_unsafe_content = 1$/;"	v
 g:instant_markdown_browser	instantmarkdown.vim	/^let g:instant_markdown_browser = "firefox --new-window"$/;"	v
 g:instant_markdown_open_to_the_world	instantmarkdown.vim	/^let g:instant_markdown_open_to_the_world = 1$/;"	v
 g:instant_markdown_port	instantmarkdown.vim	/^let g:instant_markdown_port = 10000$/;"	v
-g:javascript_plugin_flow	init_old.vim	/^let g:javascript_plugin_flow = 1$/;"	v
-g:javascript_plugin_jsdoc	init_old.vim	/^let g:javascript_plugin_jsdoc = 1$/;"	v
-g:javascript_plugin_ngdoc	init_old.vim	/^let g:javascript_plugin_ngdoc = 1$/;"	v
 g:lexical#dictionary	lexical.vim	/^let g:lexical#dictionary = ['\/usr\/share\/dict\/words',]$/;"	v
 g:lexical#dictionary	prose.vim	/^  let g:lexical#dictionary = ['\/usr\/share\/dict\/words',]$/;"	v
 g:lexical#spell	lexical.vim	/^let g:lexical#spell = 1$/;"	v
@@ -458,11 +350,6 @@ g:lightline	lightline.vim	/^let g:lightline = {$/;"	v
 g:ncm2#popup_limit	ncm2.vim	/^let g:ncm2#popup_limit = 10$/;"	v
 g:ncm2#total_popup_limit	ncm2.vim	/^let g:ncm2#total_popup_limit = 20$/;"	v
 g:pencil#wrapModeDefault	pencil.vim	/^let g:pencil#wrapModeDefault = 'soft'$/;"	v
-g:rustfmt_autosave	init_old.vim	/^let g:rustfmt_autosave = 1$/;"	v
-g:syntastic_always_populate_loc_list	init_old.vim	/^let g:syntastic_always_populate_loc_list = 1$/;"	v
-g:syntastic_auto_loc_list	init_old.vim	/^let g:syntastic_auto_loc_list = 1$/;"	v
-g:syntastic_check_on_open	init_old.vim	/^let g:syntastic_check_on_open = 1$/;"	v
-g:syntastic_check_on_wq	init_old.vim	/^let g:syntastic_check_on_wq = 0$/;"	v
 g:vimwiki_table_mappings	wiki.vim	/^let g:vimwiki_table_mappings = 0$/;"	v
 g:yoinkAutoFormatPaste	clip.vim	/^let g:yoinkAutoFormatPaste = 1$/;"	v
 g:yoinkIncludeDeleteOperations	clip.vim	/^let g:yoinkIncludeDeleteOperations = 1$/;"	v
@@ -470,16 +357,13 @@ g:yoinkSavePersistently	clip.vim	/^let g:yoinkSavePersistently = 1$/;"	v
 gE	ale.vim	/^nmap <silent> gE <Plug>(ale_previous_wrap)$/;"	m
 gE	coc.vim	/^nmap <silent> gE <Plug>(coc-diagnostic-prev)$/;"	m
 ga	coc.vim	/^nmap <silent> ga <Plug>(coc-codelens-action)$/;"	m
-ga	init_old.vim	/^nmap <silent> ga <Plug>(coc-codelens-action)$/;"	m
 ga	languageclient.vim	/^    nnoremap <silent> ga :call LanguageClient#handleCodeLensAction()<CR>$/;"	m
 gd	coc.vim	/^nmap <silent> gd <Plug>(coc-definition)$/;"	m
-gd	init_old.vim	/^nmap <silent> gd <Plug>(coc-definition)$/;"	m
 gd	languageclient.vim	/^    nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>$/;"	m
 ge	ale.vim	/^nmap <silent> ge <Plug>(ale_next_wrap)$/;"	m
 ge	coc.vim	/^nmap <silent> ge <Plug>(coc-diagnostic-next)$/;"	m
 get_initials_low	pythonx/utils.py	/^def get_initials_low(str):$/;"	f
 gi	coc.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
-gi	init_old.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
 gi	languageclient.vim	/^    nnoremap <silent> gi :call LanguageClient#textDocument_hover()<CR>$/;"	m
 gm	easyclip.vim	/^nnoremap gm m$/;"	m
 gm	fzf.vim	/^nmap gm :Marks<CR>$/;"	m
@@ -491,14 +375,10 @@ gopls.hoverKind	languageclient.json	/^  "gopls.hoverKind": "FullDocumentation",$
 gopls.linkTarget	languageclient.json	/^  "gopls.linkTarget": ""$/;"	s
 gopls.usePlaceholders	languageclient.json	/^  "gopls.usePlaceholders": true,$/;"	b
 gr	coc.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
-gr	init_old.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
 gy	coc.vim	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
-gy	init_old.vim	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
 h	defx.vim	/^  nnoremap <silent><buffer><expr> h defx#do_action('cd', ['..'])$/;"	m
 hoverKind	coc-settings.json	/^    "hoverKind": "FullDocumentation",$/;"	s	object:go.goplsOptions
 hoverKind	languageclient.json	/^    "hoverKind": "FullDocumentation",$/;"	s	object:gopls
-if	init_old.vim	/^omap if <Plug>(coc-funcobj-i)$/;"	m
-if	init_old.vim	/^xmap if <Plug>(coc-funcobj-i)$/;"	m
 ignoredRootPaths	coc-settings.json	/^      "ignoredRootPaths": ["~"]$/;"	a	object:languageserver.bash
 initializationOptions	coc-settings.json	/^      "initializationOptions": {$/;"	o	object:languageserver.ccls
 initializationOptions	coc-settings.json	/^      "initializationOptions": {$/;"	o	object:languageserver.intelephense
@@ -519,8 +399,6 @@ m	clip.vim	/^nnoremap m m$/;"	m
 m	defx.vim	/^  nnoremap <silent><buffer><expr> m defx#do_action('move')$/;"	m
 mapleader	base.vim	/^let mapleader = " "$/;"	v
 mapleader	init.vim	/^let mapleader = " "$/;"	v
-mapleader	init_old.vim	/^let mapleader = "-"$/;"	v
-mygroup	init_old.vim	/^augroup mygroup$/;"	a
 ncm2autoload	ncm2.vim	/^augroup ncm2autoload$/;"	a
 numbertoggle	base.vim	/^augroup numbertoggle$/;"	a
 o	defx.vim	/^  nnoremap <silent><buffer><expr> o defx#do_action('open_or_close_tree')$/;"	m
@@ -544,9 +422,7 @@ s	clip.vim	/^nmap s <plug>(SubversiveSubstitute)$/;"	m
 s:buflist	fzf.vim	/^function! s:buflist()$/;"	f
 s:bufopen	fzf.vim	/^function! s:bufopen(e)$/;"	f
 s:check_back_space	coc.vim	/^function! s:check_back_space() abort$/;"	f
-s:check_back_space	init_old.vim	/^function! s:check_back_space() abort$/;"	f
 s:defx_my_settings	defx.vim	/^function! s:defx_my_settings() abort$/;"	f
-s:show_documentation	init_old.vim	/^function! s:show_documentation()$/;"	f
 signature.enable	coc-settings.json	/^  "signature.enable": true,$/;"	b
 signature.floatMaxWidth	coc-settings.json	/^  "signature.floatMaxWidth": 100,$/;"	n
 snake_case	pythonx/utils.py	/^def snake_case(str):$/;"	f
@@ -568,7 +444,6 @@ vetur.format.enable	coc-settings.json	/^  "vetur.format.enable": true,$/;"	b
 vetur.useWorkspaceDependencies	coc-settings.json	/^  "vetur.useWorkspaceDependencies": true,$/;"	b
 vetur.validation.script	coc-settings.json	/^  "vetur.validation.script": true,$/;"	b
 vetur.validation.template	coc-settings.json	/^  "vetur.validation.template": true,$/;"	b
-w!!	init_old.vim	/^cmap w!! w! !sudo tee > \/dev\/null %$/;"	m
 x	clip.vim	/^nnoremap x d$/;"	m
 x	clip.vim	/^xnoremap x d$/;"	m
 x	defx.vim	/^  nnoremap <silent><buffer><expr> x defx#do_action('execute_system')$/;"	m
