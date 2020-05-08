@@ -22,7 +22,6 @@ endfunction
 
 augroup coc_autos
   au!
-  autocmd CursorHold * silent call CocActionAsync('highlight')
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
   autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -39,20 +38,6 @@ nmap <silent> gE <Plug>(coc-diagnostic-prev)
 nmap <F2> <Plug>(coc-rename)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <silent> K :call CocActionAsync('doHover')<CR>
-" nmap <silent> <leader>e :CocCommand explorer
-"       \ --toggle
-"       \<CR>
-      " \ --sources=buffer-,file+
-      " \ --file-columns=git:selection:clip:diagnosticError:indent:icon:filename;fullpath;size;modified;readonly
-
-" Use `:Format` to format current buffer
-command! -nargs=0 Fmt :call CocAction('format')
-
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fd :call CocAction('fold', <f-args>)
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Using CocList
 " Show all diagnostics
@@ -80,11 +65,18 @@ vmap <C-j> <Plug>(coc-snippets-select)
 set completeopt=noinsert,menuone,noselect
 set shortmess+=c
 
+function! Check_floating_window_and_doHover()
+    if coc#util#has_float()
+        return
+    else
+        call CocActionAsync('doHover')
+    endif
+endfunction
 
 " Enables doHover at startup
 augroup HoverSymbol
   au!
-  autocmd CursorHold * silent call CocActionAsync('doHover')
+  autocmd CursorHold * silent call Check_floating_window_and_doHover()
 augroup END
 
 
@@ -102,9 +94,8 @@ function! ToggleSymbolHover()
     " Enable if toggled on
     if g:ToggleSymbolHover
         augroup HoverSymbol
-          autocmd CursorHold * silent call CocActionAsync('doHover')
-        augroup END
-        echo "[Message] Coc hover enabled"
+            autocmd CursorHold * silent call Check_floating_window_and_doHover()
+        augroup END echo "[Message] Coc hover enabled"
     endif
 endfunction
 
@@ -119,6 +110,7 @@ inoremap <silent><expr> <Tab> pumvisible() ? "\<c-n>" : "\<Tab>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
 inoremap <silent><expr> <c-y> pumvisible() ? coc#_select_confirm() : "\<c-y>"
 
+
 let g:coc_global_extensions = [
       \ 'coc-tsserver', 
       \ 'coc-word', 
@@ -129,7 +121,6 @@ let g:coc_global_extensions = [
       \ 'coc-emoji',
       \ 'coc-snippets',
       \ 'coc-prettier',
-      \ 'coc-go',
       \ 'coc-emoji',
       \ 'coc-emmet',
       \ 'coc-dictionary',
@@ -137,6 +128,10 @@ let g:coc_global_extensions = [
       \ 'coc-yaml',
       \ 'coc-pairs'
       \ ]
+
+if executable('go') || executable('go.exe')
+    let g:coc_global_extensions += ['coc-go']
+endif
 
 autocmd FileType markdown,vimwiki,wiki,md let b:coc_pairs_disabled = ['`']
 inoremap <silent> <cr> <C-g>u<CR><c-r>=coc#on_enter()<CR>

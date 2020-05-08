@@ -1,34 +1,99 @@
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
+" Auto Install vim-plug Windows. curl required
+if has('win32') || has('win64')
+  if empty(glob('~/AppData/Local/nvim/autoload/plug.vim'))
+    silent !curl -fLo "~/AppData/Local/nvim/autoload/plug.vim" --create-dirs 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+  let $CONFIG = '~/AppData/Local/nvim'
 endif
+
+" Auto Install vim-plug Unix. curl required
+if has('unix')
+  if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd vimrc VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+  let $CONFIG = '$HOME/.config/nvim'
+endif
+
+" Auto install missing plugins
+autocmd VimEnter *
+            \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+            \|   PlugInstall --sync | q
+            \| endif
 
 nnoremap <Space> <nop>
 let mapleader = " "
 
 call plug#begin()
-source $HOME/.config/nvim/ultisnips.vim
-source $HOME/.config/nvim/gruvbox.vim
-source $HOME/.config/nvim/airline.vim
-source $HOME/.config/nvim/coc.vim
-source $HOME/.config/nvim/vimgo.vim
-source $HOME/.config/nvim/fzf.vim
-source $HOME/.config/nvim/rust.vim
-source $HOME/.config/nvim/clip.vim
-source $HOME/.config/nvim/fern.vim
-source $HOME/.config/nvim/gutentags.vim
-source $HOME/.config/nvim/prose.vim
+" Snippets
+source $CONFIG/ultisnips.vim
+
+" Theme
+source $CONFIG/gruvbox.vim
+
+" Airline
+source $CONFIG/airline.vim
+
+" Auto-completion
+source $CONFIG/coc.vim
+
+" Go support. Run :PlugInstall manually after having go sdk installed and added to $PATH
+source $CONFIG/vimgo.vim
+
+" FZF support. May not work properly on Windows Subsytem for Linux
+source $CONFIG/fzf.vim
+
+" Rust support. Need cargo installed first then run :PlugInstall
+source $CONFIG/rust.vim
+
+" Clipboard management. Delete no longer adds to clipboard and clipboard syncs with CLIPBOARD and no
+" longer with PRIMARY
+source $CONFIG/clip.vim
+
+" File Explorer. Key: <leader>e
+source $CONFIG/fern.vim
+
+" Tags generator
+source $CONFIG/gutentags.vim
+
+" Txt support
+source $CONFIG/prose.vim
+
+" Unix shell commands sugars. Check ':h eunuch'
 Plug 'tpope/vim-eunuch'
+
+" Surrounds text objexts.
 Plug 'tpope/vim-surround'
+
+" Syntax coloring
 Plug 'sheerun/vim-polyglot'
+
+" Git integration
 Plug 'tpope/vim-fugitive'
+
+" Easy commenting
 Plug 'tpope/vim-commentary'
+
+" Git signs next to line numbers
 Plug 'airblade/vim-gitgutter'
+
+" Repeat some plugin commands with '.'
 Plug 'tpope/vim-repeat'
+
+" Vim dev icons
 Plug 'ryanoasis/vim-devicons'
-Plug 'editorconfig/editorconfig-vim'
+
+" For some respect with other devs
+source $CONFIG/editorconfig.vim
+
+" Finds now search multi-lines and not just current line
 Plug 'dahu/vim-fanfingtastic'
+
+" Text multi-line auto spacing.
 Plug 'godlygeek/tabular'
+
+" Expands find and replace to something magical
 Plug 'tpope/vim-abolish'
 
 " Text Objects
@@ -45,10 +110,8 @@ Plug 'kana/vim-textobj-line' " select line. l motion key
 Plug 'wakatime/vim-wakatime'
 
 " Docs
-source $HOME/.config/nvim/wiki.vim
+source $CONFIG/wiki.vim
 call plug#end()
 
-source $HOME/.config/nvim/base.vim
+source $CONFIG/base.vim
 
-
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']

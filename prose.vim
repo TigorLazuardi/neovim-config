@@ -1,17 +1,13 @@
 " Plug 'reedes/vim-pencil'
 Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-lexical'
-" Plug 'reedes/vim-textobj-quote'
 Plug 'reedes/vim-textobj-sentence' " Motion Key 's'
-" Plug 'reedes/vim-wordy'
 Plug 'jdelkins/vim-correction'
 
 function! Prose()
 
-  " call pencil#init()
   call lexical#init()
   call litecorrect#init()
-  " call textobj#quote#init()
   call textobj#sentence#init()
 
   " manual reformatting shortcuts

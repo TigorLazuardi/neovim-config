@@ -6,6 +6,8 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+$CONFIG	init.vim	/^  let $CONFIG = '$HOME\/.config\/nvim'$/;"	v
+$CONFIG	init.vim	/^  let $CONFIG = '~\/AppData\/Local\/nvim'$/;"	v
 *	defx.vim	/^  nnoremap <silent><buffer><expr> * defx#do_action('toggle_select_all')$/;"	m
 .	defx.vim	/^  nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')$/;"	m
 0	coc-settings.json	/^            "-isystem",$/;"	s	array:languageserver.ccls.initializationOptions.clang.extraArgs
@@ -73,9 +75,9 @@
 <F2>	languageclient.vim	/^    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>$/;"	m
 <F3>	fzf.vim	/^nmap <silent><F3> :Rg <c-r><c-w><CR>$/;"	m
 <F4>	coc.vim	/^nnoremap <F4> :call ToggleSymbolHover()<CR>$/;"	m
-<F5>	rust.vim	/^nnoremap <expr><silent><F5> &filetype == "rust" ? ":make run<CR>" :$/;"	m
-<F7>	vimgo.vim	/^inoremap <expr><F7> &filetype == "go" ? "\\<esc>:GoFillStruct<CR>i" : "\\<nop>"$/;"	m
-<F7>	vimgo.vim	/^nnoremap <expr><F7> &filetype == "go" ? "\\:GoFillStruct<CR>" : "\\<nop>"$/;"	m
+<F5>	rust.vim	/^    nnoremap <expr><silent><F5> &filetype == "rust" ? ":make run<CR>" :$/;"	m
+<F7>	vimgo.vim	/^    inoremap <expr><F7> &filetype == "go" ? "\\<esc>:GoFillStruct<CR>i" : "\\<nop>"$/;"	m
+<F7>	vimgo.vim	/^    nnoremap <expr><F7> &filetype == "go" ? "\\:GoFillStruct<CR>" : "\\<nop>"$/;"	m
 <F8>	tagbar.vim	/^nmap <silent> <F8> :TagbarToggle<CR>$/;"	m
 <Leader><Enter>	fzf.vim	/^nnoremap <silent> <Leader><Enter> :call fzf#run({$/;"	m
 <Leader>j	easymotion.vim	/^nmap <Leader>j <Plug>(easymotion-bd-jk)$/;"	m
@@ -83,7 +85,7 @@
 <Leader>k	easymotion.vim	/^nmap <Leader>k <Plug>(easymotion-overwin-line)$/;"	m
 <Leader>k	easymotion.vim	/^xmap <Leader>k <Plug>(easymotion-overwin-line)$/;"	m
 <Leader>w	easymotion.vim	/^nmap <Leader>w <Plug>(easymotion-overwin-w)$/;"	m
-<S-F5>	rust.vim	/^nnoremap <expr><silent><S-F5> &filetype == "rust" ? ":make test<CR>" : "\\<nop>"$/;"	m
+<S-F5>	rust.vim	/^    nnoremap <expr><silent><S-F5> &filetype == "rust" ? ":make test<CR>" : "\\<nop>"$/;"	m
 <S-TAB>	coc.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
 <S-TAB>	deoplete.vim	/^imap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<S-TAB>"$/;"	m
 <S-Tab>	asynccomplete.vim	/^inoremap <expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"$/;"	m
@@ -99,6 +101,8 @@
 <Tab>	ncm2.vim	/^inoremap <expr> <Tab> pumvisible() ? "\\<C-n>" : "\\<Tab>"$/;"	m
 <c-=>	clip.vim	/^nmap <c-=> <plug>(YoinkPostPasteToggleFormat)$/;"	m
 <c-c>	ncm2.vim	/^inoremap <c-c> <ESC>$/;"	m
+<c-d>	base.vim	/^inoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll/;"	m
+<c-d>	base.vim	/^nnoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll/;"	m
 <c-down>	base.vim	/^nnoremap <silent> <c-down> :res +1<CR>$/;"	m
 <c-left>	base.vim	/^nnoremap <silent> <c-left> :vert res -3<CR>$/;"	m
 <c-m>	coc.vim	/^imap <c-m> <Plug>(coc-snippets-expand-jump)$/;"	m
@@ -111,6 +115,8 @@
 <c-s>	prose.vim	/^  nnoremap <buffer> <c-s> [s1z=<c-o>$/;"	m
 <c-space>	asynccomplete.vim	/^imap <c-space> <Plug>(asyncomplete_force_refresh)$/;"	m
 <c-space>	coc.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
+<c-u>	base.vim	/^inoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll/;"	m
+<c-u>	base.vim	/^nnoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll/;"	m
 <c-up>	base.vim	/^nnoremap <silent> <c-up> :res -1<CR>$/;"	m
 <c-v>	easyclip.vim	/^cmap <c-v> <plug>EasyClipCommandModePaste$/;"	m
 <c-v>	easyclip.vim	/^imap <c-v> <plug>EasyClipInsertModePaste$/;"	m
@@ -145,8 +151,7 @@
 <leader>t	easymotion.vim	/^xmap <leader>t <Plug>(easymotion-bd-t)$/;"	m
 <tab>	base.vim	/^xnoremap <tab> <esc>$/;"	m
 C	defx.vim	/^  nnoremap <silent><buffer><expr> C defx#do_action('toggle_columns', dent:icon:filename:type:siz/;"	m
-Fd	coc.vim	/^command! -nargs=? Fd :call CocAction('fold', <f-args>)$/;"	c
-Fmt	coc.vim	/^command! -nargs=0 Fmt :call CocAction('format')$/;"	c
+Check_floating_window_and_doHover	coc.vim	/^function! Check_floating_window_and_doHover()$/;"	f
 H	base.vim	/^command! -nargs=1 -complete=help H :vert help <args>$/;"	c
 HFiles	fzf.vim	/^command! -bang -nargs=? -complete=dir HFiles$/;"	c
 HoverSymbol	coc.vim	/^        augroup HoverSymbol$/;"	a
@@ -162,7 +167,6 @@ M	defx.vim	/^  nnoremap <silent><buffer><expr> M defx#do_action('new_multiple_fi
 N	defx.vim	/^  nnoremap <silent><buffer><expr> N defx#do_action('new_file')$/;"	m
 NERDTreeShowHidden	nerdtree.vim	/^let NERDTreeShowHidden = 1$/;"	v
 Normal Mode:	readme.md	/^# Normal Mode:$/;"	c
-OR	coc.vim	/^command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')$/;"	c
 P	clip.vim	/^nmap P <plug>(YoinkPaste_P)$/;"	m
 P	defx.vim	/^  nnoremap <silent><buffer><expr> P defx#do_action('open', 'pedit')$/;"	m
 Prose	prose.vim	/^function! Prose()$/;"	f
@@ -203,7 +207,7 @@ coc.preferences.hoverTarget	coc-settings.json	/^  "coc.preferences.hoverTarget":
 coc.source.emoji.filetypes	coc-settings.json	/^  "coc.source.emoji.filetypes": ["markdown"],$/;"	a
 coc.source.emoji.priority	coc-settings.json	/^  "coc.source.emoji.priority": 1$/;"	n
 coc.source.file.ignoreHidden	coc-settings.json	/^  "coc.source.file.ignoreHidden": false,$/;"	b
-coc.source.ultisnips.priority	coc-settings.json	/^  "coc.source.ultisnips.priority": 100,$/;"	n
+coc.source.ultisnips.priority	coc-settings.json	/^  "coc.source.ultisnips.priority": 50,$/;"	n
 coc_autos	coc.vim	/^augroup coc_autos$/;"	a
 codeLens.enable	coc-settings.json	/^  "codeLens.enable": true,$/;"	b
 codeLens.separator	coc-settings.json	/^  "codeLens.separator": "⬅",$/;"	s
@@ -251,7 +255,6 @@ g:EasyClipShareYanks	easyclip.vim	/^let g:EasyClipShareYanks = 1$/;"	v
 g:EasyClipUseCutDefaults	easyclip.vim	/^let g:EasyClipUseCutDefaults = 1$/;"	v
 g:EasyClipUsePasteToggleDefaults	easyclip.vim	/^let g:EasyClipUsePasteToggleDefaults = 1$/;"	v
 g:EasyClipUseSubstituteDefaults	easyclip.vim	/^let g:EasyClipUseSubstituteDefaults = 1$/;"	v
-g:EditorConfig_exclude_patterns	init.vim	/^let g:EditorConfig_exclude_patterns = ['fugitive:\/\/.*']$/;"	v
 g:LanguaClient_settingsPath	languageclient.vim	/^let g:LanguaClient_settingsPath = "\/home\/tigor\/.config\/nvim\/languageclient.json"$/;"	v
 g:LanguageClient_completionPreferTextEdit	languageclient.vim	/^let g:LanguageClient_completionPreferTextEdit = 1$/;"	v
 g:LanguageClient_hoverPreview	languageclient.vim	/^let g:LanguageClient_hoverPreview = "Always"$/;"	v
@@ -286,6 +289,7 @@ g:ale_sign_info	ale.vim	/^let g:ale_sign_info = '🔧'$/;"	v
 g:ale_sign_warning	ale.vim	/^let g:ale_sign_warning = '⚡'$/;"	v
 g:ale_virtualtext_cursor	ale.vim	/^let g:ale_virtualtext_cursor = 1$/;"	v
 g:ale_virtualtext_prefix	ale.vim	/^let g:ale_virtualtext_prefix = '🔧 '$/;"	v
+g:coc_global_extensions	coc.vim	/^    let g:coc_global_extensions += ['coc-go']$/;"	v
 g:coc_global_extensions	coc.vim	/^let g:coc_global_extensions = [$/;"	v
 g:coc_snippet_next	coc.vim	/^let g:coc_snippet_next = '<c-j>'$/;"	v
 g:coc_snippet_prev	coc.vim	/^let g:coc_snippet_prev = '<c-k>'$/;"	v
@@ -303,34 +307,34 @@ g:fern#default_hidden	fern.vim	/^let g:fern#default_hidden = 1$/;"	v
 g:fern#drawer_width	fern.vim	/^let g:fern#drawer_width = 40$/;"	v
 g:fern#renderer	fern.vim	/^let g:fern#renderer = "devicons"$/;"	v
 g:float_preview#docked	ncm2.vim	/^let g:float_preview#docked = 1$/;"	v
-g:go_code_completion_enabled	vimgo.vim	/^let g:go_code_completion_enabled = 0$/;"	v
-g:go_def_mapping_enabled	vimgo.vim	/^let g:go_def_mapping_enabled = 0$/;"	v
-g:go_diagnostics_enabled	vimgo.vim	/^let g:go_diagnostics_enabled = 1$/;"	v
-g:go_doc_keywordprg_enabled	vimgo.vim	/^let g:go_doc_keywordprg_enabled = 0$/;"	v
-g:go_doc_popup_window	vimgo.vim	/^let g:go_doc_popup_window = 1$/;"	v
-g:go_echo_go_info	vimgo.vim	/^let g:go_echo_go_info = 0$/;"	v
-g:go_fmt_autosave	vimgo.vim	/^let g:go_fmt_autosave = 0$/;"	v
-g:go_fmt_autosave	vimgo.vim	/^let g:go_fmt_autosave = 1$/;"	v
-g:go_fmt_command	vimgo.vim	/^let g:go_fmt_command = "goimports"$/;"	v
-g:go_gopls_complete_unimported	vimgo.vim	/^let g:go_gopls_complete_unimported = 1$/;"	v
-g:go_gopls_deep_completion	vimgo.vim	/^let g:go_gopls_deep_completion = 1$/;"	v
-g:go_gopls_enabled	vimgo.vim	/^let g:go_gopls_enabled = 0$/;"	v
-g:go_gopls_fuzzy_matching	vimgo.vim	/^let g:go_gopls_fuzzy_matching = 1$/;"	v
-g:go_gopls_staticcheck	vimgo.vim	/^let g:go_gopls_staticcheck = 1$/;"	v
-g:go_gopls_use_placeholders	vimgo.vim	/^let g:go_gopls_use_placeholders = 1 $/;"	v
-g:go_highlight_build_constraints	vimgo.vim	/^let g:go_highlight_build_constraints = 1$/;"	v
-g:go_highlight_diagnostic_errors	vimgo.vim	/^let g:go_highlight_diagnostic_errors = 1$/;"	v
-g:go_highlight_extra_types	vimgo.vim	/^let g:go_highlight_extra_types = 1$/;"	v
-g:go_highlight_fields	vimgo.vim	/^let g:go_highlight_fields = 1$/;"	v
-g:go_highlight_function_calls	vimgo.vim	/^let g:go_highlight_function_calls = 1$/;"	v
-g:go_highlight_function_parameters	vimgo.vim	/^let g:go_highlight_function_parameters = 1$/;"	v
-g:go_highlight_functions	vimgo.vim	/^let g:go_highlight_functions = 1$/;"	v
-g:go_highlight_generate_tags	vimgo.vim	/^let g:go_highlight_generate_tags = 1$/;"	v
-g:go_highlight_operators	vimgo.vim	/^let g:go_highlight_operators = 1$/;"	v
-g:go_highlight_types	vimgo.vim	/^let g:go_highlight_types = 1$/;"	v
-g:go_highlight_variable_assignments	vimgo.vim	/^let g:go_highlight_variable_assignments = 1$/;"	v
-g:go_highlight_variable_declarations	vimgo.vim	/^let g:go_highlight_variable_declarations = 1$/;"	v
-g:go_snippet_engine	vimgo.vim	/^let g:go_snippet_engine = ''$/;"	v
+g:go_code_completion_enabled	vimgo.vim	/^    let g:go_code_completion_enabled = 0$/;"	v
+g:go_def_mapping_enabled	vimgo.vim	/^    let g:go_def_mapping_enabled = 0$/;"	v
+g:go_diagnostics_enabled	vimgo.vim	/^    let g:go_diagnostics_enabled = 1$/;"	v
+g:go_doc_keywordprg_enabled	vimgo.vim	/^    let g:go_doc_keywordprg_enabled = 0$/;"	v
+g:go_doc_popup_window	vimgo.vim	/^    let g:go_doc_popup_window = 1$/;"	v
+g:go_echo_go_info	vimgo.vim	/^    let g:go_echo_go_info = 0$/;"	v
+g:go_fmt_autosave	vimgo.vim	/^    let g:go_fmt_autosave = 0$/;"	v
+g:go_fmt_autosave	vimgo.vim	/^    let g:go_fmt_autosave = 1$/;"	v
+g:go_fmt_command	vimgo.vim	/^    let g:go_fmt_command = "goimports"$/;"	v
+g:go_gopls_complete_unimported	vimgo.vim	/^    let g:go_gopls_complete_unimported = 1$/;"	v
+g:go_gopls_deep_completion	vimgo.vim	/^    let g:go_gopls_deep_completion = 1$/;"	v
+g:go_gopls_enabled	vimgo.vim	/^    let g:go_gopls_enabled = 0$/;"	v
+g:go_gopls_fuzzy_matching	vimgo.vim	/^    let g:go_gopls_fuzzy_matching = 1$/;"	v
+g:go_gopls_staticcheck	vimgo.vim	/^    let g:go_gopls_staticcheck = 1$/;"	v
+g:go_gopls_use_placeholders	vimgo.vim	/^    let g:go_gopls_use_placeholders = 1 $/;"	v
+g:go_highlight_build_constraints	vimgo.vim	/^    let g:go_highlight_build_constraints = 1$/;"	v
+g:go_highlight_diagnostic_errors	vimgo.vim	/^    let g:go_highlight_diagnostic_errors = 1$/;"	v
+g:go_highlight_extra_types	vimgo.vim	/^    let g:go_highlight_extra_types = 1$/;"	v
+g:go_highlight_fields	vimgo.vim	/^    let g:go_highlight_fields = 1$/;"	v
+g:go_highlight_function_calls	vimgo.vim	/^    let g:go_highlight_function_calls = 1$/;"	v
+g:go_highlight_function_parameters	vimgo.vim	/^    let g:go_highlight_function_parameters = 1$/;"	v
+g:go_highlight_functions	vimgo.vim	/^    let g:go_highlight_functions = 1$/;"	v
+g:go_highlight_generate_tags	vimgo.vim	/^    let g:go_highlight_generate_tags = 1$/;"	v
+g:go_highlight_operators	vimgo.vim	/^    let g:go_highlight_operators = 1$/;"	v
+g:go_highlight_types	vimgo.vim	/^    let g:go_highlight_types = 1$/;"	v
+g:go_highlight_variable_assignments	vimgo.vim	/^    let g:go_highlight_variable_assignments = 1$/;"	v
+g:go_highlight_variable_declarations	vimgo.vim	/^    let g:go_highlight_variable_declarations = 1$/;"	v
+g:go_snippet_engine	vimgo.vim	/^    let g:go_snippet_engine = ''$/;"	v
 g:gruvbox_italic	gruvbox.vim	/^let g:gruvbox_italic=1$/;"	v
 g:gutentags_ctags_tagfile	gutentags.vim	/^  let g:gutentags_ctags_tagfile = '.tags'$/;"	v
 g:gutentags_file_list_command	gutentags.vim	/^  let g:gutentags_file_list_command = {$/;"	v
@@ -402,6 +406,7 @@ mapleader	init.vim	/^let mapleader = " "$/;"	v
 ncm2autoload	ncm2.vim	/^augroup ncm2autoload$/;"	a
 numbertoggle	base.vim	/^augroup numbertoggle$/;"	a
 o	defx.vim	/^  nnoremap <silent><buffer><expr> o defx#do_action('open_or_close_tree')$/;"	m
+open_fold	base.vim	/^augroup open_fold$/;"	a
 p	clip.vim	/^nmap p <plug>(YoinkPaste_p)$/;"	m
 p	defx.vim	/^  nnoremap <silent><buffer><expr> p defx#do_action('paste')$/;"	m
 pairs.enableBackspace	coc-settings.json	/^  "pairs.enableBackspace": true,$/;"	b
@@ -411,7 +416,8 @@ prettier.jsxSingleQuote	coc-settings.json	/^  "prettier.jsxSingleQuote": true,$/
 prettier.printWidth	coc-settings.json	/^  "prettier.printWidth": 80,$/;"	n
 prettier.semi	coc-settings.json	/^  "prettier.semi": false,$/;"	b
 prettier.singleQuote	coc-settings.json	/^  "prettier.singleQuote": true,$/;"	b
-prettier.trailingComma	coc-settings.json	/^  "prettier.trailingComma":"es5",$/;"	s
+prettier.tabWidth	coc-settings.json	/^  "prettier.tabWidth": 4,$/;"	n
+prettier.trailingComma	coc-settings.json	/^  "prettier.trailingComma":"all",$/;"	s
 q	defx.vim	/^  nnoremap <silent><buffer><expr> q defx#do_action('quit')$/;"	m
 r	defx.vim	/^  nnoremap <silent><buffer><expr> r defx#do_action('rename')$/;"	m
 requires	package-lock.json	/^  "requires": true,$/;"	b

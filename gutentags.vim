@@ -1,4 +1,4 @@
-if executable('ctags')
+if executable('ctags') || executable('ctags.exe')
   Plug 'ludovicchabant/vim-gutentags'
 
   let g:gutentags_file_list_command = {

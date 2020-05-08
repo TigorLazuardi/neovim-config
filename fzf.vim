@@ -1,4 +1,6 @@
-Plug '/usr/bin/fzf'
+if !executable('fzf')
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+endif
 Plug 'junegunn/fzf.vim'
 
 function! s:buflist()
@@ -43,6 +45,3 @@ nnoremap <silent> ]F :call fzf#run({
 nnoremap <silent> [F :call fzf#run({
 \   'right': winwidth('.') / 2,
 \   'sink':  'vertical botright split' })<CR>
-
-" command! -nargs=1 -bang Locate call fzf#run(fzf#wrap(
-"       \ {'source': 'locate <q-args>', 'options': '-m'}, <bang>0))

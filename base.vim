@@ -16,12 +16,14 @@ set guifont=DejavuSansMono\ Nerd\ Font\ Mono "You may want to delete this if you
 set cursorline "Highlight where your current line is"
 set termguicolors
 set timeoutlen=1000 "Set delay between input commands before trigger"
-set updatetime=500 "Time before vim is refreshed. Default 4000, the stronger your pc, the lower you may set it."
+set updatetime=200 "Time before vim is refreshed. Default 4000, the stronger your pc, the lower you may set it."
 set display+=lastline "Never shortens messages"
 set linebreak "Prevent vim from wrap in the middle of a word"
 set scrolloff=5 "Make sure there's at least few lines visible between cursor and edge of window. Setting to 999 will make the cursor always on middle of screen"
 set autoread "Auto reload file if there's outside edit"
 set backspace=indent,eol,start "you may backspace over indentation, endofline, startofline"
+set foldmethod=syntax
+set nofoldenable        "dont fold by default
 
 if !isdirectory($HOME . "/.vim/backup")
   call mkdir($HOME . "/.vim/backup", "p", 0700)
@@ -66,9 +68,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Pressing enter in normal mode enters new line
-" nnoremap <CR> o<Esc>
-
 inoremap <c-o> <esc>A<CR> 
 
 nnoremap <silent> <A-n> :bnext!<cr>
@@ -94,6 +93,10 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
+augroup open_fold
+    au BufNew * normal! zR
+augroup end
 
 
 " Press F12 to reload config
@@ -129,3 +132,8 @@ nnoremap <silent> <c-up> :res -1<CR>
 nnoremap <silent> <c-down> :res +1<CR>
 nnoremap <silent> <c-left> :vert res -3<CR>
 nnoremap <silent> <c-right> :vert res +3<CR>
+
+inoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
+inoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
+nnoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
+nnoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
