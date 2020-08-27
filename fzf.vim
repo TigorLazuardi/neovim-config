@@ -32,6 +32,10 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 command! -bang -nargs=? -complete=dir HFiles
       \ call fzf#vim#files(<q-args>, {'source': 'rg --files --hidden'}, <bang>0)
 
+" Add your path here.
+let plugins_dir='~/.config/nvim/plugged' 
+let preview_file = plugins_dir . "/fzf.vim/bin/preview.sh"
+
 nnoremap <silent><leader>o :HFiles<CR>
 
 nnoremap [f :Rg <c-r><c-w><cr>

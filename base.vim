@@ -1,10 +1,10 @@
 set nocompatible "Remove compability with older versions.
 set ignorecase "When searching, make the search case insensitive
 set hlsearch "When searching, the text is highlighted
-set tabstop=4 "2 spaces when pressing tab.
-set softtabstop=4 "Same as above"
+set tabstop=2 "2 spaces when pressing tab.
+set softtabstop=2 "Same as above"
 set expandtab "Same as above
-set shiftwidth=4 "If there's a matching bracket, vim will put it properly"
+set shiftwidth=2 "If there's a matching bracket, vim will put it properly"
 set shiftround "An extension of above"
 set autoindent "When you press enter on a tabbed line, Next line is idented properly"
 set smartindent "Indent enhancement"
@@ -22,7 +22,7 @@ set linebreak "Prevent vim from wrap in the middle of a word"
 set scrolloff=5 "Make sure there's at least few lines visible between cursor and edge of window. Setting to 999 will make the cursor always on middle of screen"
 set autoread "Auto reload file if there's outside edit"
 set backspace=indent,eol,start "you may backspace over indentation, endofline, startofline"
-set foldmethod=syntax
+" set foldmethod=syntax
 set nofoldenable        "dont fold by default
 
 if !isdirectory($HOME . "/.vim/backup")
@@ -88,16 +88,13 @@ nnoremap ]w :setlocal wrap<cr>
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap fs w! !sudo tee > /dev/null %
 
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
+set norelativenumber
 
-augroup open_fold
-    au BufNew * normal! zR
-augroup end
-
+" augroup numbertoggle
+"   autocmd!
+"   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+" augroup END
 
 " Press F12 to reload config
 if has('unix')
@@ -106,8 +103,8 @@ if has('unix')
 endif
 
 " Change leader key to space key
-nnoremap <Space> <nop>
-let mapleader = " "
+" nnoremap <Space> <nop>
+" let mapleader = " "
 
 
 " Adds Semicolon to end of line
@@ -116,14 +113,16 @@ nmap <leader>; mAA;<esc>`A
 au VimEnter * inoremap <c-l> <right>
 au VimEnter * inoremap <c-h> <left>
 
-au VimEnter * hi Normal guibg=NONE ctermbg=NONE
-au BufEnter * hi Normal guibg=NONE ctermbg=NONE
+" Transparent background
+" au VimEnter * hi Normal guibg=NONE ctermbg=NONE
+" au BufEnter * hi Normal guibg=NONE ctermbg=NONE
 
 nmap <leader>n :e %:h/
 command! -nargs=1 -complete=help H :vert help <args>
 
-cnoreabbrev wq w<bar>bd
-cnoreabbrev q bd
+" cnoreabbrev wq w<bar>bd
+" cnoreabbrev q bd
+nnoremap <silent> ZZ :bd<CR>
 
 nnoremap <silent> [o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> ]o :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
@@ -133,7 +132,4 @@ nnoremap <silent> <c-down> :res +1<CR>
 nnoremap <silent> <c-left> :vert res -3<CR>
 nnoremap <silent> <c-right> :vert res +3<CR>
 
-inoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
-inoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
-nnoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
-nnoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
+nnoremap <silent> gq :bd<CR>

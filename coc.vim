@@ -28,20 +28,28 @@ augroup coc_autos
   autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 augroup END
 
+function! Check_floating_window_and_doHover()
+  if coc#util#has_float()
+    return
+  else
+    call CocActionAsync('doHover')
+  endif
+endfunction
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> ga <Plug>(coc-codelens-action)
-nmap <silent> ge <Plug>(coc-diagnostic-next)
-nmap <silent> gE <Plug>(coc-diagnostic-prev)
+nmap <silent> gn <Plug>(coc-diagnostic-next)
+nmap <silent> gp <Plug>(coc-diagnostic-prev)
 nmap <F2> <Plug>(coc-rename)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <silent> K :call CocActionAsync('doHover')<CR>
 
 " Using CocList
 " Show all diagnostics
-nnoremap <silent> <leader>cd  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions
 nnoremap <silent> <leader>ce  :<C-u>CocList extensions<cr>
 " Show commands
@@ -50,7 +58,6 @@ nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>
 nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
 " Search workleader symbols
 nnoremap <silent> <leader>cy  :<C-u>CocList -I symbols<cr>
-nnoremap <silent> <leader>cs  :<C-u>CocCommand snippets.editSnippets<cr>
 " Do default action for next item.
 nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>
 " Do default action for previous item.
@@ -65,42 +72,6 @@ vmap <C-j> <Plug>(coc-snippets-select)
 set completeopt=noinsert,menuone,noselect
 set shortmess+=c
 
-function! Check_floating_window_and_doHover()
-    if coc#util#has_float()
-        return
-    else
-        call CocActionAsync('doHover')
-    endif
-endfunction
-
-" Enables doHover at startup
-augroup HoverSymbol
-  au!
-  autocmd CursorHold * silent call Check_floating_window_and_doHover()
-augroup END
-
-
-function! ToggleSymbolHover()
-    " Switch the toggle variable
-    let g:ToggleSymbolHover = !get(g:, 'ToggleSymbolHover', 1)
-
-    " Reset group
-    augroup HoverSymbol
-        autocmd!
-    augroup END
-    if !g:ToggleSymbolHover
-      echo "[Message] Coc hover disabled"
-    endif
-    " Enable if toggled on
-    if g:ToggleSymbolHover
-        augroup HoverSymbol
-            autocmd CursorHold * silent call Check_floating_window_and_doHover()
-        augroup END echo "[Message] Coc hover enabled"
-    endif
-endfunction
-
-nnoremap <F4> :call ToggleSymbolHover()<CR>
-
 imap <c-m> <Plug>(coc-snippets-expand-jump)
 vmap <c-m> <Plug>(coc-snippets-expand-jump)
 
@@ -111,26 +82,31 @@ inoremap <silent><expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
 inoremap <silent><expr> <c-y> pumvisible() ? coc#_select_confirm() : "\<c-y>"
 
 
+inoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
+inoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
+nnoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
+nnoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
+
+
 let g:coc_global_extensions = [
       \ 'coc-tsserver', 
       \ 'coc-word', 
       \ 'coc-vimlsp', 
-      \ 'coc-ultisnips',
       \ 'coc-tag',
       \ 'coc-json',
       \ 'coc-emoji',
-      \ 'coc-snippets',
       \ 'coc-prettier',
       \ 'coc-emoji',
       \ 'coc-emmet',
       \ 'coc-dictionary',
       \ 'coc-diagnostic',
       \ 'coc-yaml',
-      \ 'coc-pairs'
+      \ 'coc-pairs',
+      \ 'coc-rust-analyzer',
       \ ]
 
-if executable('go') || executable('go.exe')
-    let g:coc_global_extensions += ['coc-go']
+if executable('flutter') || executable('flutter.exe')
+    let g:coc_global_extensions += ['coc-flutter']
 endif
 
 autocmd FileType markdown,vimwiki,wiki,md let b:coc_pairs_disabled = ['`']
