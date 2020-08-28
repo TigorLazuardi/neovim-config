@@ -25,7 +25,6 @@ augroup coc_autos
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
   autocmd FileType json syntax match Comment +\/\/.\+$+
-  autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 augroup END
 
 function! Check_floating_window_and_doHover()

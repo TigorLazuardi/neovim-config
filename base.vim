@@ -12,7 +12,6 @@ set smarttab "tab enhancement"
 set textwidth=100 "The text width before vim wraps the line"
 set clipboard=unnamedplus "Make vim able to copy and paste from outside vim"
 set encoding=utf8 "Enforces utf-8"
-set guifont=DejavuSansMono\ Nerd\ Font\ Mono "You may want to delete this if you don't have the font"
 set cursorline "Highlight where your current line is"
 set termguicolors
 set timeoutlen=1000 "Set delay between input commands before trigger"
@@ -49,6 +48,7 @@ set number relativenumber
 set wildmenu
 set wildignore+=**/node_modules/** 
 set wildmode=longest:full,list:full
+set signcolumn=yes
 
 
 " Enable syntax highlighting

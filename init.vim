@@ -22,7 +22,7 @@ if exists('g:vscode')
   Plug 'kana/vim-textobj-line' " select line. l motion key
 
   " Finds now search multi-lines and not just current line
-  Plug 'dahu/vim-fanfingtastic'
+  " Plug 'dahu/vim-fanfingtastic'
 
   " Text multi-line auto spacing.
   Plug 'godlygeek/tabular'
@@ -79,6 +79,10 @@ if exists('g:vscode')
 else
     " Ordinary NVIM
     call plug#begin()
+
+    " Vim dev icons
+    Plug 'ryanoasis/vim-devicons'
+
     " Snippets
     source $CONFIG/ultisnips.vim
 
@@ -129,19 +133,17 @@ else
     " Repeat some plugin commands with '.'
     Plug 'tpope/vim-repeat'
 
-    " Vim dev icons
-    Plug 'ryanoasis/vim-devicons'
 
     " For some coding respect with other devs
     source $CONFIG/editorconfig.vim
 
     " Finds now search multi-lines and not just current line
-    Plug 'dahu/vim-fanfingtastic'
+    " Plug 'dahu/vim-fanfingtastic'
 
     " Text multi-line auto spacing.
     Plug 'godlygeek/tabular'
 
-    " Expands find and replace to something magical
+    " Expands find and replace to support context replace with brackets
     Plug 'tpope/vim-abolish'
 
     " Text Objects
@@ -164,6 +166,5 @@ else
     call plug#end()
 
     source $CONFIG/base.vim
-
 endif
 

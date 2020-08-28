@@ -6,7 +6,11 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+"	surround.vim	/^xmap " S"$/;"	m
 $CONFIG	init.vim	/^let $CONFIG = '$HOME\/.config\/nvim'$/;"	v
+'	surround.vim	/^xmap ' S'$/;"	m
+(	surround.vim	/^xmap ( S)$/;"	m
+)	surround.vim	/^xmap ) S)$/;"	m
 0	coc-settings.json	/^            "-isystem",$/;"	s	array:languageserver.ccls.initializationOptions.clang.extraArgs
 0	coc-settings.json	/^      "args": ["--stdio"],$/;"	s	array:languageserver.intelephense.args
 0	coc-settings.json	/^      "args": ["start"],$/;"	s	array:languageserver.bash.args
@@ -63,14 +67,19 @@ $CONFIG	init.vim	/^let $CONFIG = '$HOME\/.config\/nvim'$/;"	v
 <A-p>	base.vim	/^inoremap <silent> <A-p> <esc>:bprev!<cr>$/;"	m
 <A-p>	base.vim	/^nnoremap <silent> <A-p> :bprev!<cr>$/;"	m
 <C-H>	base.vim	/^nnoremap <C-H> <C-W><C-H>$/;"	m
+<C-H>	fern.vim	/^  nnoremap <buffer> <C-H> <C-W><C-H>$/;"	m
 <C-J>	base.vim	/^nnoremap <C-J> <C-W><C-J>$/;"	m
+<C-J>	fern.vim	/^  nnoremap <buffer> <C-J> <C-W><C-J>$/;"	m
 <C-K>	base.vim	/^nnoremap <C-K> <C-W><C-K>$/;"	m
+<C-K>	fern.vim	/^  nnoremap <buffer> <C-K> <C-W><C-K>$/;"	m
 <C-L>	base.vim	/^nnoremap <C-L> <C-W><C-L>$/;"	m
+<C-L>	fern.vim	/^  nnoremap <buffer> <C-L> <C-W><C-L>$/;"	m
 <C-j>	coc.vim	/^vmap <C-j> <Plug>(coc-snippets-select)$/;"	m
 <F10>	ultisnips.vim	/^nnoremap <silent> <F10> :UltiSnipsEdit<CR>$/;"	m
 <F11>	base.vim	/^  nmap <silent><F11> :e $HOME\/.config\/nvim\/$/;"	m
 <F12>	base.vim	/^  nmap <silent><F12> :source $HOME\/.config\/nvim\/init.vim<CR>:echo "Config reloaded"<CR>$/;"	m
 <F2>	coc.vim	/^nmap <F2> <Plug>(coc-rename)$/;"	m
+<F3>	fern.vim	/^  nmap <buffer> <F3> <Plug>(fern-action-grep)$/;"	m
 <F3>	fzf.vim	/^nmap <silent><F3> :Rg <c-r><c-w><CR>$/;"	m
 <F5>	rust.vim	/^    nnoremap <expr><silent><F5> &filetype == "rust" ? ":make run<CR>" :$/;"	m
 <F7>	vimgo.vim	/^inoremap <expr><F7> &filetype == "go" ? "\\<esc>:GoFillStruct<CR>i" : "\\<nop>"$/;"	m
@@ -121,6 +130,7 @@ $CONFIG	init.vim	/^let $CONFIG = '$HOME\/.config\/nvim'$/;"	v
 <tab>	base.vim	/^xnoremap <tab> <esc>$/;"	m
 ?	init.vim	/^  nnoremap <silent> ? :<C-u>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand(/;"	m
 Check_floating_window_and_doHover	coc.vim	/^function! Check_floating_window_and_doHover()$/;"	f
+D	fern.vim	/^  nmap <buffer> D <Plug>(fern-action-remove)$/;"	m
 H	base.vim	/^command! -nargs=1 -complete=help H :vert help <args>$/;"	c
 HFiles	fzf.vim	/^command! -bang -nargs=? -complete=dir HFiles$/;"	c
 K	coc.vim	/^nmap <silent> K :call CocActionAsync('doHover')<CR>$/;"	m
@@ -187,6 +197,7 @@ diagnostic.virtualTextLines	coc-settings.json	/^  "diagnostic.virtualTextLines":
 diagnostic.virtualTextPrefix	coc-settings.json	/^  "diagnostic.virtualTextPrefix": " ",$/;"	s
 diagnostic.warningSign	coc-settings.json	/^  "diagnostic.warningSign": "⚠",$/;"	s
 directory	coc-settings.json	/^          "directory": "\/tmp\/ccls"$/;"	s	object:languageserver.ccls.initializationOptions.cache
+e	fern.vim	/^  nmap <buffer> e <Plug>(fern-action-open:select)$/;"	m
 extraArgs	coc-settings.json	/^          "extraArgs": [$/;"	a	object:languageserver.ccls.initializationOptions.clang
 filetypes	coc-settings.json	/^      "filetypes": ["c", "cpp", "objc", "objcpp"],$/;"	a	object:languageserver.ccls
 filetypes	coc-settings.json	/^      "filetypes": ["go"],$/;"	a	object:languageserver.golang
@@ -198,18 +209,33 @@ g:UltiSnipsExpandTrigger	ultisnips.vim	/^let g:UltiSnipsExpandTrigger = "<Plug>(
 g:UltiSnipsJumpBackwardTrigger	ultisnips.vim	/^let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"$/;"	v
 g:UltiSnipsJumpForwardTrigger	ultisnips.vim	/^let g:UltiSnipsJumpForwardTrigger	= "<c-j>"$/;"	v
 g:UltiSnipsRemoveSelectModeMappings	ultisnips.vim	/^let g:UltiSnipsRemoveSelectModeMappings = 0$/;"	v
+g:airline#extensions#ale#enabled	ale.vim	/^let g:airline#extensions#ale#enabled = 1$/;"	v
 g:airline#extensions#tabline#enabled	airline.vim	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
 g:airline#extensions#tabline#enabled	theme.vim	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
 g:airline_powerline_fonts	airline.vim	/^let g:airline_powerline_fonts = 1$/;"	v
 g:airline_powerline_fonts	theme.vim	/^let g:airline_powerline_fonts = 1$/;"	v
 g:airline_theme	autoload/theme.vim	/^let g:airline_theme='gruvbox'$/;"	v
+g:ale_disable_lsp	ale.vim	/^let g:ale_disable_lsp = 1$/;"	v
+g:ale_go_gofmt_options	ale.vim	/^let g:ale_go_gofmt_options = "-s"$/;"	v
+g:ale_go_golangci_lint_package	ale.vim	/^let g:ale_go_golangci_lint_package = 1$/;"	v
+g:ale_linters	ale.vim	/^let g:ale_linters = {'go': ['gofmt', 'golint', 'go vet']}$/;"	v
+g:ale_set_loclist	ale.vim	/^let g:ale_set_loclist = 0$/;"	v
+g:ale_set_quickfix	ale.vim	/^let g:ale_set_quickfix = 1$/;"	v
+g:ale_sign_error	ale.vim	/^let g:ale_sign_error = '>>'$/;"	v
+g:ale_sign_warning	ale.vim	/^let g:ale_sign_warning = '--'$/;"	v
+g:ale_virtualtext_cursor	ale.vim	/^let g:ale_virtualtext_cursor = 1$/;"	v
 g:coc_global_extensions	coc.vim	/^    let g:coc_global_extensions += ['coc-flutter']$/;"	v
 g:coc_global_extensions	coc.vim	/^let g:coc_global_extensions = [$/;"	v
 g:coc_snippet_next	coc.vim	/^let g:coc_snippet_next = '<c-j>'$/;"	v
 g:coc_snippet_prev	coc.vim	/^let g:coc_snippet_prev = '<c-k>'$/;"	v
 g:fern#default_hidden	fern.vim	/^let g:fern#default_hidden = 1$/;"	v
 g:fern#drawer_width	fern.vim	/^let g:fern#drawer_width = 40$/;"	v
-g:fern#renderer	fern.vim	/^let g:fern#renderer = "devicons"$/;"	v
+g:fern#renderer	fern.vim	/^let g:fern#renderer = "nerdfont"$/;"	v
+g:floaterm_keymap_kill	floaterm.vim	/^let g:floaterm_keymap_kill = '<F9>'$/;"	v
+g:floaterm_keymap_new	floaterm.vim	/^let g:floaterm_keymap_new    = '<F8>'$/;"	v
+g:floaterm_keymap_next	floaterm.vim	/^let g:floaterm_keymap_next   = '<F7>'$/;"	v
+g:floaterm_keymap_prev	floaterm.vim	/^let g:floaterm_keymap_prev   = '<F6>'$/;"	v
+g:floaterm_keymap_toggle	floaterm.vim	/^let g:floaterm_keymap_toggle = '<F5>'$/;"	v
 g:go_code_completion_enabled	vimgo.vim	/^let g:go_code_completion_enabled = 0$/;"	v
 g:go_def_mapping_enabled	vimgo.vim	/^let g:go_def_mapping_enabled = 0$/;"	v
 g:go_diagnostics_enabled	vimgo.vim	/^let g:go_diagnostics_enabled = 1$/;"	v
@@ -262,16 +288,19 @@ gh	init.vim	/^  nnoremap <silent> gh :<C-u>call VSCodeNotify('closeMarkersNaviga
 gi	coc.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
 gl	init.vim	/^  nnoremap <silent> gl :<C-u>call VSCodeNotify('editor.action.openLink')<CR>$/;"	m
 gm	fzf.vim	/^nmap gm :Marks<CR>$/;"	m
+gn	ale.vim	/^nmap <silent> gn <Plug>(ale_next_wrap)$/;"	m
 gn	coc.vim	/^nmap <silent> gn <Plug>(coc-diagnostic-next)$/;"	m
 gn	init.vim	/^  nnoremap <silent> gn :<C-u>call VSCodeNotify('editor.action.marker.nextInFiles')<CR>$/;"	m
 goconfig	vimgo.vim	/^augroup goconfig$/;"	a
 golang	coc-settings.json	/^    "golang": {$/;"	o	object:languageserver
+gp	ale.vim	/^nmap <silent> gp <Plug>(ale_previous_wrap)$/;"	m
 gp	coc.vim	/^nmap <silent> gp <Plug>(coc-diagnostic-prev)$/;"	m
 gp	init.vim	/^  nnoremap <silent> gp :<C-u>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>$/;"	m
 gq	base.vim	/^nnoremap <silent> gq :bd<CR>$/;"	m
 gr	coc.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
 gr	init.vim	/^  nnoremap <silent> gr :<C-u>call VSCodeNotify('goToNextReference')<CR>$/;"	m
 gy	coc.vim	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
+i	fern.vim	/^  nmap <buffer> i <Plug>(fern-action-rename:bottom)$/;"	m
 ignoredRootPaths	coc-settings.json	/^      "ignoredRootPaths": ["~"]$/;"	a	object:languageserver.bash
 initializationOptions	coc-settings.json	/^      "initializationOptions": {$/;"	o	object:languageserver.ccls
 initializationOptions	coc-settings.json	/^      "initializationOptions": {$/;"	o	object:languageserver.intelephense
@@ -285,7 +314,9 @@ languageserver	coc-settings.json	/^  "languageserver": {$/;"	o
 lockfileVersion	package-lock.json	/^  "lockfileVersion": 1,$/;"	n
 m	clip.vim	/^nnoremap m m$/;"	m
 mapleader	init.vim	/^let mapleader = ","$/;"	v
+my	fern.vim	/^augroup my-fern$/;"	a
 p	clip.vim	/^nmap p <plug>(YoinkPaste_p)$/;"	m
+p	fern.vim	/^  nmap <buffer> p <Plug>(fern-action-clipboard-paste)$/;"	m
 p	init.vim	/^  nmap p <plug>(YoinkPaste_p)$/;"	m
 pairs.enableBackspace	coc-settings.json	/^  "pairs.enableBackspace": true,$/;"	b
 plugins_dir	fzf.vim	/^let plugins_dir='~\/.config\/nvim\/plugged' $/;"	v
@@ -315,6 +346,7 @@ s	init.vim	/^  nmap s <plug>(SubversiveSubstitute)$/;"	m
 s:buflist	fzf.vim	/^function! s:buflist()$/;"	f
 s:bufopen	fzf.vim	/^function! s:bufopen(e)$/;"	f
 s:check_back_space	coc.vim	/^function! s:check_back_space() abort$/;"	f
+s:init_fern	fern.vim	/^function! s:init_fern() abort$/;"	f
 signature.enable	coc-settings.json	/^  "signature.enable": true,$/;"	b
 signature.floatMaxWidth	coc-settings.json	/^  "signature.floatMaxWidth": 100,$/;"	n
 snake_case	pythonx/utils.py	/^def snake_case(str):$/;"	f
@@ -335,10 +367,12 @@ typescript.updateImportsOnFileMove.enable	coc-settings.json	/^  "typescript.upda
 version	package-lock.json	/^      "version": "1.22.0",$/;"	s	object:dependencies.yarn
 x	clip.vim	/^nnoremap x d$/;"	m
 x	clip.vim	/^xnoremap x d$/;"	m
+x	fern.vim	/^  nmap <buffer> x <Plug>(fern-action-clipboard-move)$/;"	m
 x	init.vim	/^  nnoremap x d$/;"	m
 x	init.vim	/^  xnoremap x d$/;"	m
 xx	clip.vim	/^nnoremap xx dd$/;"	m
 xx	init.vim	/^  nnoremap xx dd$/;"	m
 y	clip.vim	/^nmap y <plug>(YoinkYankPreserveCursorPosition)$/;"	m
 y	clip.vim	/^xmap y <plug>(YoinkYankPreserveCursorPosition)$/;"	m
+y	fern.vim	/^  nmap <buffer> y <Plug>(fern-action-clipboard-copy)$/;"	m
 yarn	package-lock.json	/^    "yarn": {$/;"	o	object:dependencies

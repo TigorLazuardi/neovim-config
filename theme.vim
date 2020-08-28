@@ -13,6 +13,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'mhartington/oceanic-next'
 Plug 'cocopon/iceberg.vim'
+Plug 'dracula/vim'
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -32,6 +33,8 @@ let g:thematic#themes = {
       \ 'gruvbox'     :{'colorscheme': 'gruvbox',
       \                 'background': 'dark',
       \                 'airline-theme': 'gruvbox',
+      \                 'transparency': 100,
+      \                 'sign-column-color-fix': 1,
       \                },
       \ 'molokai'     :{'colorscheme': 'molokai',
       \                 'background': 'dark',
@@ -45,23 +48,28 @@ let g:thematic#themes = {
       \                 'background': 'dark',
       \                 'airline-theme': 'jellybeans',
       \                },
-      \ 'lucius'  :{'colorscheme': 'lucius',
+      \ 'lucius'      :{'colorscheme': 'lucius',
       \                 'background': 'dark',
       \                 'airline-theme': 'lucius',
       \                },
-      \ 'oceanicnext'  :{'colorscheme': 'OceanicNext',
+      \ 'oceanicnext' :{'colorscheme': 'OceanicNext',
       \                 'background': 'dark',
       \                 'airline-theme': 'oceanicnext',
       \                },
-      \ 'solarized'  :{'colorscheme': 'base16-solarized-dark',
+      \ 'solarized'   :{'colorscheme': 'base16-solarized-dark',
       \                 'background': 'dark',
       \                 'airline-theme': 'base16_solarized',
       \                },
-      \ 'iceberg'  :{'colorscheme': 'iceberg',
+      \ 'iceberg'     :{'colorscheme': 'iceberg',
       \                 'background': 'dark',
       \                 'airline-theme': 'iceberg',
+      \                },
+      \ 'dracula'     :{'colorscheme': 'dracula',
+      \                 'background': 'dark',
+      \                 'airline-theme': 'dracula',
       \                },
       \ }
 
 
 autocmd VimEnter * :ThematicRandom
+
