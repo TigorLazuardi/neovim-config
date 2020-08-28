@@ -3,6 +3,8 @@ if !executable('fzf')
 endif
 Plug 'junegunn/fzf.vim'
 
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
 function! s:buflist()
   redir => ls
   silent ls

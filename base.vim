@@ -23,6 +23,7 @@ set autoread "Auto reload file if there's outside edit"
 set backspace=indent,eol,start "you may backspace over indentation, endofline, startofline"
 " set foldmethod=syntax
 set nofoldenable        "dont fold by default
+set mouse=a
 
 if !isdirectory($HOME . "/.vim/backup")
   call mkdir($HOME . "/.vim/backup", "p", 0700)
@@ -102,14 +103,6 @@ if has('unix')
   nmap <silent><F11> :e $HOME/.config/nvim/
 endif
 
-" Change leader key to space key
-" nnoremap <Space> <nop>
-" let mapleader = " "
-
-
-" Adds Semicolon to end of line
-nmap <leader>; mAA;<esc>`A
-
 au VimEnter * inoremap <c-l> <right>
 au VimEnter * inoremap <c-h> <left>
 
@@ -119,17 +112,19 @@ au VimEnter * inoremap <c-h> <left>
 
 nmap <leader>n :e %:h/
 command! -nargs=1 -complete=help H :vert help <args>
+command! Noh :noh
+command! NOh :noh
+command! NOH :noh
+command! S :source /home/tigor/.config/nvim/init.vim
 
 " cnoreabbrev wq w<bar>bd
 " cnoreabbrev q bd
 nnoremap <silent> ZZ :bd<CR>
-
 nnoremap <silent> [o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> ]o :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
-
 nnoremap <silent> <c-up> :res -1<CR>
 nnoremap <silent> <c-down> :res +1<CR>
 nnoremap <silent> <c-left> :vert res -3<CR>
 nnoremap <silent> <c-right> :vert res +3<CR>
-
 nnoremap <silent> gq :bd<CR>
+nnoremap <c-s> :w<cr>

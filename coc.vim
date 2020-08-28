@@ -1,6 +1,7 @@
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
 set hidden
 set nobackup
@@ -45,6 +46,17 @@ nmap <silent> gp <Plug>(coc-diagnostic-prev)
 nmap <F2> <Plug>(coc-rename)
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <silent> K :call CocActionAsync('doHover')<CR>
+
+" mappings
+nnoremap <silent> <leader><leader> :<C-u>CocFzfList<CR>
+nnoremap <silent> <leader>a        :<C-u>CocFzfList diagnostics<CR>
+nnoremap <silent> <leader>b        :<C-u>CocFzfList diagnostics --current-buf<CR>
+nnoremap <silent> <leader>c        :<C-u>CocFzfList commands<CR>
+nnoremap <silent> <leader>x        :<C-u>CocFzfList extensions<CR>
+nnoremap <silent> <leader>l        :<C-u>CocFzfList location<CR>
+nnoremap <silent> <leader>o        :<C-u>CocFzfList outline<CR>
+nnoremap <silent> <leader>s        :<C-u>CocFzfList symbols<CR>
+nnoremap <silent> <leader>p        :<C-u>CocFzfListResume<CR>
 
 " Using CocList
 " Show all diagnostics

@@ -52,6 +52,7 @@ $CONFIG	init.vim	/^let $CONFIG = '$HOME\/.config\/nvim'$/;"	v
 8	coc-settings.json	/^    "vim",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
 9	coc-settings.json	/^    "rust",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
 ;	fzf.vim	/^nmap <silent> ; :Buffers<CR>$/;"	m
+<A-CR>	init.vim	/^  nnoremap <A-CR> :FVimToggleFullScreen<CR>$/;"	m
 <A-j>	base.vim	/^inoremap <A-j> :m .+1<CR>==gi$/;"	m
 <A-j>	base.vim	/^nnoremap <A-j> :m .+1<CR>==$/;"	m
 <A-j>	base.vim	/^vnoremap <A-j> :m '>+1<CR>gv=gv$/;"	m
@@ -74,6 +75,8 @@ $CONFIG	init.vim	/^let $CONFIG = '$HOME\/.config\/nvim'$/;"	v
 <C-K>	fern.vim	/^  nnoremap <buffer> <C-K> <C-W><C-K>$/;"	m
 <C-L>	base.vim	/^nnoremap <C-L> <C-W><C-L>$/;"	m
 <C-L>	fern.vim	/^  nnoremap <buffer> <C-L> <C-W><C-L>$/;"	m
+<C-ScrollWheelDown>	init.vim	/^  nnoremap <silent> <C-ScrollWheelDown> :set guifont=-<CR>$/;"	m
+<C-ScrollWheelUp>	init.vim	/^  nnoremap <silent> <C-ScrollWheelUp> :set guifont=+<CR>$/;"	m
 <C-j>	coc.vim	/^vmap <C-j> <Plug>(coc-snippets-select)$/;"	m
 <F10>	ultisnips.vim	/^nnoremap <silent> <F10> :UltiSnipsEdit<CR>$/;"	m
 <F11>	base.vim	/^  nmap <silent><F11> :e $HOME\/.config\/nvim\/$/;"	m
@@ -101,6 +104,7 @@ $CONFIG	init.vim	/^let $CONFIG = '$HOME\/.config\/nvim'$/;"	v
 <c-o>	base.vim	/^inoremap <c-o> <esc>A<CR> $/;"	m
 <c-p>	clip.vim	/^nmap <c-p> <plug>(YoinkPostPasteSwapForward)$/;"	m
 <c-right>	base.vim	/^nnoremap <silent> <c-right> :vert res +3<CR>$/;"	m
+<c-s>	base.vim	/^nnoremap <c-s> :w<cr>$/;"	m
 <c-s>	prose.vim	/^  inoremap <buffer> <c-s> <c-g>u<Esc>[s1z=`]A<c-g>u$/;"	m
 <c-s>	prose.vim	/^  nnoremap <buffer> <c-s> [s1z=<c-o>$/;"	m
 <c-space>	coc.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
@@ -110,10 +114,13 @@ $CONFIG	init.vim	/^let $CONFIG = '$HOME\/.config\/nvim'$/;"	v
 <c-y>	coc.vim	/^inoremap <silent><expr> <c-y> pumvisible() ? coc#_select_confirm() : "\\<c-y>"$/;"	m
 <cr>	coc.vim	/^inoremap <silent> <cr> <C-g>u<CR><c-r>=coc#on_enter()<CR>$/;"	m
 <cr>	coc.vim	/^inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : $/;"	m
-<leader>;	base.vim	/^nmap <leader>; mAA;<esc>`A$/;"	m
+<leader><leader>	coc.vim	/^nnoremap <silent> <leader><leader> :<C-u>CocFzfList<CR>$/;"	m
 <leader>Q	prose.vim	/^  nnoremap <buffer> <silent> <leader>Q vapJgqap$/;"	m
+<leader>a	coc.vim	/^nnoremap <silent> <leader>a        :<C-u>CocFzfList diagnostics<CR>$/;"	m
 <leader>a	coc.vim	/^nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>$/;"	m
 <leader>a	coc.vim	/^xmap <leader>a  <Plug>(coc-codeaction-selected)$/;"	m
+<leader>b	coc.vim	/^nnoremap <silent> <leader>b        :<C-u>CocFzfList diagnostics --current-buf<CR>$/;"	m
+<leader>c	coc.vim	/^nnoremap <silent> <leader>c        :<C-u>CocFzfList commands<CR>$/;"	m
 <leader>cc	coc.vim	/^nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>$/;"	m
 <leader>ce	coc.vim	/^nnoremap <silent> <leader>ce  :<C-u>CocList extensions<cr>$/;"	m
 <leader>cj	coc.vim	/^nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>$/;"	m
@@ -122,11 +129,16 @@ $CONFIG	init.vim	/^let $CONFIG = '$HOME\/.config\/nvim'$/;"	v
 <leader>cp	coc.vim	/^nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>$/;"	m
 <leader>cy	coc.vim	/^nnoremap <silent> <leader>cy  :<C-u>CocList -I symbols<cr>$/;"	m
 <leader>e	fern.vim	/^nnoremap <silent> <leader>e :Fern . -reveal=% -drawer -toggle<CR>$/;"	m
+<leader>l	coc.vim	/^nnoremap <silent> <leader>l        :<C-u>CocFzfList location<CR>$/;"	m
 <leader>n	base.vim	/^nmap <leader>n :e %:h\/$/;"	m
+<leader>o	coc.vim	/^nnoremap <silent> <leader>o        :<C-u>CocFzfList outline<CR>$/;"	m
 <leader>o	fzf.vim	/^nnoremap <silent><leader>o :HFiles<CR>$/;"	m
+<leader>p	coc.vim	/^nnoremap <silent> <leader>p        :<C-u>CocFzfListResume<CR>$/;"	m
 <leader>s	clip.vim	/^nmap <leader>s <plug>(SubversiveSubstituteRange)$/;"	m
 <leader>s	clip.vim	/^xmap <leader>s <plug>(SubversiveSubstituteRange)$/;"	m
+<leader>s	coc.vim	/^nnoremap <silent> <leader>s        :<C-u>CocFzfList symbols<CR>$/;"	m
 <leader>ss	clip.vim	/^nmap <leader>ss <plug>(SubversiveSubstituteWordRange)$/;"	m
+<leader>x	coc.vim	/^nnoremap <silent> <leader>x        :<C-u>CocFzfList extensions<CR>$/;"	m
 <tab>	base.vim	/^xnoremap <tab> <esc>$/;"	m
 ?	init.vim	/^  nnoremap <silent> ? :<C-u>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand(/;"	m
 Check_floating_window_and_doHover	coc.vim	/^function! Check_floating_window_and_doHover()$/;"	f
@@ -135,12 +147,16 @@ H	base.vim	/^command! -nargs=1 -complete=help H :vert help <args>$/;"	c
 HFiles	fzf.vim	/^command! -bang -nargs=? -complete=dir HFiles$/;"	c
 K	coc.vim	/^nmap <silent> K :call CocActionAsync('doHover')<CR>$/;"	m
 K	init.vim	/^  nnoremap <silent> K :<C-u>call VSCodeNotify('editor.action.showHover')<CR>$/;"	m
+NOH	base.vim	/^command! NOH :noh$/;"	c
+NOh	base.vim	/^command! NOh :noh$/;"	c
+Noh	base.vim	/^command! Noh :noh$/;"	c
 Normal Mode:	readme.md	/^# Normal Mode:$/;"	c
 P	clip.vim	/^nmap P <plug>(YoinkPaste_P)$/;"	m
 P	init.vim	/^  nmap P <plug>(YoinkPaste_P)$/;"	m
 Prose	prose.vim	/^function! Prose()$/;"	f
 Q	prose.vim	/^  nnoremap <buffer> <silent> Q gqap$/;"	m
 Q	prose.vim	/^  xnoremap <buffer> <silent> Q gq$/;"	m
+S	base.vim	/^command! S :source \/home\/tigor\/.config\/nvim\/init.vim$/;"	c
 S	clip.vim	/^nmap S <plug>(SubversiveSubstituteToEndOfLine)$/;"	m
 S	init.vim	/^  nmap S <plug>(SubversiveSubstituteToEndOfLine)$/;"	m
 X	clip.vim	/^nnoremap X D$/;"	m
@@ -236,6 +252,7 @@ g:floaterm_keymap_new	floaterm.vim	/^let g:floaterm_keymap_new    = '<F8>'$/;"	v
 g:floaterm_keymap_next	floaterm.vim	/^let g:floaterm_keymap_next   = '<F7>'$/;"	v
 g:floaterm_keymap_prev	floaterm.vim	/^let g:floaterm_keymap_prev   = '<F6>'$/;"	v
 g:floaterm_keymap_toggle	floaterm.vim	/^let g:floaterm_keymap_toggle = '<F5>'$/;"	v
+g:fzf_layout	fzf.vim	/^let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }$/;"	v
 g:go_code_completion_enabled	vimgo.vim	/^let g:go_code_completion_enabled = 0$/;"	v
 g:go_def_mapping_enabled	vimgo.vim	/^let g:go_def_mapping_enabled = 0$/;"	v
 g:go_diagnostics_enabled	vimgo.vim	/^let g:go_diagnostics_enabled = 1$/;"	v
